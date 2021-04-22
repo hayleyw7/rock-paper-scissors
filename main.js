@@ -21,7 +21,7 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 
 // buttons
 
-var changeFormatBtn = document.querySelector("#changeFormat")
+var changeFormatBtn = document.querySelector("#changeFormatBtn")
 var rpsBtn = document.querySelector("#rpsBtn")
 var mtgBtn = document.querySelector("#mtgBtn")
 
@@ -29,13 +29,13 @@ var mtgBtn = document.querySelector("#mtgBtn")
 
 // buttons
 
-// changeFormatBtn.addEventListener("click", showHome)
+changeFormatBtn.addEventListener("click", showHome)
 rpsBtn.addEventListener("click", rpsGame)
 mtgBtn.addEventListener("click", mtgGame)
 
 // FUNCTIONS
 
-// helper functions
+// hide/show helper functions
 
 function hide(e) {
   e.classList.add("hidden")
@@ -45,18 +45,33 @@ function show(e) {
   e.classList.remove("hidden")
 }
 
-// function showHome() {
-//   hide(mtgHeading);
-//   hide(mtgImgRock);
-//   hide(mtgImgPaper);
-//   hide(mtgImgScissors);
-//   hide(mtgImgAlien);
-//   hide(mtgImgLizard);
-//   hide(rpsHeading);
-//   show(chooseFormatHeading);
-//   show(mtgBtn);
-//   show(rpsBtn);
-// }
+/// hide game screens
+
+function hideRpsGame() {
+  hide(rpsImgHeading);
+  hide(rpsImgRock);
+  hide(rpsImgScissors);
+  hide(rpsImgPaper);
+}
+
+function hideMtgGame() {
+  hide(mtgHeading);
+  hide(mtgImgRock);
+  hide(mtgImgPaper);
+  hide(mtgImgScissors);
+  hide(mtgImgLizard);
+  hide(mtgImgAlien);
+}
+
+// home settings
+
+function showHome() {
+  hideMtgGame();
+  hideRpsGame();
+  show(chooseFormatHeading);
+  show(mtgBtn);
+  show(rpsBtn);
+}
 
 function hideHome() {
   hide(chooseFormatHeading);
@@ -64,21 +79,25 @@ function hideHome() {
   hide(rpsBtn);
 }
 
-// big functions
+// show game screens
 
 function rpsGame() {
   hideHome();
+  hideMtgGame();
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
+  show(changeFormatBtn);
 }
 
 function mtgGame() {
   hideHome();
+  hideRpsGame();
   show(mtgHeading);
   show(mtgImgRock);
   show(mtgImgPaper);
   show(mtgImgScissors);
   show(mtgImgLizard);
   show(mtgImgAlien);
+  show(changeFormatBtn);
 }
