@@ -15,32 +15,36 @@
 <p>0</p>
 <!-- CENTER COLUMN -->
 <!-- load page -->
-    <h2>Choose a format.</h2>
-      <h3>Standard RPS</h3>
+    <h2 id="chooseFormatHeading" class="choose-format">Choose a format.</h2>
+      <button id="rpsBtn" class="rps-button">
+        <h3>Standard</h3>
         <p>Rock smashes Scissors.</p>
         <p>Scissors cut Paper.</p>
-          <p>Paper covers Rock.</p>
-      <h3>Magic The Gathering</h3>
+        <p>Paper covers Rock.</p>
+      </button>
+      <button id="mtgBtn" class="mtg-button">
+        <h3>Magic The Gathering</h3>
         <p>Rock smashes Scissors & Lizard.</p>
         <p>Scissors cut Paper & Lizard.</p>
         <p>Paper covers Rock & Alien.</p>
         <p>Lizard eats Paper & Alien.</p>
         <p>Alien vaporizes Scissors & Rock.</p>
+      </button>
 <!-- home button (hidden on load) -->
-    <button id="changeFormat" class="change-format hidden">CHANGE FORMAT</button>
+    <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
 <!-- rps page (hidden on load) -->
-<h3>Summon an artifact.</h3>
-<img class="rps-image" src="assets/rps-rock.png" alt="rock">
-<img class="rps-image" src="assets/rps-paper.png" alt="paper">
-<img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
+<h3 id="rpsHeading" class="rps-heading hidden">Summon an artifact.</h3>
+<img id="rpsImg" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
+<img id="rpsImg" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
+<img id="rpsImg" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
 <button></button>
 <!-- mtg page page (hidden on load) -->
-<h3>Cast a spell.</h3>
-<img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
-<img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
-<img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
-<img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
-<img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
+<h3 id="mtgHeading" class="mtg-heading hidden">Cast a spell.</h3>
+<img id="mtgImg" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
+<img id="mtgImg" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
+<img id="mtgImg" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
+<img id="mtgImg" class="mtg-image hidden" src="assets/mtg-lizard.jpeg" alt="lizard">
+<img id="mtgImg" class="mtg-image hidden" src="assets/mtg-alien.jpeg" alt="alien">
 <!-- COMPUTER SCORE -->
 <h3>Construct</h3>
 <p>0</p>

@@ -43,12 +43,17 @@ h1 {
 /* IMAGES */
 
 .rps-image {
-  width: 10rem;
+  width: 6rem;
+  background: var(--white);
+  border-radius: 1rem;
+  padding: .4rem;
+  margin: 1rem;
+  border: solid .4rem var(--black);
 }
 
 .mtg-image {
   width: 10rem;
   border: solid 5px white;
-  margin: 5px;
+  margin: 1rem;
   border-radius: 8px;
 }
