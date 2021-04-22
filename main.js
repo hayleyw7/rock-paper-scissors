@@ -25,18 +25,35 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 // buttons
 
 var changeFormatBtn = document.querySelector("#changeFormatBtn")
-var rpsBtn = document.querySelector("#rpsBtn")
-var mtgBtn = document.querySelector("#mtgBtn")
+var rpsBtn = document.querySelector("#rpsBtn");
+var mtgBtn = document.querySelector("#mtgBtn");
 
 // EVENT LISTENERS
 
 // buttons
 
-changeFormatBtn.addEventListener("click", showHome)
-rpsBtn.addEventListener("click", rpsGame)
-mtgBtn.addEventListener("click", mtgGame)
+changeFormatBtn.addEventListener("click", showHome);
+rpsBtn.addEventListener("click", rpsGame);
+mtgBtn.addEventListener("click", mtgGame);
+
+// images
+
+rpsImgRock.addEventListener("click", showAlert);
+rpsImgPaper.addEventListener("click", showAlert);
+rpsImgScissors.addEventListener("click", showAlert);
+mtgImgScissors.addEventListener("click", showAlert);
+mtgImgRock.addEventListener("click", showAlert);
+mtgImgPaper.addEventListener("click", showAlert);
+mtgImgAlien.addEventListener("click", showAlert);
+mtgImgLizard.addEventListener("click", showAlert);
 
 // FUNCTIONS
+
+// randomizer
+
+function s(array) {
+  return Math.floor(Math.random()*array.length);
+};
 
 // hide/show helper functions
 
@@ -106,3 +123,9 @@ function mtgGame() {
   show(mtgImgAlien);
   show(changeFormatBtn);
 }
+
+// ALERT BUTTON TEST
+
+  function showAlert() {
+    alert ("Hello world!");
+  }
