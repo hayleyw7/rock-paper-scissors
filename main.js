@@ -8,11 +8,14 @@ var chooseFormatHeading = document.querySelector("#chooseFormatHeading")
 var mtgHeading = document.querySelector("#mtgHeading")
 var rpsHeading = document.querySelector("#rpsHeading")
 
-// images
+// rps images
 
 var rpsImgRock = document.querySelector("#rpsImgRock");
 var rpsImgPaper = document.querySelector("#rpsImgPaper");
 var rpsImgScissors = document.querySelector("#rpsImgScissors");
+
+// mtg images
+
 var mtgImgRock = document.querySelector("#mtgImgRock");
 var mtgImgPaper = document.querySelector("#mtgImgPaper");
 var mtgImgScissors = document.querySelector("#mtgImgScissors");
@@ -83,7 +86,7 @@ function hideHome() {
 
 function rpsGame() {
   hideHome();
-  hideMtgGame();
+  // hideMtgGame();
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
@@ -92,7 +95,7 @@ function rpsGame() {
 
 function mtgGame() {
   hideHome();
-  hideRpsGame();
+  // hideRpsGame();
   show(mtgHeading);
   show(mtgImgRock);
   show(mtgImgPaper);
