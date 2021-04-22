@@ -1,0 +1,54 @@
+/* UTILITY */
+
+ :root {
+  --blue: #215abc;
+  --red: #b03114;
+  --black: #000000;
+  --white: #FFF;
+  --beige: rgb(242, 239, 220);
+}
+
+* {
+  /* font-family: 'Roboto', sans-serif; */
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* BACKGROUND */
+
+body {
+  background:url("assets/background-2.jpeg") no-repeat center center fixed; 
+  background-size: cover;
+}
+
+/* HEADER */
+
+h1 {
+  padding-left: 28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--black);
+  font-size: 50px;
+  margin-bottom: 40px;
+  margin-top: 0;
+  color: var(--white);
+}
+
+/* IMAGES */
+
+.rps-image {
+  width: 10rem;
+}
+
+.mtg-image {
+  width: 10rem;
+  border: solid 5px white;
+  margin: 5px;
+  border-radius: 8px;
+}
