@@ -49,9 +49,10 @@ function show(e) {
 }
 
 /// hide game screens
+// try to show and hide div for these
 
 function hideRpsGame() {
-  hide(rpsImgHeading);
+  hide(rpsHeading);
   hide(rpsImgRock);
   hide(rpsImgScissors);
   hide(rpsImgPaper);
