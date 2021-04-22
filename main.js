@@ -69,11 +69,12 @@ function hideMtgGame() {
 // home settings
 
 function showHome() {
-  hideMtgGame();
-  hideRpsGame();
+  hide(changeFormatBtn);
   show(chooseFormatHeading);
   show(mtgBtn);
   show(rpsBtn);
+  hideRpsGame();
+  hideMtgGame();
 }
 
 function hideHome() {
