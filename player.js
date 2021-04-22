@@ -16,11 +16,7 @@ class Player {
     localStorage.setItem(" -------- ", JSON.stringify( -------- ))
   }
   retrieveWinsFromStorage() {
-    activities.push( -------- )
-    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
   }
   takeTurn() {
-    activities.push( -------- )
-    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
   }
 }
