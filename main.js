@@ -5,20 +5,23 @@
 // headings
 
 var chooseFormatHeading = document.querySelector("#chooseFormatHeading")
-
 var mtgHeading = document.querySelector("#mtgHeading")
-
 var rpsHeading = document.querySelector("#rpsHeading")
 
 // images
 
-var rpsImg = document.querySelector("#rpsImg");
-var mtgImg = document.querySelector("#mtgImg");
+var rpsImgRock = document.querySelector("#rpsImgRock");
+var rpsImgPaper = document.querySelector("#rpsImgPaper");
+var rpsImgScissors = document.querySelector("#rpsImgScissors");
+var mtgImgRock = document.querySelector("#mtgImgRock");
+var mtgImgPaper = document.querySelector("#mtgImgPaper");
+var mtgImgScissors = document.querySelector("#mtgImgScissors");
+var mtgImgLizard = document.querySelector("#mtgImgLizard");
+var mtgImgAlien = document.querySelector("#mtgImgAlien");
 
 // buttons
 
 var changeFormatBtn = document.querySelector("#changeFormat")
-
 var rpsBtn = document.querySelector("#rpsBtn")
 var mtgBtn = document.querySelector("#mtgBtn")
 
@@ -32,32 +35,6 @@ mtgBtn.addEventListener("click", mtgGame)
 
 // FUNCTIONS
 
-function rpsGame() {
-  hideHome();
-  hide(mtgHeading);
-  hide(mtgImg);
-  show(rpsImg);
-  show(rpsHeading);
-}
-
-function mtgGame() {
-  hideHome();
-  hide(rpsImg);
-  hide(rpsHeading);
-  show(mtgHeading);
-  show(mtgImg);
-}
-
-function showHome() {
-  hide(mtgHeading);
-  hide(mtgImg);
-  hide(rpsImg);
-  hide(rpsHeading);
-  show(chooseFormatHeading);
-  show(mtgBtn);
-  show(rpsBtn);
-}
-
 // helper functions
 
 function hide(e) {
@@ -66,6 +43,19 @@ function hide(e) {
 
 function show(e) {
   e.classList.remove("hidden")
+}
+
+function showHome() {
+  hide(mtgHeading);
+  hide(mtgImgRock);
+  hide(mtgImgPaper);
+  hide(mtgImgScissors);
+  hide(mtgImgAlien);
+  hide(mtgImgLizard);
+  hide(rpsHeading);
+  show(chooseFormatHeading);
+  show(mtgBtn);
+  show(rpsBtn);
 }
 
 function hideHome() {
@@ -78,3 +68,39 @@ function hideHome() {
 function preventDefault() {
   event.preventDefault();
 }
+
+// function showAlert() {
+//   alert("test");
+// }
+
+// big functions
+
+function rpsGame() {
+  // showAlert()
+  hideHome();
+  hide(mtgHeading);
+  hide(mtgImgRock);
+  hide(mtgImgPaper);
+  hide(mtgImgScissors);
+  show(rpsImgRock);
+  show(rpsImgPaper);
+  show(rpsImgScissors);
+  show(rpsImgLizard);
+  show(rpsImgAlien);
+  show(rpsHeading);
+}
+
+function mtgGame() {
+  hideHome();
+  hide(rpsHeading);
+  show(mtgHeading);
+  show(mtgImgRock);
+  show(mtgImgPaper);
+  show(mtgImgScissors);
+  hide(rpsImgRock);
+  hide(rpsImgPaper);
+  hide(rpsImgScissors);
+  hide(rpsImgLizard);
+  hide(rpsImgAlien);
+}
+
