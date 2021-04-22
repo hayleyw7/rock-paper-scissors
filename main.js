@@ -29,7 +29,7 @@ var mtgBtn = document.querySelector("#mtgBtn")
 
 // buttons
 
-changeFormatBtn.addEventListener("click", showHome)
+// changeFormatBtn.addEventListener("click", showHome)
 rpsBtn.addEventListener("click", rpsGame)
 mtgBtn.addEventListener("click", mtgGame)
 
@@ -58,49 +58,30 @@ function show(e) {
 //   show(rpsBtn);
 // }
 
-// function hideHome() {
-//   preventDefault();
-//   hide(chooseFormatHeading);
-//   hide(mtgBtn);
-//   hide(rpsBtn);
-// }
-
-function preventDefault() {
-  event.preventDefault();
-}
-
-function showAlert() {
-  alert("test");
+function hideHome() {
+  hide(chooseFormatHeading);
+  hide(mtgBtn);
+  hide(rpsBtn);
 }
 
 // big functions
 
 function rpsGame() {
-  showAlert()
-  // hideHome();
-  // hide(mtgHeading);
-  // hide(mtgImgRock);
-  // hide(mtgImgPaper);
-  // hide(mtgImgScissors);
-  // show(rpsImgRock);
-  // show(rpsImgPaper);
-  // show(rpsImgScissors);
-  // show(rpsImgLizard);
-  // show(rpsImgAlien);
-  // show(rpsHeading);
+  hideHome();s
+  show(rpsImgRock);
+  show(rpsImgPaper);
+  show(rpsImgScissors);
+  show(rpsImgLizard);
+  show(rpsImgAlien);
+  show(rpsHeading);
 }
 
-// function mtgGame() {
-//   hideHome();
-//   hide(rpsHeading);
-//   show(mtgHeading);
-//   show(mtgImgRock);
-//   show(mtgImgPaper);
-//   show(mtgImgScissors);
-//   hide(rpsImgRock);
-//   hide(rpsImgPaper);
-//   hide(rpsImgScissors);
-//   hide(rpsImgLizard);
-//   hide(rpsImgAlien);
-// }
-
+function mtgGame() {
+  hideHome();
+  show(mtgHeading);
+  show(mtgImgRock);
+  show(mtgImgPaper);
+  show(mtgImgScissors);
+  show(mtgImgLizard);
+  show(mtgImgAlien);
+}
