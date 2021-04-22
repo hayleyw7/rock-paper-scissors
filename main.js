@@ -45,62 +45,62 @@ function show(e) {
   e.classList.remove("hidden")
 }
 
-function showHome() {
-  hide(mtgHeading);
-  hide(mtgImgRock);
-  hide(mtgImgPaper);
-  hide(mtgImgScissors);
-  hide(mtgImgAlien);
-  hide(mtgImgLizard);
-  hide(rpsHeading);
-  show(chooseFormatHeading);
-  show(mtgBtn);
-  show(rpsBtn);
-}
+// function showHome() {
+//   hide(mtgHeading);
+//   hide(mtgImgRock);
+//   hide(mtgImgPaper);
+//   hide(mtgImgScissors);
+//   hide(mtgImgAlien);
+//   hide(mtgImgLizard);
+//   hide(rpsHeading);
+//   show(chooseFormatHeading);
+//   show(mtgBtn);
+//   show(rpsBtn);
+// }
 
-function hideHome() {
-  preventDefault();
-  hide(chooseFormatHeading);
-  hide(mtgBtn);
-  hide(rpsBtn);
-}
+// function hideHome() {
+//   preventDefault();
+//   hide(chooseFormatHeading);
+//   hide(mtgBtn);
+//   hide(rpsBtn);
+// }
 
 function preventDefault() {
   event.preventDefault();
 }
 
-// function showAlert() {
-//   alert("test");
-// }
+function showAlert() {
+  alert("test");
+}
 
 // big functions
 
 function rpsGame() {
-  // showAlert()
-  hideHome();
-  hide(mtgHeading);
-  hide(mtgImgRock);
-  hide(mtgImgPaper);
-  hide(mtgImgScissors);
-  show(rpsImgRock);
-  show(rpsImgPaper);
-  show(rpsImgScissors);
-  show(rpsImgLizard);
-  show(rpsImgAlien);
-  show(rpsHeading);
+  showAlert()
+  // hideHome();
+  // hide(mtgHeading);
+  // hide(mtgImgRock);
+  // hide(mtgImgPaper);
+  // hide(mtgImgScissors);
+  // show(rpsImgRock);
+  // show(rpsImgPaper);
+  // show(rpsImgScissors);
+  // show(rpsImgLizard);
+  // show(rpsImgAlien);
+  // show(rpsHeading);
 }
 
-function mtgGame() {
-  hideHome();
-  hide(rpsHeading);
-  show(mtgHeading);
-  show(mtgImgRock);
-  show(mtgImgPaper);
-  show(mtgImgScissors);
-  hide(rpsImgRock);
-  hide(rpsImgPaper);
-  hide(rpsImgScissors);
-  hide(rpsImgLizard);
-  hide(rpsImgAlien);
-}
+// function mtgGame() {
+//   hideHome();
+//   hide(rpsHeading);
+//   show(mtgHeading);
+//   show(mtgImgRock);
+//   show(mtgImgPaper);
+//   show(mtgImgScissors);
+//   hide(rpsImgRock);
+//   hide(rpsImgPaper);
+//   hide(rpsImgScissors);
+//   hide(rpsImgLizard);
+//   hide(rpsImgAlien);
+// }
 
