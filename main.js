@@ -67,13 +67,10 @@ function hideHome() {
 // big functions
 
 function rpsGame() {
-  hideHome();s
+  hideHome();
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
-  show(rpsImgLizard);
-  show(rpsImgAlien);
-  show(rpsHeading);
 }
 
 function mtgGame() {
