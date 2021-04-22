@@ -4,3 +4,23 @@
 // saveWinsToStorage
 // retrieveWinsFromStorage
 // takeTurn
+
+class Player {
+  constructor(name, token, wins) {
+    this.name = name;
+    this.token = token;
+    this.wins = wins;
+  }
+  saveWinsToStorage() {
+    activities.push( -------- )
+    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
+  }
+  retrieveWinsFromStorage() {
+    activities.push( -------- )
+    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
+  }
+  takeTurn() {
+    activities.push( -------- )
+    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
+  }
+}
