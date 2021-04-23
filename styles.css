@@ -2,10 +2,11 @@
 
  :root {
   --blue: #215abc;
-  --red: #b03114;
+  --red: #c16c3e;
   --black: #000000;
   --white: #FFF;
   --beige: rgb(242, 239, 220);
+  
 }
 
 * {
@@ -26,6 +27,7 @@ body {
   background:url("assets/background-2.jpeg") no-repeat center center fixed; 
   background-size: cover;
   display: flex;
+  justify-content: center;
 }
 
 /* HEADER */
@@ -38,6 +40,10 @@ h1 {
   margin-bottom: 40px;
   margin-top: 0;
   color: var(--white);
+  /* border-top: solid .4rem var(--white); */
+  border-bottom: solid .4rem var(--white);
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 /* IMAGES */
@@ -56,4 +62,50 @@ h1 {
   border: solid 5px white;
   margin: 1rem;
   border-radius: 8px;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-section,
+.left-section {
+  display: flex;
+  flex-direction: column;
+  background: var(--red);
+  color: var(--white);
+  padding: 2rem;
+}
+
+.rps-button,
+.mtg-button,
+.change-format-btn {
+  width: 20rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid .4rem var(--white);
+  border-radius: 1rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+.rps-button:hover,
+.mtg-button:hover,
+.change-format-btn:hover,
+.rps-image:hover,
+.mtg-image:hover {
+  transform: scale(1.25);
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.score {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 40px;
 }

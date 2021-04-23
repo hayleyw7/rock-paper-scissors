@@ -8,16 +8,16 @@
     <title>Rock-Paper-Scissors</title>
   </head>
   <body>
-<!-- HEADER -->
-    <h1>ENCHANTED ROCK-PAPER-SCISSORS</h1>
 <!-- HUMAN SCORE -->
     <section class="left-section">
-      <h3>Planeswalker</h3>
-      <p id="humanScore">0</p>
+      <h2>💀</h2>
+      <h3 class="player">Planeswalker</h3>
+      <p id="humanScore" class="score">0</p>
     </section>
 <!-- CENTER COLUMN -->
 <!-- load page -->
     <section class="middle-section">
+      <h1>ENCHANTED ROCK-PAPER-SCISSORS</h1>
       <h2 id="chooseFormatHeading" class="choose-format">Choose a format.</h2>
       <button id="rpsBtn" class="rps-button">
         <h3>Standard</h3>
@@ -36,13 +36,12 @@
 <!-- home button (hidden on load) -->
       <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
 <!-- rps page (hidden on load) -->
-
-      <h3 id="rpsHeading" class="rps-heading hidden">Summon an artifact.</h3>
+      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact.</h3>
       <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
       <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
       <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
 <!-- mtg page page (hidden on load) -->
-      <h3 id="mtgHeading" class="mtg-heading hidden">Cast a spell.</h3>
+      <h2 id="mtgHeading" class="mtg-heading hidden">Cast a spell.</h2>
       <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
       <img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
       <img id="mtgImgScissors" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
@@ -51,8 +50,9 @@
     </section>
 <!-- COMPUTER SCORE -->
     <section class="right-section">
-      <h3>Construct</h3>
-      <p id="computerScore">0</p>
+      <h2>🤖</h2>
+      <h3 class="player">Construct</h3>
+      <p id="computerScore" class="score">0</p>
     </section>
 <!-- CLOSING TAGS -->
   </body>

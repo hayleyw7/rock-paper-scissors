@@ -293,6 +293,7 @@ function hideHome() {
 function rpsGame() {
   // var game = new Game(human, computer, "rps");
   hideHome();
+  show(rpsHeading);
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
