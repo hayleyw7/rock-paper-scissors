@@ -1,20 +1,29 @@
 // A main.js file that contains all DOM related JavaScript
 
-// QUERY SELECTORS
+//////////////////////////////////////////////////////
+////////////////////// ARRAYS ////////////////////////
+//////////////////////////////////////////////////////
 
-// headings
+var rpsChoices = ["rock", "paper", "scissors"];
+var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
+
+//////////////////////////////////////////////////////
+////////////////// QUERY SELECTORS ///////////////////
+//////////////////////////////////////////////////////
+
+// HEADINGS
 
 var chooseFormatHeading = document.querySelector("#chooseFormatHeading")
 var mtgHeading = document.querySelector("#mtgHeading")
 var rpsHeading = document.querySelector("#rpsHeading")
 
-// rps images
+// RPS IMAGES
 
 var rpsImgRock = document.querySelector("#rpsImgRock");
 var rpsImgPaper = document.querySelector("#rpsImgPaper");
 var rpsImgScissors = document.querySelector("#rpsImgScissors");
 
-// mtg images
+// MTG IMAGES
 
 var mtgImgRock = document.querySelector("#mtgImgRock");
 var mtgImgPaper = document.querySelector("#mtgImgPaper");
@@ -22,106 +31,109 @@ var mtgImgScissors = document.querySelector("#mtgImgScissors");
 var mtgImgLizard = document.querySelector("#mtgImgLizard");
 var mtgImgAlien = document.querySelector("#mtgImgAlien");
 
-// buttons
+// BUTTONS
 
 var changeFormatBtn = document.querySelector("#changeFormatBtn")
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
 
-// arrays
+//////////////////////////////////////////////////////
+/////////////////// EVENT LISTENERS //////////////////
+//////////////////////////////////////////////////////
 
-var rpsChoices = ["rock", "paper", "scissors"];
-var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
-
-// EVENT LISTENERS
-
-// buttons
+// BUTTONS
 
 changeFormatBtn.addEventListener("click", showHome);
 rpsBtn.addEventListener("click", rpsGame);
-// mtgBtn.addEventListener("click", mtgGame);
+mtgBtn.addEventListener("click", mtgGame);
 
-// images
+// IMAGES
 
-rpsImgRock.addEventListener("click", rpsHumanChoiceR);
-rpsImgPaper.addEventListener("click", rpsHumanChoiceP);
-rpsImgScissors.addEventListener("click", rpsHumanChoiceS);
-mtgImgScissors.addEventListener("click", mtgHumanChoiceS);
-mtgImgRock.addEventListener("click", mtgHumanChoiceR);
-mtgImgPaper.addEventListener("click", mtgHumanChoiceP);
-mtgImgAlien.addEventListener("click", mtgHumanChoiceA);
-mtgImgLizard.addEventListener("click", mtgHumanChoiceL);
+// rps
 
-// FUNCTIONS
+rpsImgRock.addEventListener("click", rpsHumanChoiceRock);
+rpsImgPaper.addEventListener("click", rpsHumanChoicePaper);
+rpsImgScissors.addEventListener("click", rpsHumanChoiceScissors);
 
-// instance of Game
+// mtg
 
-// var testInstance = new Game(test1, test2, test3);
+mtgImgScissors.addEventListener("click", mtgHumanChoiceScissor);
+mtgImgRock.addEventListener("click", mtgHumanChoiceRock);
+mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
+mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
+mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 
-// rps choices
+//////////////////////////////////////////////////////
+///////////////////// FUNCTIONS //////////////////////
+//////////////////////////////////////////////////////
 
-function rpsHumanChoiceR() {
-  var rpsHumanChoice = "rock";
-  testInstance.determineWinnerRps();
-  tieWinLose();
+////////// HUMAN CHOICES (FUNCTION TRIGGERED WHEN IMAGE CLICKED) //////////
+
+// RPS HUMAN CHOICE
+
+function rpsHumanChoiceRock() {
+  rpsTieWinLose("rock");
 }
 
-function rpsHumanChoiceP() {
-  var rpsHumanChoice = "paper";
-  testInstance.determineWinnerRps();
-  tieWinLose();
+function rpsHumanChoicePaper() {
+  rpsTieWinLose("paper");
 }
 
-function rpsHumanChoiceS() {
-  var rpsHumanChoice = "scissors";
-  testInstance.determineWinnerRps();
-    tieWinLose();
+function rpsHumanChoiceScissors() {
+  rpsTieWinLose("scissors");
 }
 
-// mtg choices
+// MTG HUMAN CHOICE
 
-// function mtgHumanChoiceR() {
-//   var mtgHumanChoice = "rock";
-//   testInstance.determineWinnerMtg();
-//     tieWinLose();
-// }
+function mtgHumanChoiceRock() {
+  tieWinLose("rock");
+}
 
-// function mtgHumanChoiceP() {
-//   var mtgHumanChoice = "paper";
-//   testInstance.determineWinnerMtg();
-//     tieWinLose();
-// }
+function mtgHumanChoicePaper() {
+  tieWinLose("paper");
+}
 
-// function mtgHumanChoiceS() {
-//   var mtgHumanChoice = "rock";
-//   testInstance.determineWinnerMtg();
-//     tieWinLose();
-// }
+function mtgHumanChoiceScissors() {
+  tieWinLose("scissors");
+}
 
-// function mtgHumanChoiceA() {
-//   var mtgHumanChoice = "alien";
-//   testInstance.determineWinnerMtg();
-//     tieWinLose();
-// }
+function mtgHumanChoiceAlien() {
+  tieWinLose("alien");
+}
 
-// function mtgHumanChoiceL() {
-//   var mtgHumanChoice = "lizard";
-//   testInstance.determineWinnerMtg();
-//   tieWinLose();
-// }
+function mtgHumanChoiceLizard() {
+  tieWinLose("lizard");
+}
 
-function tieWinLose() {
+////////// FUNCTIONS THAT DECIDE THE WINNER BASED ON CONDITIONALS //////////
+
+// RPS WINNER FUNCTION
+
+function rpsTieWinLose(choice) {
   var rpsCompChoice = getRandomRpsChoice();
-  if (rpsUserChoice === rpsCompChoice) {
+  var rpsHumanChoice = choice;
+
+// tie
+
+  if (rpsHumanChoice === rpsCompChoice) {
     tieAlert();
+
+// comp throws rock
+
   } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
     loseAlert();
   } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
     winAlert();
+
+// comp throws paper
+
   } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
     winAlert();
   } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
     loseAlert();
+
+// comp throws scissors
+
   } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
     winAlert();
   } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
@@ -129,36 +141,77 @@ function tieWinLose() {
   } 
 }
 
-// randomizer helper
+// MTG WINNER FUNCTION
 
-function getRandomIndex(array) {
-  return Math.floor(Math.random()*array.length);
-};
+function mtgTieWinLose(choice) {
+  var mtgCompChoice = getRandomMtgChoice();
+  var mtgHumanChoice = choice;
 
-// random game choices
+// tie
 
-function getRandomRpsChoice() {
-	var randomRpsChoice = getRandomIndex(rpsChoices);
-  return rpsChoices[randomRpsChoice];
+  if (mtgHumanChoice === mtgCompChoice) {
+    tieAlert();
+
+// comp throws rock
+
+  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="scissors") {
+    loseAlert();
+  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="paper") {
+    winAlert();
+  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="lizard") {
+    loseAlert();
+  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="alien") {
+    winAlert();
+
+// comp throws paper
+
+  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="scissors") {
+    winAlert();
+  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="rock") {
+    loseAlert();
+  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="lizard") {
+    winAlert();
+  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="alien") {
+    loseAlert();
+
+// comp throws scissors
+
+  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="rock") {
+    winAlert();
+  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="paper") {
+    loseAlert();
+  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="lizard") {
+    loseAlert();
+  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="alien") {
+    winAlert();
+
+// comp throws lizard
+
+  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="rock") {
+    winAlert();
+  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="paper") {
+    loseAlert();
+  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="scissors") {
+    winAlert();
+  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="alien") {
+    loseAlert();
+
+// comp throws alien
+
+  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="paper") {
+    winAlert();
+  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="rock") {
+    loseAlert();
+  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="lizard") {
+    winAlert();
+  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="scissors") {
+    loseAlert();
+  } 
 }
 
-// function getRandomMtgChoice() {
-// 	var randomMtgChoice = getRandomIndex(mtgChoices);
-//   return mtgChoices[randomMtgChoice];
-// }
+////////// SHOW AND HIDING ELEMENTS ON DIFFERENT PAGES //////////
 
-// hide/show helper functions
-
-function hide(e) {
-  e.classList.add("hidden")
-}
-
-function show(e) {
-  e.classList.remove("hidden")
-}
-
-/// hide game screens
-// try to show and hide div for these
+// hiding games specifically (try to show and hide div for these later)
 
 function hideRpsGame() {
   hide(rpsHeading);
@@ -176,7 +229,7 @@ function hideMtgGame() {
   hide(mtgImgAlien);
 }
 
-// home settings
+// show & hide home stuffs
 
 function showHome() {
   hide(changeFormatBtn);
@@ -193,7 +246,7 @@ function hideHome() {
   hide(rpsBtn);
 }
 
-// show game screens
+// displays for each game
 
 function rpsGame() {
   hideHome();
@@ -203,16 +256,48 @@ function rpsGame() {
   show(changeFormatBtn);
 }
 
-// function mtgGame() {
-//   hideHome();
-//   show(mtgHeading);
-//   show(mtgImgRock);
-//   show(mtgImgPaper);
-//   show(mtgImgScissors);
-//   show(mtgImgLizard);
-//   show(mtgImgAlien);
-//   show(changeFormatBtn);
-// }
+function mtgGame() {
+  hideHome();
+  show(mtgHeading);
+  show(mtgImgRock);
+  show(mtgImgPaper);
+  show(mtgImgScissors);
+  show(mtgImgLizard);
+  show(mtgImgAlien);
+  show(changeFormatBtn);
+}
+
+////////// HELPER FUNCTIONS //////////
+
+// RANOMIZER
+
+// randomizer helper
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random()*array.length);
+};
+
+// random game choices
+
+function getRandomRpsChoice() {
+	var randomRpsChoice = getRandomIndex(rpsChoices);
+  return rpsChoices[randomRpsChoice];
+}
+
+function getRandomMtgChoice() {
+	var randomMtgChoice = getRandomIndex(mtgChoices);
+  return mtgChoices[randomMtgChoice];
+}
+
+// SHOW & HIDE
+
+function hide(e) {
+  e.classList.add("hidden")
+}
+
+function show(e) {
+  e.classList.remove("hidden")
+}
 
 // ALERT BUTTON TEST
 
