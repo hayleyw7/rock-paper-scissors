@@ -6,17 +6,18 @@
 // takeTurn
 
 class Player {
-  constructor(name, token, wins) {
+  constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = wins;
+    this.turn = false;
+    this.wins = 0;
   }
-  saveWinsToStorage() {
-    activities.push( -------- )
-    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
-  }
-  retrieveWinsFromStorage() {
-  }
-  takeTurn() {
-  }
+  // saveWinsToStorage() {
+  //   activities.push( -------- )
+  //   localStorage.setItem(" -------- ", JSON.stringify( -------- ))
+  // }
+  // retrieveWinsFromStorage() {
+  // }
+  // takeTurn(whattoputhere????) {
+  // }
 }
