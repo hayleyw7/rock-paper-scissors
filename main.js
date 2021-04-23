@@ -28,6 +28,11 @@ var changeFormatBtn = document.querySelector("#changeFormatBtn")
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
 
+// arrays
+
+var rpsChoices = ["rock", "paper", "scissors"];
+var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
+
 // EVENT LISTENERS
 
 // buttons
@@ -38,22 +43,82 @@ mtgBtn.addEventListener("click", mtgGame);
 
 // images
 
-rpsImgRock.addEventListener("click", showAlert);
-rpsImgPaper.addEventListener("click", showAlert);
-rpsImgScissors.addEventListener("click", showAlert);
-mtgImgScissors.addEventListener("click", showAlert);
-mtgImgRock.addEventListener("click", showAlert);
-mtgImgPaper.addEventListener("click", showAlert);
-mtgImgAlien.addEventListener("click", showAlert);
-mtgImgLizard.addEventListener("click", showAlert);
+rpsImgRock.addEventListener("click", rpsHumanChoiceR);
+rpsImgPaper.addEventListener("click", rpsHumanChoiceP);
+rpsImgScissors.addEventListener("click", rpsHumanChoiceS);
+mtgImgScissors.addEventListener("click", mtgHumanChoiceS);
+mtgImgRock.addEventListener("click", mtgHumanChoiceR);
+mtgImgPaper.addEventListener("click", mtgHumanChoiceP);
+mtgImgAlien.addEventListener("click", mtgHumanChoiceA);
+mtgImgLizard.addEventListener("click", mtgHumanChoiceL);
 
 // FUNCTIONS
 
-// randomizer
+// instance of Game
 
-function s(array) {
+// var testInstance = new Game(test1, test2, test3);
+
+// rps choices
+
+function rpsHumanChoiceR() {
+  var rpsHumanChoice = "rock";
+  testInstance.determineWinnerRps();
+}
+
+function rpsHumanChoiceP() {
+  var rpsHumanChoice = "paper";
+  testInstance.determineWinnerRps();
+}
+
+function rpsHumanChoiceS() {
+  var rpsHumanChoice = "scissors";
+  testInstance.determineWinnerRps();
+}
+
+// mtg choices
+
+function mtgHumanChoiceR() {
+  var mtgHumanChoice = "rock";
+  testInstance.determineWinnerMtg();
+}
+
+function mtgHumanChoiceP() {
+  var mtgHumanChoice = "paper";
+  testInstance.determineWinnerMtg();
+}
+
+function mtgHumanChoiceS() {
+  var mtgHumanChoice = "rock";
+  testInstance.determineWinnerMtg();
+}
+
+function mtgHumanChoiceA() {
+  var mtgHumanChoice = "alien";
+  testInstance.determineWinnerMtg();
+}
+
+function mtgHumanChoiceL() {
+  var mtgHumanChoice = "lizard";
+  testInstance.determineWinnerMtg();
+}
+
+// randomizer helper
+
+function getRandomIndex(array) {
   return Math.floor(Math.random()*array.length);
 };
+
+// random game choices
+
+function getRandomRpsChoice() {
+	var randomRpsChoice = getRandomIndex(rpsChoices);
+  return rpsChoices[randomRpsChoice];
+}
+
+function getRandomMtgChoice() {
+	var randomMtgChoice = getRandomIndex(mtgChoices);
+  return mtgChoices[randomMtgChoice];
+}
 
 // hide/show helper functions
 
@@ -126,6 +191,14 @@ function mtgGame() {
 
 // ALERT BUTTON TEST
 
-  function showAlert() {
-    alert ("Hello world!");
-  }
+function winAlert() {
+  alert ("YOU WIN!");
+}
+
+function loseAlert() {
+  alert ("YOU LOSE!");
+}
+
+function tieAlert() {
+  alert ("TIE!");
+}

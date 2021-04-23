@@ -8,13 +8,35 @@
 // A way to reset the Game’s board to begin a new game
 
 class Game {
-  constructor(name, token, wins) {
-    this.data = data;
-    this.format = format;
-    this.turn = turn;
+  // constructor(name, token, wins) {
+  //   this.data = data;
+  //   this.format = format;
+  //   this.turn = turn;
+  // }
+  determineWinnerRps() {
+    var rpsCompChoice = getRandomRpsChoice();
+    if (rpsUserChoice === rpsCompChoice) {
+      tieAlert();
+    } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
+      loseAlert();
+    } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
+      winAlert();
+    } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
+      winAlert();
+    } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
+      loseAlert();
+    } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
+      winAlert();
+    } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
+      loseAlert();
+    } 
+    // if human won, they get a point
+    // else if pc won, they get a point
+    // else no points (draw)
   }
-  determineWinner() {
-
+    determineWinnerMtg() {
+      var rpsCompChoice = getRandomRpsChoice();
+      var rpsHumanChoice = 
 
     
     // if human won, they get a point
@@ -24,3 +46,5 @@ class Game {
   resetGame() {
   }
 }
+
+var testInstance = new Game();
