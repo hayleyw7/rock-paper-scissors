@@ -57,7 +57,7 @@ rpsImgScissors.addEventListener("click", rpsHumanChoiceScissors);
 
 // mtg
 
-mtgImgScissors.addEventListener("click", mtgHumanChoiceScissor);
+mtgImgScissors.addEventListener("click", mtgHumanChoiceScissors);
 mtgImgRock.addEventListener("click", mtgHumanChoiceRock);
 mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
 mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
@@ -86,23 +86,23 @@ function rpsHumanChoiceScissors() {
 // MTG HUMAN CHOICE
 
 function mtgHumanChoiceRock() {
-  tieWinLose("rock");
+  mtgTieWinLose("rock");
 }
 
 function mtgHumanChoicePaper() {
-  tieWinLose("paper");
+  mtgTieWinLose("paper");
 }
 
 function mtgHumanChoiceScissors() {
-  tieWinLose("scissors");
+  mtgTieWinLose("scissors");
 }
 
 function mtgHumanChoiceAlien() {
-  tieWinLose("alien");
+  mtgTieWinLose("alien");
 }
 
 function mtgHumanChoiceLizard() {
-  tieWinLose("lizard");
+  mtgTieWinLose("lizard");
 }
 
 ////////// FUNCTIONS THAT DECIDE THE WINNER BASED ON CONDITIONALS //////////
