@@ -9,14 +9,17 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.token = token;
+    this.turn = false;
     this.wins = 0;
   }
-  saveWinsToStorage() {
-    activities.push( -------- )
-    localStorage.setItem(" -------- ", JSON.stringify( -------- ))
-  }
-  retrieveWinsFromStorage() {
-  }
-  takeTurn(whattoputhere????) {
-  }
+  // saveWinsToStorage() {
+  //   activities.push( -------- )
+  //   localStorage.setItem(" -------- ", JSON.stringify( -------- ))
+  // }
+  // retrieveWinsFromStorage() {
+  // }
+  // takeTurn(whattoputhere????) {
+  // }
 }
+
+module.exports = Player;

@@ -11,10 +11,8 @@ var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
 //////////////////// INSTANCES ///////////////////////
 //////////////////////////////////////////////////////
 
-// var human = new Player("Human", "💀")
-// var computer = new Player("Computer", "🤖")
-
-// var game = new Game(human, computer);
+var human = new Player({ name: "Human", token: "💀" });
+var computer = new Player({ name: "Computer", token: "🤖" });
 
 //////////////////////////////////////////////////////
 ////////////////// QUERY SELECTORS ///////////////////
@@ -45,6 +43,11 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 var changeFormatBtn = document.querySelector("#changeFormatBtn")
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
+
+// SCORES
+
+var computerScore = document.querySelector("#computerScore");
+var humanScore = document.querySelector("#humanScore");
 
 //////////////////////////////////////////////////////
 /////////////////// EVENT LISTENERS //////////////////
@@ -282,7 +285,7 @@ function hideHome() {
 // displays for each game
 
 function rpsGame() {
-  // var game = new Game("human", "computer");
+  var game = new Game(human, computer, "rps");
   hideHome();
   show(rpsImgRock);
   show(rpsImgPaper);
@@ -291,7 +294,7 @@ function rpsGame() {
 }
 
 function mtgGame() {
-  // var game = new Game(human, computer);
+  var game = new Game(human, computer, "rps");
   hideHome();
   show(mtgHeading);
   show(mtgImgRock);
@@ -347,3 +350,10 @@ function loseAlert() {
 function tieAlert() {
   alert ("TIE!");
 }
+
+
+
+////////
+
+// computerScore.innerHTML = computer.wins;
+// computerScore.innerHTML = human.wins;

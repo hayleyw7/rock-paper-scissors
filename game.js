@@ -8,11 +8,18 @@
 // A way to reset the Game’s board to begin a new game
 
 class Game {
-  constructor(name, token, wins) {
-    this.data = data;
-    this.format = format;
-    this.turn = turn;
+  constructor(human, computer, type) {
+    this.human = human;
+    this.computer = computer;
+    // this.data = data;
+    // this.format = format;
+    // this.turn = turn;
   }
+  // constructor(human, computer) {
+  //   this.data = data;
+  //   this.format = format;
+  //   this.turn = turn;
+  // }
   determineWinner() {
     // if human won, they get a point
     // else if pc won, they get a point
@@ -22,4 +29,21 @@ class Game {
   }
 }
 
+// class Game {
+//   constructor(name, token, wins) {
+//     this.data = data;
+//     this.format = format;
+//     this.turn = turn;
+//   }
+//   determineWinner() {
+//     // if human won, they get a point
+//     // else if pc won, they get a point
+//     // else no points (draw)
+//   }
+//   resetGame() {
+//   }
+// }
+
 // var testInstance = new Game();
+
+module.exports = Game;
