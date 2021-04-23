@@ -39,7 +39,7 @@ var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
 
 changeFormatBtn.addEventListener("click", showHome);
 rpsBtn.addEventListener("click", rpsGame);
-mtgBtn.addEventListener("click", mtgGame);
+// mtgBtn.addEventListener("click", mtgGame);
 
 // images
 
@@ -63,43 +63,70 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceL);
 function rpsHumanChoiceR() {
   var rpsHumanChoice = "rock";
   testInstance.determineWinnerRps();
+  tieWinLose();
 }
 
 function rpsHumanChoiceP() {
   var rpsHumanChoice = "paper";
   testInstance.determineWinnerRps();
+  tieWinLose();
 }
 
 function rpsHumanChoiceS() {
   var rpsHumanChoice = "scissors";
   testInstance.determineWinnerRps();
+    tieWinLose();
 }
 
 // mtg choices
 
-function mtgHumanChoiceR() {
-  var mtgHumanChoice = "rock";
-  testInstance.determineWinnerMtg();
-}
+// function mtgHumanChoiceR() {
+//   var mtgHumanChoice = "rock";
+//   testInstance.determineWinnerMtg();
+//     tieWinLose();
+// }
 
-function mtgHumanChoiceP() {
-  var mtgHumanChoice = "paper";
-  testInstance.determineWinnerMtg();
-}
+// function mtgHumanChoiceP() {
+//   var mtgHumanChoice = "paper";
+//   testInstance.determineWinnerMtg();
+//     tieWinLose();
+// }
 
-function mtgHumanChoiceS() {
-  var mtgHumanChoice = "rock";
-  testInstance.determineWinnerMtg();
-}
+// function mtgHumanChoiceS() {
+//   var mtgHumanChoice = "rock";
+//   testInstance.determineWinnerMtg();
+//     tieWinLose();
+// }
 
-function mtgHumanChoiceA() {
-  var mtgHumanChoice = "alien";
-  testInstance.determineWinnerMtg();
-}
+// function mtgHumanChoiceA() {
+//   var mtgHumanChoice = "alien";
+//   testInstance.determineWinnerMtg();
+//     tieWinLose();
+// }
 
-function mtgHumanChoiceL() {
-  var mtgHumanChoice = "lizard";
-  testInstance.determineWinnerMtg();
+// function mtgHumanChoiceL() {
+//   var mtgHumanChoice = "lizard";
+//   testInstance.determineWinnerMtg();
+//   tieWinLose();
+// }
+
+function tieWinLose() {
+  var rpsCompChoice = getRandomRpsChoice();
+  if (rpsUserChoice === rpsCompChoice) {
+    tieAlert();
+  } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
+    loseAlert();
+  } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
+    winAlert();
+  } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
+    winAlert();
+  } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
+    loseAlert();
+  } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
+    winAlert();
+  } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
+    loseAlert();
+  } 
 }
 
 // randomizer helper
@@ -115,10 +142,10 @@ function getRandomRpsChoice() {
   return rpsChoices[randomRpsChoice];
 }
 
-function getRandomMtgChoice() {
-	var randomMtgChoice = getRandomIndex(mtgChoices);
-  return mtgChoices[randomMtgChoice];
-}
+// function getRandomMtgChoice() {
+// 	var randomMtgChoice = getRandomIndex(mtgChoices);
+//   return mtgChoices[randomMtgChoice];
+// }
 
 // hide/show helper functions
 
@@ -170,24 +197,22 @@ function hideHome() {
 
 function rpsGame() {
   hideHome();
-  // hideMtgGame();
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
   show(changeFormatBtn);
 }
 
-function mtgGame() {
-  hideHome();
-  // hideRpsGame();
-  show(mtgHeading);
-  show(mtgImgRock);
-  show(mtgImgPaper);
-  show(mtgImgScissors);
-  show(mtgImgLizard);
-  show(mtgImgAlien);
-  show(changeFormatBtn);
-}
+// function mtgGame() {
+//   hideHome();
+//   show(mtgHeading);
+//   show(mtgImgRock);
+//   show(mtgImgPaper);
+//   show(mtgImgScissors);
+//   show(mtgImgLizard);
+//   show(mtgImgAlien);
+//   show(changeFormatBtn);
+// }
 
 // ALERT BUTTON TEST
 

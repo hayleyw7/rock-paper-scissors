@@ -14,29 +14,14 @@ class Game {
   //   this.turn = turn;
   // }
   determineWinnerRps() {
-    var rpsCompChoice = getRandomRpsChoice();
-    if (rpsUserChoice === rpsCompChoice) {
-      tieAlert();
-    } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
-      loseAlert();
-    } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
-      winAlert();
-    } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
-      winAlert();
-    } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
-      loseAlert();
-    } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
-      winAlert();
-    } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
-      loseAlert();
-    } 
+    // tieWinLose()
     // if human won, they get a point
     // else if pc won, they get a point
     // else no points (draw)
   }
     determineWinnerMtg() {
-      var rpsCompChoice = getRandomRpsChoice();
-      var rpsHumanChoice = 
+      // var rpsCompChoice = getRandomRpsChoice();
+      // var rpsHumanChoice = 
 
     
     // if human won, they get a point
@@ -47,4 +32,4 @@ class Game {
   }
 }
 
-var testInstance = new Game();
+// var testInstance = new Game();
