@@ -11,12 +11,15 @@
 <!-- HEADER -->
     <h1>ENCHANTED ROCK-PAPER-SCISSORS</h1>
 <!-- HUMAN SCORE -->
-<h3>Planeswalker</h3>
-<p id="humanScore">0</p>
+    <section class="left-section">
+      <h3>Planeswalker</h3>
+      <p id="humanScore">0</p>
+    </section>
 <!-- CENTER COLUMN -->
 <!-- load page -->
-    <h2 id="chooseFormatHeading" class="choose-format">Choose a format.</h2>
-    <button id="rpsBtn" class="rps-button">
+    <section class="middle-section">
+      <h2 id="chooseFormatHeading" class="choose-format">Choose a format.</h2>
+      <button id="rpsBtn" class="rps-button">
         <h3>Standard</h3>
         <p>Rock smashes Scissors.</p>
         <p>Scissors cut Paper.</p>
@@ -31,23 +34,26 @@
         <p>Alien vaporizes Scissors & Rock.</p>
       </button>
 <!-- home button (hidden on load) -->
-    <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
+      <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
 <!-- rps page (hidden on load) -->
-<h3 id="rpsHeading" class="rps-heading hidden">Summon an artifact.</h3>
-<img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
-<img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
-<img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
-<button></button>
+
+      <h3 id="rpsHeading" class="rps-heading hidden">Summon an artifact.</h3>
+      <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
+      <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
+      <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
 <!-- mtg page page (hidden on load) -->
-<h3 id="mtgHeading" class="mtg-heading hidden">Cast a spell.</h3>
-<img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
-<img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
-<img id="mtgImgScissors" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
-<img id="mtgImgLizard" class="mtg-image hidden" src="assets/mtg-lizard.jpeg" alt="lizard">
-<img id="mtgImgAlien" class="mtg-image hidden" src="assets/mtg-alien.jpeg" alt="alien">
+      <h3 id="mtgHeading" class="mtg-heading hidden">Cast a spell.</h3>
+      <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
+      <img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
+      <img id="mtgImgScissors" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
+      <img id="mtgImgLizard" class="mtg-image hidden" src="assets/mtg-lizard.jpeg" alt="lizard">
+      <img id="mtgImgAlien" class="mtg-image hidden" src="assets/mtg-alien.jpeg" alt="alien">
+    </section>
 <!-- COMPUTER SCORE -->
-<h3>Construct</h3>
-<p id="computerScore">0</p>
+    <section class="right-section">
+      <h3>Construct</h3>
+      <p id="computerScore">0</p>
+    </section>
 <!-- CLOSING TAGS -->
   </body>
   <script src="player.js"></script>

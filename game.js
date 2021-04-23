@@ -46,5 +46,3 @@ class Game {
 // }
 
 // var testInstance = new Game();
-
-module.exports = Game;
