@@ -11,6 +11,7 @@ class Game {
   constructor(human, computer, type) {
     this.human = human;
     this.computer = computer;
+    this.type = type;
     // this.data = data;
     // this.format = format;
     // this.turn = turn;
