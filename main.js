@@ -8,6 +8,15 @@ var rpsChoices = ["rock", "paper", "scissors"];
 var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
 
 //////////////////////////////////////////////////////
+//////////////////// INSTANCES ///////////////////////
+//////////////////////////////////////////////////////
+
+// var human = new Player("Human", "💀")
+// var computer = new Player("Computer", "🤖")
+
+// var game = new Game(human, computer);
+
+//////////////////////////////////////////////////////
 ////////////////// QUERY SELECTORS ///////////////////
 //////////////////////////////////////////////////////
 
@@ -121,7 +130,8 @@ function rpsTieWinLose(choice) {
 // comp throws rock
 
   } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
-    loseAlert();
+    // loseAlert();
+    computer.wins++
   } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
     winAlert();
 
@@ -129,15 +139,19 @@ function rpsTieWinLose(choice) {
 
   } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
     winAlert();
+    human.wins++
   } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
     loseAlert();
+    computer.wins++
 
 // comp throws scissors
 
   } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
     winAlert();
+    human.wins++
   } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
     loseAlert();
+    computer.wins++
   } 
 }
 
@@ -155,35 +169,47 @@ function mtgTieWinLose(choice) {
 // comp throws rock
 
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="scissors") {
-    loseAlert();
+    // loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="paper") {
-    winAlert();
+    // winAlert();
+    human.wins++
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="lizard") {
-    loseAlert();
+    // loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="alien") {
-    winAlert();
+    // winAlert();
+    human.wins++
 
 // comp throws paper
 
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="scissors") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="rock") {
     loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="lizard") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="alien") {
     loseAlert();
+    computer.wins++
 
 // comp throws scissors
 
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="rock") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="paper") {
     loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="lizard") {
     loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="alien") {
     winAlert();
+    human.wins++
 
 // comp throws lizard
 
@@ -191,21 +217,28 @@ function mtgTieWinLose(choice) {
     winAlert();
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="paper") {
     loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="scissors") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="alien") {
     loseAlert();
+    computer.wins++
 
 // comp throws alien
 
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="paper") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="rock") {
     loseAlert();
+    computer.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="lizard") {
     winAlert();
+    human.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="scissors") {
     loseAlert();
+    computer.wins++
   } 
 }
 
@@ -249,6 +282,7 @@ function hideHome() {
 // displays for each game
 
 function rpsGame() {
+  // var game = new Game("human", "computer");
   hideHome();
   show(rpsImgRock);
   show(rpsImgPaper);
@@ -257,6 +291,7 @@ function rpsGame() {
 }
 
 function mtgGame() {
+  // var game = new Game(human, computer);
   hideHome();
   show(mtgHeading);
   show(mtgImgRock);

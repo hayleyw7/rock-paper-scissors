@@ -8,22 +8,12 @@
 // A way to reset the Game’s board to begin a new game
 
 class Game {
-  // constructor(name, token, wins) {
-  //   this.data = data;
-  //   this.format = format;
-  //   this.turn = turn;
-  // }
-  determineWinnerRps() {
-    // tieWinLose()
-    // if human won, they get a point
-    // else if pc won, they get a point
-    // else no points (draw)
+  constructor(name, token, wins) {
+    this.data = data;
+    this.format = format;
+    this.turn = turn;
   }
-    determineWinnerMtg() {
-      // var rpsCompChoice = getRandomRpsChoice();
-      // var rpsHumanChoice = 
-
-    
+  determineWinner() {
     // if human won, they get a point
     // else if pc won, they get a point
     // else no points (draw)

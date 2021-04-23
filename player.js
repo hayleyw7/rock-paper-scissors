@@ -6,10 +6,10 @@
 // takeTurn
 
 class Player {
-  constructor(name, token, wins) {
+  constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = wins;
+    this.wins = 0;
   }
   saveWinsToStorage() {
     activities.push( -------- )
@@ -17,6 +17,6 @@ class Player {
   }
   retrieveWinsFromStorage() {
   }
-  takeTurn() {
+  takeTurn(whattoputhere????) {
   }
 }
