@@ -21,5 +21,3 @@ class Player {
   // takeTurn(whattoputhere????) {
   // }
 }
-
-module.exports = Player;

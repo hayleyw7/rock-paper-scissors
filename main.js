@@ -1,8 +1,5 @@
 // A main.js file that contains all DOM related JavaScript
 
-var Player = require("./player.js");
-var Game = require("./game.js");
-
 //////////////////////////////////////////////////////
 ////////////////////// ARRAYS ////////////////////////
 //////////////////////////////////////////////////////
@@ -125,6 +122,9 @@ function mtgHumanChoiceLizard() {
 // RPS WINNER FUNCTION
 
 function rpsTieWinLose(choice) {
+  computerScore.innerText = computer.wins;
+  humanScore.innerText = human.wins;
+
   var rpsCompChoice = getRandomRpsChoice();
   var rpsHumanChoice = choice;
 
@@ -164,6 +164,9 @@ function rpsTieWinLose(choice) {
 // MTG WINNER FUNCTION
 
 function mtgTieWinLose(choice) {
+  computerScore.innerText = computer.wins;
+  humanScore.innerText = human.wins;
+
   var mtgCompChoice = getRandomMtgChoice();
   var mtgHumanChoice = choice;
 
@@ -288,7 +291,7 @@ function hideHome() {
 // displays for each game
 
 function rpsGame() {
-  var game = new Game(human, computer, "rps");
+  // var game = new Game(human, computer, "rps");
   hideHome();
   show(rpsImgRock);
   show(rpsImgPaper);
@@ -297,7 +300,7 @@ function rpsGame() {
 }
 
 function mtgGame() {
-  var game = new Game(human, computer, "rps");
+  // var game = new Game(human, computer, "mtg");
   hideHome();
   show(mtgHeading);
   show(mtgImgRock);
@@ -358,5 +361,5 @@ function tieAlert() {
 
 ////////
 
-// computerScore.innerHTML = computer.wins;
-// computerScore.innerHTML = human.wins;
+// computerScore.innerText = computer.wins;
+// humanScore.innerText = human.wins;
