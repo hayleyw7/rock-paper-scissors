@@ -12,7 +12,7 @@ class Game {
     // this.data = data;
   }
 
-  displayChoices() {
+  displayFighters() {
   }
 
   getRandomChoice() {
@@ -28,9 +28,9 @@ class Game {
   determineWinner(choice) {
     // RPS WINNER FUNCTION
 
-    if (this.type === "rps") {
-      computerScore.innerText = this.computer.wins;
-      humanScore.innerText = this.human.wins;
+    if (this.format === "rps") {
+      computerScore.innerText = this.computer[0].wins;
+      humanScore.innerText = this.human[0].wins;
 
       var rpsCompChoice = this.getRandomChoice();
       var rpsHumanChoice = choice;
@@ -84,73 +84,73 @@ class Game {
 
         // comp throws rock
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "scissors") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "paper") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "lizard") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "alien") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
 
         // comp throws paper
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "scissors") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "rock") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "lizard") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "alien") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
 
         // comp throws scissors
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "rock") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "paper") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "alien") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
 
         // comp throws lizard
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "rock") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "paper") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "scissors") {
-        this.human.wins++;
+        // this.human.wins++;
         winAlert();
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "alien") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
 
         // comp throws alien
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "paper") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "rock") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "lizard") {
-        this.human[0].wins++;
+        // this.human[0].wins++;
         winAlert();
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") {
-        this.computer[0].wins++;
+        // this.computer[0].wins++;
         loseAlert();
       }
     }

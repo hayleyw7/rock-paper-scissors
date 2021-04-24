@@ -207,10 +207,12 @@ function show(e) {
 // ALERT BUTTON TEST
 
 function winAlert() {
+  this.human[0].wins++;
   alert ("YOU WIN!");
 }
 
 function loseAlert() {
+  this.computer[0].wins++;
   alert ("YOU LOSE!");
 }
 

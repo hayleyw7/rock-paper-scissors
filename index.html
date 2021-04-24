@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="game.js"></script>
 <!-- INFO -->
   <head>
     <meta charset="UTF-8">
@@ -36,16 +37,16 @@
         </button>
       <!-- </section> -->
 <!-- home button (hidden on load) -->
+      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact</h3>
+      <h2 id="mtgHeading" class="mtg-heading hidden">Cast a spell</h2>
       <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
 <!-- rps page (hidden on load) -->
-      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact</h3>
       <section class="button-containers">
         <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
         <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
         <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
       </section>
 <!-- mtg page page (hidden on load) -->
-      <h2 id="mtgHeading" class="mtg-heading hidden">Cast a spell</h2>
       <section class="button-containers">
         <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
         <img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
@@ -63,6 +64,6 @@
 <!-- CLOSING TAGS -->
   </body>
   <script src="player.js"></script>
-  <script src="game.js"></script>
+  <!-- <script src="game.js"></script> -->
   <script src="main.js"></script>
 </html>
