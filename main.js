@@ -207,15 +207,20 @@ function show(e) {
 // ALERT BUTTON TEST
 
 function winAlert() {
-  this.human[0].wins++;
-  alert ("YOU WIN!");
+  game.human[0].wins++;
+  rpsHeading.innerText = "Construct defeated";
+  mtgHeading.innerText = "Construct defeated";
+  // alert ("Construct defeated!");
 }
 
 function loseAlert() {
-  this.computer[0].wins++;
-  alert ("YOU LOSE!");
+  game.computer[0].wins++;
+  rpsHeading.innerText = "Planeswalker defeated";
+  mtgHeading.innerText = "Planeswalker defeated";
+  // alert ("Planeswalker defeated!");
 }
 
 function tieAlert() {
-  alert ("TIE!");
+  rpsHeading.innerText = "Evenly matched";
+  mtgHeading.innerText = "Evenly matched";
 }
