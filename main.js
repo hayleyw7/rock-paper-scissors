@@ -1,8 +1,8 @@
 // A main.js file that contains all DOM related JavaScript
 
-//////////////////////////////////////////////////////
-//////////////////// INSTANCES ///////////////////////
-//////////////////////////////////////////////////////
+////////////////////////////////////////////////
+///////////////// INSTANCES ////////////////////
+////////////////////////////////////////////////
 
 var game = new Game("rps");
 
@@ -15,16 +15,9 @@ function createPlayers() {
 
 createPlayers()
 
-//////////////////////////////////////////////////////
-////////////////////// ARRAYS ////////////////////////
-//////////////////////////////////////////////////////
-
-var rpsChoices = ["rock", "paper", "scissors"];
-var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
-
-//////////////////////////////////////////////////////
-////////////////// QUERY SELECTORS ///////////////////
-//////////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////// QUERY SELECTORS ////////////////
+////////////////////////////////////////////////
 
 // HEADINGS
 
@@ -86,11 +79,11 @@ mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
 mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 
-//////////////////////////////////////////////////////
-///////////////////// FUNCTIONS //////////////////////
-//////////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////// FUNCTIONS ///////////////////
+////////////////////////////////////////////////
 
-////////// HUMAN CHOICES //////////
+//////////////// HUMAN CHOICES /////////////////
 
 // RPS HUMAN CHOICE
 
@@ -157,8 +150,8 @@ function showHome() {
   show(rpsBtn);
   hideRpsGame();
   hideMtgGame();
-  // hide(rpsButtons);
-  // hide(mtgButtons);
+  hide(rpsButtons);
+  hide(mtgButtons);
 }
 
 function hideHome() {
@@ -176,7 +169,9 @@ function rpsGame() {
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
-  // show(rpsButtons);
+  show(rpsButtons);
+  hide(mtgButtons);
+  hideMtgGame();
 }
 
 function mtgGame() {
@@ -188,20 +183,12 @@ function mtgGame() {
   show(mtgImgScissors);
   show(mtgImgLizard);
   show(mtgImgAlien);
-  // show(mtgButtons);
+  show(mtgButtons);
+  hideRpsGame();
+  hide(rpsButtons);
 }
 
 ////////// HELPER FUNCTIONS //////////
-
-// RANDOMIZER
-
-// randomizer helper
-
-function getRandomIndex(array) {
-  return Math.floor(Math.random()*array.length);
-};
-
-// SHOW & HIDE
 
 function hide(e) {
   e.classList.add("hidden")
@@ -211,23 +198,20 @@ function show(e) {
   e.classList.remove("hidden")
 }
 
-// ALERT BUTTON TEST
-
 function winAlert() {
   game.human[0].wins++;
   rpsHeading.innerText = "Construct defeated";
   mtgHeading.innerText = "Construct defeated";
-  // alert ("Construct defeated!");
-}
-
+  setTimeout(rpsGame(), 2000);
+  }
 function loseAlert() {
   game.computer[0].wins++;
   rpsHeading.innerText = "Planeswalker defeated";
   mtgHeading.innerText = "Planeswalker defeated";
-  // alert ("Planeswalker defeated!");
-}
-
+  setTimeout(rpsGame(), 2000);
+  }
 function tieAlert() {
   rpsHeading.innerText = "Evenly matched";
   mtgHeading.innerText = "Evenly matched";
-}
+  setTimeout(rpsGame(), 2000);
+  }
