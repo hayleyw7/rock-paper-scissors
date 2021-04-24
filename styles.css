@@ -5,7 +5,7 @@
   --red: #7e3a30;
   --black: #000000;
   --white: #FFF;
-  --beige: rgb(242, 239, 220);
+  --beige: #f2efdc;
   
 }
 
@@ -104,7 +104,7 @@ h1 {
 .rps-button,
 .mtg-button,
 .change-format-btn {
-  width: 20rem;
+  width: 25rem;
   padding: 1rem;
   margin: 1rem;
   border: solid .4rem var(--white);
@@ -113,6 +113,7 @@ h1 {
   color: var(--white);
   /* font-family: 'Times', serif; */
   font-family: 'American Typewriter', serif;
+  font-size: 20px;
 }
 
 /* .rps-button {
@@ -142,8 +143,8 @@ h3 {
 }
 
 h2 {
-  font-size: 40px;
-  color: white;
+  font-size: 60px;
+  color: var(--beige);
   padding-bottom: 1rem;
   font-family: 'Copperplate', fantasy;
 }

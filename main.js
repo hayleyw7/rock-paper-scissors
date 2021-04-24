@@ -79,180 +79,45 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 ///////////////////// FUNCTIONS //////////////////////
 //////////////////////////////////////////////////////
 
-////////// HUMAN CHOICES (FUNCTION TRIGGERED WHEN IMAGE CLICKED) //////////
+////////// HUMAN CHOICES //////////
 
 // RPS HUMAN CHOICE
 
 function rpsHumanChoiceRock() {
-  rpsTieWinLose("rock");
+  game.determineWinner("rock");
 }
 
 function rpsHumanChoicePaper() {
-  rpsTieWinLose("paper");
+  game.determineWinner("paper");
 }
 
 function rpsHumanChoiceScissors() {
-  rpsTieWinLose("scissors");
+  game.determineWinner("scissors");
 }
 
 // MTG HUMAN CHOICE
 
 function mtgHumanChoiceRock() {
-  mtgTieWinLose("rock");
+  game.determineWinner("rock");
 }
 
 function mtgHumanChoicePaper() {
-  mtgTieWinLose("paper");
+  game.determineWinner("paper");
 }
 
 function mtgHumanChoiceScissors() {
-  mtgTieWinLose("scissors");
+  game.determineWinner("scissors");
 }
 
 function mtgHumanChoiceAlien() {
-  mtgTieWinLose("alien");
+  game.determineWinner("alien");
 }
 
 function mtgHumanChoiceLizard() {
-  mtgTieWinLose("lizard");
+  game.determineWinner("lizard");
 }
 
-////////// FUNCTIONS THAT DECIDE THE WINNER BASED ON CONDITIONALS //////////
-
-// RPS WINNER FUNCTION
-
-function rpsTieWinLose(choice) {
-  computerScore.innerText = computer.wins;
-  humanScore.innerText = human.wins;
-
-  var rpsCompChoice = getRandomRpsChoice();
-  var rpsHumanChoice = choice;
-
-// tie
-
-  if (rpsHumanChoice === rpsCompChoice) {
-    tieAlert();
-
-// comp throws rock
-
-  } else if (rpsCompChoice === "rock" && rpsHumanChoice==="scissors") {
-    // loseAlert();
-    computer.wins++
-  } else if (rpsCompChoice === "rock" && rpsHumanChoice==="paper") {
-    winAlert();
-
-// comp throws paper
-
-  } else if (rpsCompChoice === "paper" && rpsHumanChoice==="scissors") {
-    winAlert();
-    human.wins++
-  } else if (rpsCompChoice === "paper" && rpsHumanChoice==="rock") {
-    loseAlert();
-    computer.wins++
-
-// comp throws scissors
-
-  } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="rock") {
-    winAlert();
-    human.wins++
-  } else if (rpsCompChoice === "scissors" && rpsHumanChoice==="paper") {
-    loseAlert();
-    computer.wins++
-  } 
-}
-
-// MTG WINNER FUNCTION
-
-function mtgTieWinLose(choice) {
-  computerScore.innerText = computer.wins;
-  humanScore.innerText = human.wins;
-
-  var mtgCompChoice = getRandomMtgChoice();
-  var mtgHumanChoice = choice;
-
-// tie
-
-  if (mtgHumanChoice === mtgCompChoice) {
-    tieAlert();
-
-// comp throws rock
-
-  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="scissors") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="paper") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="lizard") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "rock" && mtgHumanChoice==="alien") {
-    human.wins++;
-    winAlert();
-
-// comp throws paper
-
-  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="scissors") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="rock") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="lizard") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "paper" && mtgHumanChoice==="alien") {
-    computer.wins++;
-    loseAlert();
-
-// comp throws scissors
-
-  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="rock") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="paper") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="lizard") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="alien") {
-    human.wins++;
-    winAlert();
-
-// comp throws lizard
-
-  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="rock") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="paper") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="scissors") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="alien") {
-    computer.wins++;
-    loseAlert();
-
-// comp throws alien
-
-  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="paper") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="rock") {
-    computer.wins++;
-    loseAlert();
-  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="lizard") {
-    human.wins++;
-    winAlert();
-  } else if (mtgCompChoice === "alien" && mtgHumanChoice==="scissors") {
-    computer.wins++;
-    loseAlert();
-  } 
-}
-
-////////// SHOW AND HIDING ELEMENTS ON DIFFERENT PAGES //////////
+////////// SHOW AND HIDE ELEMENTS ON DIFFERENT PAGES //////////
 
 // hiding games specifically (try to show and hide div for these later)
 
@@ -287,22 +152,23 @@ function hideHome() {
   hide(chooseFormatHeading);
   hide(mtgBtn);
   hide(rpsBtn);
+  show(changeFormatBtn);
 }
 
 // displays for each game
 
 function rpsGame() {
-  // var game = new Game(human, computer, "rps");
+  var game = new Game(human, computer, "rps");
   hideHome();
   show(rpsHeading);
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
-  show(changeFormatBtn);
+  return game;
 }
 
 function mtgGame() {
-  // var game = new Game(human, computer, "mtg");
+  var game = new Game(human, computer, "mtg");
   hideHome();
   show(mtgHeading);
   show(mtgImgRock);
@@ -310,7 +176,6 @@ function mtgGame() {
   show(mtgImgScissors);
   show(mtgImgLizard);
   show(mtgImgAlien);
-  show(changeFormatBtn);
 }
 
 ////////// HELPER FUNCTIONS //////////
@@ -358,10 +223,3 @@ function loseAlert() {
 function tieAlert() {
   alert ("TIE!");
 }
-
-
-
-////////
-
-// computerScore.innerText = computer.wins;
-// humanScore.innerText = human.wins;
