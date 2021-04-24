@@ -178,76 +178,77 @@ function mtgTieWinLose(choice) {
 // comp throws rock
 
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="scissors") {
-    // loseAlert();
-    computer.wins++
+    computer.wins++;
+    loseAlert();
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="paper") {
-    // winAlert();
-    human.wins++
+    human.wins++;
+    winAlert();
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="lizard") {
-    // loseAlert();
-    computer.wins++
+    computer.wins++;
+    loseAlert();
   } else if (mtgCompChoice === "rock" && mtgHumanChoice==="alien") {
-    // winAlert();
-    human.wins++
+    human.wins++;
+    winAlert();
 
 // comp throws paper
 
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="scissors") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="rock") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="lizard") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "paper" && mtgHumanChoice==="alien") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
 
 // comp throws scissors
 
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="rock") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="paper") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="lizard") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } else if (mtgCompChoice === "scissors" && mtgHumanChoice==="alien") {
+    human.wins++;
     winAlert();
-    human.wins++
 
 // comp throws lizard
 
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="rock") {
+    human.wins++;
     winAlert();
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="paper") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="scissors") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "lizard" && mtgHumanChoice==="alien") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
 
 // comp throws alien
 
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="paper") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="rock") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="lizard") {
+    human.wins++;
     winAlert();
-    human.wins++
   } else if (mtgCompChoice === "alien" && mtgHumanChoice==="scissors") {
+    computer.wins++;
     loseAlert();
-    computer.wins++
   } 
 }
 
