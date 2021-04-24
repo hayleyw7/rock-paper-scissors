@@ -52,6 +52,9 @@ var changeFormatBtn = document.querySelector("#changeFormatBtn")
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
 
+var rpsButtons = document.querySelector("#rpsButtons")
+var mtgButtons = document.querySelector("#mtgButtons")
+
 // SCORES
 
 var computerScore = document.querySelector("#computerScore");
@@ -154,6 +157,8 @@ function showHome() {
   show(rpsBtn);
   hideRpsGame();
   hideMtgGame();
+  // hide(rpsButtons);
+  // hide(mtgButtons);
 }
 
 function hideHome() {
@@ -171,6 +176,7 @@ function rpsGame() {
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
+  // show(rpsButtons);
 }
 
 function mtgGame() {
@@ -182,6 +188,7 @@ function mtgGame() {
   show(mtgImgScissors);
   show(mtgImgLizard);
   show(mtgImgAlien);
+  // show(mtgButtons);
 }
 
 ////////// HELPER FUNCTIONS //////////

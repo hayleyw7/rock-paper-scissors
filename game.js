@@ -43,26 +43,61 @@ class Game {
         // comp throws rock
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") {
+        rpsButtons.innerHTML = `
+          <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
+          <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
+        `
         loseAlert();
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "paper") {
+        rpsButtons.innerHTML = `
+          <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
+          <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
+        `
         winAlert();
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
 
         // comp throws paper
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "scissors") {
+        rpsButtons.innerHTML = `
+          <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
+          <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
+        `
         winAlert();
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "rock") {
+        rpsButtons.innerHTML = `
+          <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
+          <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
+        `
         loseAlert();
-        
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
+
         // comp throws scissors
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "rock") {
-        winAlert();
-
+        rpsButtons.innerHTML = `
+          <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
+          <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
+        `
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
+        
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "paper") {
+        rpsButtons.innerHTML = `
+          <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
+          <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
+        `
         loseAlert();
+        // setTimeout(rpsGame(), 2000);
+        setTimeout(console.log("TEST"), 2000);
       }
     } else {
 
