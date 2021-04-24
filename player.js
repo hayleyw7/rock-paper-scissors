@@ -1,9 +1,8 @@
 // A player.js file that contains a Player class.
 // Player methods must include, but are not limited to:
-// constructor - properties should include: name (ex: 'hannah'), token (ex: '⭐️'), wins (ex: 0)
 // saveWinsToStorage
 // retrieveWinsFromStorage
-// takeTurn
+
 
 class Player {
   constructor(playplay) {
@@ -11,12 +10,22 @@ class Player {
     this.token = playplay.token;
     this.wins = 0;
   }
+  saveWinsToStorage() {
+    if (this.name === "Human") {
+      localstorage.setItem();
+    } else {
+      local.storage.setItem();
+    }
+  }
+  retrieveWinsFromStorage() {
+    if (this.name === "Human") {
+      localStorage.getItem();
+    } else {
+      localStorage.getItem();
+    }
+  }
 }
   // saveWinsToStorage() {
   //   activities.push( -------- )
   //   localStorage.setItem(" -------- ", JSON.stringify( -------- ))
-  // }
-  // retrieveWinsFromStorage() {
-  // }
-  // takeTurn(whattoputhere????) {
   // }
