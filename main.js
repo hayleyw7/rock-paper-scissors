@@ -1,18 +1,26 @@
 // A main.js file that contains all DOM related JavaScript
 
 //////////////////////////////////////////////////////
+//////////////////// INSTANCES ///////////////////////
+//////////////////////////////////////////////////////
+
+var game = new Game("rps");
+
+function createPlayers() {
+  var human = new Player({ name: "Human", token: "💀" });
+  var computer = new Player({ name: "Computer", token: "🤖" });
+  game.human.push(human);
+  game.computer.push(computer);
+}
+
+createPlayers()
+
+//////////////////////////////////////////////////////
 ////////////////////// ARRAYS ////////////////////////
 //////////////////////////////////////////////////////
 
 var rpsChoices = ["rock", "paper", "scissors"];
 var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
-
-//////////////////////////////////////////////////////
-//////////////////// INSTANCES ///////////////////////
-//////////////////////////////////////////////////////
-
-var human = new Player("Human", "💀");
-var computer = new Player("Computer", "🤖" );
 
 //////////////////////////////////////////////////////
 ////////////////// QUERY SELECTORS ///////////////////
@@ -158,17 +166,15 @@ function hideHome() {
 // displays for each game
 
 function rpsGame() {
-  var game = new Game(human, computer, "rps");
   hideHome();
   show(rpsHeading);
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
-  return game;
 }
 
 function mtgGame() {
-  var game = new Game(human, computer, "mtg");
+	game.format = "mtg";
   hideHome();
   show(mtgHeading);
   show(mtgImgRock);
@@ -180,25 +186,13 @@ function mtgGame() {
 
 ////////// HELPER FUNCTIONS //////////
 
-// RANOMIZER
+// RANDOMIZER
 
 // randomizer helper
 
 function getRandomIndex(array) {
   return Math.floor(Math.random()*array.length);
 };
-
-// random game choices
-
-function getRandomRpsChoice() {
-	var randomRpsChoice = getRandomIndex(rpsChoices);
-  return rpsChoices[randomRpsChoice];
-}
-
-function getRandomMtgChoice() {
-	var randomMtgChoice = getRandomIndex(mtgChoices);
-  return mtgChoices[randomMtgChoice];
-}
 
 // SHOW & HIDE
 
