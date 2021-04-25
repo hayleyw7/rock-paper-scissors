@@ -191,6 +191,7 @@ function rpsChoicesChosenScreen() {
   show(rpsChoicesChosen);
   show(whoWon);
   hide(rpsHeading);
+  hide(changeFormatBtn);
   setTimeout(function() {rpsGame()}, 2000);
 }
 
