@@ -2,10 +2,18 @@
 // A way to reset the Game’s board to begin a new game
 
 class Game {
-  constructor(format) {
-    this.human = [];
-    this.computer = [];
-    this.format = format;
+  constructor() {
+    this.human = new Player({ name: "Human", token: "💀" });
+    this.computer = new Player({ name: "Computer", token: "🤖" });
+    this.type = "";
+  }
+
+  playRps() {
+    this.type = "rps";
+  }
+
+  playMtg() {
+    this.type = "mtg";
   }
 
 // RANDOMIZERS
@@ -15,7 +23,7 @@ class Game {
   };
 
   getRandomChoice() {
-    if (this.format === "rps") {
+    if (this.type === "rps") {
       var randomRpsChoice = this.getRandomIndex(rpsChoices);
       return rpsChoices[randomRpsChoice];
     } else {
@@ -34,9 +42,9 @@ class Game {
   determineWinner(choice) {
     // RPS WINNER FUNCTION
 
-    if (this.format === "rps") {
-      // computerScore.innerText = this.computer[0].wins;
-      // humanScore.innerText = this.human[0].wins;
+    if (this.type === "rps") {
+      // computerScore.innerText = this.computer.wins;
+      // humanScore.innerText = this.human.wins;
 
       var rpsCompChoice = this.getRandomChoice();
       var rpsHumanChoice = choice;
@@ -114,8 +122,8 @@ class Game {
 
       // MTG WINNER FUNCTION
 
-      computerScore.innerText = this.computer[0].wins;
-      humanScore.innerText = this.human[0].wins;
+      computerScore.innerText = this.computer.wins;
+      humanScore.innerText = this.human.wins;
 
       var mtgCompChoice = this.getRandomChoice();
       var mtgHumanChoice = choice;
@@ -311,34 +319,34 @@ class Game {
   // TIE/WIN/LOSE ALERTS
 
   winAlert() {
-    this.human[0].wins++;
-    // humanScore.innerText = this.human[0].retrieveHumanWinsFromStorage();
-    humanScore.innerText = this.human[0].wins;
-    if (this.format === "rps") {
+    this.human.wins++;
+    // humanScore.innerText = this.human.retrieveHumanWinsFromStorage();
+    humanScore.innerText = this.human.wins;
+    if (this.type === "rps") {
       rpsSelectionsPage();
     } else {
       mtgSelectionsPage();
     }
     whoWon.innerText = "Construct defeated";
-    this.human[0].saveWinsToStorage();
-    this.computer[0].saveWinsToStorage();
+    this.human.saveWinsToStorage();
+    this.computer.saveWinsToStorage();
   }
   loseAlert() {
-    this.computer[0].wins++;
-    // computerScore.innerText = this.computer[0].retrieveComputerWinsFromStorage();
-    computerScore.innerText = this.computer[0].wins;
+    this.computer.wins++;
+    // computerScore.innerText = this.computer.retrieveComputerWinsFromStorage();
+    computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker defeated";
-    if (this.format === "rps") {
+    if (this.type === "rps") {
       rpsSelectionsPage();
     } else {
       mtgSelectionsPage();
     }
-    this.human[0].saveWinsToStorage();
-    this.computer[0].saveWinsToStorage();
+    this.human.saveWinsToStorage();
+    this.computer.saveWinsToStorage();
   }
   tieAlert() {
     whoWon.innerText = "Evenly matched";
-    if (this.format === "rps") {
+    if (this.type === "rps") {
       rpsSelectionsPage();
     } else {
       mtgSelectionsPage();
@@ -348,7 +356,7 @@ class Game {
   // RESET SCORES
 
   // resetGame() {
-  //   this.human[0].wins = 0;
-  //   this.computer[0].wins = 0;
+  //   this.human.wins = 0;
+  //   this.computer.wins = 0;
   // }
 }

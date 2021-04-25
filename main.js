@@ -4,18 +4,16 @@
 //////////// INSTANCES //////////////
 /////////////////////////////////////
 
-// MOVE THIS STUFF TO game.js
+var game = new Game();
 
-var game = new Game("rps");
-
-function createPlayers() {
-  var human = new Player({ name: "Human", token: "💀" });
-  var computer = new Player({ name: "Computer", token: "🤖" });
-  game.human.push(human);
-  game.computer.push(computer);
-}
-
-createPlayers()
+// function createPlayers() {
+//   var human = new Player({ name: "Human", token: "💀" });
+//   var computer = new Player({ name: "Computer", token: "🤖" });
+//   game.human.push(human);
+//   game.computer.push(computer);
+// }
+//
+// createPlayers()
 
 //////////////////////////////////////
 ////////// QUERY SELECTORS ///////////
@@ -75,13 +73,13 @@ var humanScore = document.querySelector("#humanScore");
 if (localStorage.humanWins === undefined) {
   localStorage.humanWins = 0;
 } else {
-  humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
+  humanScore.innerText = game.human.retrieveHumanWinsFromStorage();
 }
 
 if (localStorage.computerWins === undefined) {
   localStorage.computerWins = 0;
 } else {
-  computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+  computerScore.innerText = game.computer.retrieveComputerWinsFromStorage();
 }
 
 ///////////////////////////////////////////
@@ -206,7 +204,7 @@ function showHomePage() {
 // game pages
 
 function rpsGamePage() {
-  game.format = "rps"; // MOVE THIS TO game.js
+  game.playRps();
   hideHomeFeatures();
   showRpsGameFeatures();
   hide([rpsSelections, whoWon]);
@@ -214,7 +212,7 @@ function rpsGamePage() {
 }
 
 function mtgGamePage() {
-	game.format = "mtg"; // MOVE THIS TO game.js
+	game.playMtg();
   hideHomeFeatures();
   showMtgGameFeatures();
   hide([mtgSelections, whoWon]);
@@ -224,7 +222,7 @@ function mtgGamePage() {
 // selections pages
 
 function rpsSelectionsPage() {
-  game.format = "rps"; // MOVE THIS TO game.js
+  // playRps(); /// ???
   hideRpsGameFeatures();
   hideHomeFeatures();
   show([rpsSelections, whoWon]);
@@ -233,7 +231,7 @@ function rpsSelectionsPage() {
 }
 
 function mtgSelectionsPage() {
-  game.format = "mtg"; // MOVE THIS TO game.js
+  // playMtg(); /// ???
   hideMtgGameFeatures();
   hideHomeFeatures();
   show([mtgSelections, whoWon]);

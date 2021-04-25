@@ -11,8 +11,8 @@ class Player {
     this.wins = 0;
   }
   saveWinsToStorage() {
-    var humanWinsToStorage = game.human[0].wins;
-    var computerWinsToStorage = game.computer[0].wins;
+    var humanWinsToStorage = game.human.wins;
+    var computerWinsToStorage = game.computer.wins;
     localStorage.setItem("humanWins", JSON.stringify(humanWinsToStorage));
     localStorage.setItem("computerWins", JSON.stringify(computerWinsToStorage));
     localStorage.setItem("humanWins", humanWinsToStorage);
