@@ -200,28 +200,39 @@ class Game {
   winAlert() {
     this.human[0].wins++;
     humanScore.innerText = this.human[0].wins;
-    mtgChoicesChosenScreen();
-    rpsHeading.innerText = "Construct defeated";
-    mtgHeading.innerText = "Construct defeated";
-    setTimeout(function() {rpsGame()}, 2000);
+    if (this.format === "rps") {
+      rpsChoicesChosenScreen();
+    } else {
+      mtgChoicesChosenScreen();
+    }
+    whoWon.innerText = "Construct defeated";
+    // whoWon.innerText = "Construct defeated";
+    // setTimeout(function() {rpsGame()}, 2000);
     this.human[0].saveWinsToStorage();
     this.computer[0].saveWinsToStorage();
+    // setTimeout(function() {rpsGame()}, 2000);
   }
   loseAlert() {
     this.computer[0].wins++;
     computerScore.innerText = this.computer[0].wins;
-    mtgChoicesChosenScreen();
-    rpsHeading.innerText = "Planeswalker defeated";
-    mtgHeading.innerText = "Planeswalker defeated";
-    setTimeout(function() {rpsGame()}, 2000);
+    if (this.format === "rps") {
+      rpsChoicesChosenScreen();
+    } else {
+      mtgChoicesChosenScreen();
+    }
+    whoWon.innerText = "Planeswalker defeated";
+    // setTimeout(function() {rpsGame()}, 2000);
     this.human[0].saveWinsToStorage();
     this.computer[0].saveWinsToStorage();
   }
   tieAlert() {
-    mtgChoicesChosenScreen();
-    rpsHeading.innerText = "Evenly matched";
-    mtgHeading.innerText = "Evenly matched";
-    setTimeout(function() {rpsGame()}, 2000);
+    if (this.format === "rps") {
+      rpsChoicesChosenScreen();
+    } else {
+      mtgChoicesChosenScreen();
+    }
+    whoWon.innerText = "Evenly matched";
+    // setTimeout(function() {mtgGame()}, 2000);
     this.human[0].saveWinsToStorage();
     this.computer[0].saveWinsToStorage();
   }
