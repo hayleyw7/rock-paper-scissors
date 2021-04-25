@@ -4,6 +4,8 @@
 //////////// INSTANCES //////////////
 /////////////////////////////////////
 
+// MOVE THIS STUFF TO game.js
+
 var game = new Game("rps");
 
 function createPlayers() {
@@ -55,8 +57,8 @@ var mtgBtn = document.querySelector("#mtgBtn");
 
 // CHOICES CHOSEN
 
-var rpsChoicesChosen = document.querySelector("#rpsChoicesChosen");
-var mtgChoicesChosen = document.querySelector("#mtgChoicesChosen");
+var rpsSelections = document.querySelector("#rpsSelections");
+var mtgSelections = document.querySelector("#mtgSelections");
 
 // SCORES
 
@@ -67,6 +69,8 @@ var humanScore = document.querySelector("#humanScore");
 ///////////////////////////////////////////
 //////////// STORAGE GRABBING /////////////
 ///////////////////////////////////////////
+
+// MOVE THIS STUFF TO game.js
 
 if (localStorage.humanWins === undefined) {
   localStorage.humanWins = 0;
@@ -86,9 +90,9 @@ if (localStorage.computerWins === undefined) {
 
 // BUTTONS
 
-changeFormatBtn.addEventListener("click", showHome);
-rpsBtn.addEventListener("click", rpsGame);
-mtgBtn.addEventListener("click", mtgGame);
+changeFormatBtn.addEventListener("click", showHomePage);
+rpsBtn.addEventListener("click", rpsGamePage);
+mtgBtn.addEventListener("click", mtgGamePage);
 
 // IMAGES
 
@@ -110,9 +114,9 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 ///////////// FUNCTIONS //////////////
 //////////////////////////////////////
 
-// HUMAN CHOICES
+///// HUMAN CHOICES (move all to game.js) /////
 
-// rps human choices
+// RPS HUMAN CHOICES
 
 function rpsHumanChoiceRock() {
   game.determineWinner("rock");
@@ -126,7 +130,7 @@ function rpsHumanChoiceScissors() {
   game.determineWinner("scissors");
 }
 
-// mtg human choices
+// MTG HUMAN CHOICES
 
 function mtgHumanChoiceRock() {
   game.determineWinner("rock");
@@ -148,118 +152,109 @@ function mtgHumanChoiceLizard() {
   game.determineWinner("lizard");
 }
 
-// SHOW AND HIDE ELEMENTS
+///// HIDE & SHOW ELEMENTS ////
 
-// hide/show game displays
+// FEATURES
 
-function hideRpsGame() {
-  hide(rpsHeading);
-  hideMultiple(rpsImgRock, rpsImgScissors, rpsImgPaper);
-  // hide(rpsButtons);
+// rps game features
+
+function hideRpsGameFeatures() {
+  hide([rpsHeading, rpsImgRock, rpsImgScissors, rpsImgPaper]);
 }
 
-function hideMtgGame() {
-  hideMultiple(mtgHeading, mtgImgRock, mtgImgPaper);
-  hideMultiple(mtgImgScissors, mtgImgLizard, mtgImgAlien);
+function showRpsGameFeatures() {
+  show([rpsHeading, rpsImgRock, rpsImgScissors, rpsImgPaper]);
 }
 
-// hide/show home displays
+// mtg game features
 
-function showHome() {
-  hide(changeFormatBtn);
-  showMultiple(chooseFormatHeading, mtgBtn, rpsBtn);
-  hideRpsGame();
-  hideMtgGame();
-  hide(rpsChoicesChosen);
-  hide(mtgChoicesChosen);
+function hideMtgGameFeatures() {
+  hide([mtgHeading, mtgImgRock, mtgImgPaper, mtgImgScissors, mtgImgLizard, mtgImgAlien]);
 }
 
-function hideHome() {
-  hideMultiple(chooseFormatHeading, mtgBtn, rpsBtn);
+function showMtgGameFeatures() {
+  show([mtgHeading, mtgImgRock, mtgImgPaper, mtgImgScissors, mtgImgLizard, mtgImgAlien]);
 }
 
-// hide/show displays for each game
+// all game features
 
-function rpsGame() {
-  game.format = "rps";
-  hideHome();
-  showMultiple(rpsImgRock, rpsImgPaper, rpsImgScissors);
-  show(rpsHeading);
-  hideMtgGame();
-  hide(rpsChoicesChosen);
-  hide(mtgChoicesChosen);
-  hide(whoWon);
-  show(changeFormatBtn);
+function hideGameFeatures() {
+  hide([changeFormatBtn, rpsSelections, mtgSelections]);
+  hideRpsGameFeatures();
+  hideMtgGameFeatures();
 }
 
-function mtgGame() {
-	game.format = "mtg";
-  hideHome();
-  showMultiple(mtgImgRock, mtgImgPaper, mtgImgScissors);
-  showMultiple(mtgImgLizard, mtgImgAlien, mtgHeading);
-  hide(mtgChoicesChosen);
-  hide(whoWon);
-  hideRpsGame();
-  show(changeFormatBtn);
+// home features
+
+function hideHomeFeatures() {
+  hide([chooseFormatHeading, mtgBtn, rpsBtn]);
 }
 
-// hide/show choices-chosen displays
-
-function rpsChoicesChosenScreen() {
-  game.format = "rps";
-  hideMultiple(rpsImgRock, rpsImgPaper, rpsImgScissors);
-  hideHome();
-  hideMtgGame();
-  show(rpsChoicesChosen);
-  show(whoWon);
-  hide(rpsHeading);
-  hide(changeFormatBtn);
-  hide(mtgChoicesChosen);
-  // computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
-  // humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
-  setTimeout(function() {rpsGame()}, 2000);
+function showHomeFeatures() {
+  show([chooseFormatHeading, mtgBtn, rpsBtn]);
 }
 
-function mtgChoicesChosenScreen() {
-  game.format = "mtg";
-  hideMultiple(mtgImgRock, mtgImgPaper, mtgImgScissors);
-  hideMultiple(mtgImgLizard, mtgImgAlien, mtgHeading);
-  hideHome();
-  show(mtgChoicesChosen);
-  show(whoWon);
-  hide(changeFormatBtn);
-  // computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
-  // humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
-  setTimeout(function() {mtgGame()}, 2000);
+// PAGES
+
+// home page
+
+function showHomePage() {
+  hideGameFeatures();
+  showHomeFeatures();
 }
+
+// game pages
+
+function rpsGamePage() {
+  game.format = "rps"; // MOVE THIS TO game.js
+  hideHomeFeatures();
+  showRpsGameFeatures();
+  hide([rpsSelections, whoWon]);
+  show([changeFormatBtn]);
+}
+
+function mtgGamePage() {
+	game.format = "mtg"; // MOVE THIS TO game.js
+  hideHomeFeatures();
+  showMtgGameFeatures();
+  hide([mtgSelections, whoWon]);
+  show([changeFormatBtn]);
+}
+
+// selections pages
+
+function rpsSelectionsPage() {
+  game.format = "rps"; // MOVE THIS TO game.js
+  hideRpsGameFeatures();
+  hideHomeFeatures();
+  show([rpsSelections, whoWon]);
+  hide([changeFormatBtn]);
+  setTimeout(function() {rpsGamePage()}, 2000);
+}
+
+function mtgSelectionsPage() {
+  game.format = "mtg"; // MOVE THIS TO game.js
+  hideMtgGameFeatures();
+  hideHomeFeatures();
+  show([mtgSelections, whoWon]);
+  hide([changeFormatBtn]);
+  setTimeout(function() {mtgGamePage()}, 2000);
+}
+
+// HELPER FUNCTIONS
 
 // hide/show helper functions
 
-function hide(e) {
-  e.classList.add("hidden");
+function hide(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    element = elements[i];
+    element.classList.add("hidden");
+  }
 }
 
-function show(e) {
-  e.classList.remove("hidden");
+function show(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    element = elements[i];
+    element.classList.remove("hidden");
+  }
 }
-
-function hideMultiple(a, b, c) {
-  a.classList.add("hidden");
-  b.classList.add("hidden");
-  c.classList.add("hidden");
-}
-
-function showMultiple(a, b, c) {
-  a.classList.remove("hidden");
-  b.classList.remove("hidden");
-  c.classList.remove("hidden");
-}
-
-// LOCAL STORAGRE
-
-// retrieve past scores
-
-// function pastScores() {
-//   this.computer[0].wins = retrieveWinsFromStorage();
-//   this.human[0].wins = retrieveWinsFromStorage();
-// }
