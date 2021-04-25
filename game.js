@@ -40,8 +40,6 @@ class Game {
     // RPS WINNER FUNCTION
 
     if (this.type === "rps") {
-      // computerScore.innerText = this.computer.wins;
-      // humanScore.innerText = this.human.wins;
 
       var rpsCompChoice = this.getRandomChoice();
       var rpsHumanChoice = choice;
@@ -68,7 +66,6 @@ class Game {
       } else {
 
         this.winAlert();
-
       }
 
     } else {
@@ -120,7 +117,6 @@ class Game {
 
   winAlert() {
     this.human.wins++;
-    // humanScore.innerText = this.human.retrieveHumanWinsFromStorage();
     humanScore.innerText = this.human.wins;
     if (this.type === "rps") {
       rpsSelectionsPage();
@@ -131,9 +127,9 @@ class Game {
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
+
   loseAlert() {
     this.computer.wins++;
-    // computerScore.innerText = this.computer.retrieveComputerWinsFromStorage();
     computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker defeated";
     if (this.type === "rps") {
@@ -144,6 +140,7 @@ class Game {
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
+
   tieAlert() {
     whoWon.innerText = "Evenly matched";
     if (this.type === "rps") {
