@@ -68,9 +68,17 @@ var humanScore = document.querySelector("#humanScore");
 //////////// STORAGE GRABBING /////////////
 ///////////////////////////////////////////
 
-computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
-humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
+if (localStorage.humanWins === undefined) {
+  localStorage.humanWins = 0;
+} else {
+  humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
+}
 
+if (localStorage.computerWins === undefined) {
+  localStorage.computerWins = 0;
+} else {
+  computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+}
 
 ///////////////////////////////////////////
 ///////////// EVENT LISTENERS /////////////
@@ -190,7 +198,7 @@ function mtgGame() {
   showMultiple(mtgImgRock, mtgImgPaper, mtgImgScissors);
   showMultiple(mtgImgLizard, mtgImgAlien, mtgHeading);
   hide(mtgChoicesChosen);
-  hide(whoWon); 
+  hide(whoWon);
   hideRpsGame();
   show(changeFormatBtn);
 }
