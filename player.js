@@ -1,9 +1,3 @@
-// A player.js file that contains a Player class.
-// Player methods must include, but are not limited to:
-// saveWinsToStorage
-// retrieveWinsFromStorage
-
-
 class Player {
   constructor(playplay) {
     this.name = playplay.name;
@@ -11,8 +5,8 @@ class Player {
     this.wins = 0;
   }
   saveWinsToStorage() {
-    var humanWinsToStorage = game.human[0].wins;
-    var computerWinsToStorage = game.computer[0].wins;
+    var humanWinsToStorage = game.human.wins;
+    var computerWinsToStorage = game.computer.wins;
     localStorage.setItem("humanWins", JSON.stringify(humanWinsToStorage));
     localStorage.setItem("computerWins", JSON.stringify(computerWinsToStorage));
     localStorage.setItem("humanWins", humanWinsToStorage);
@@ -24,16 +18,10 @@ class Player {
     this.wins = humanWins;
     return humanWins;
   }
-
   retrieveComputerWinsFromStorage() {
     var computerWinsGrab = localStorage.getItem("computerWins");
     var computerWins = JSON.parse(computerWinsGrab);
     this.wins = computerWins;
     return computerWins;
   }
-
 }
-  // saveWinsToStorage() {
-  //   activities.push( -------- )
-  //   localStorage.setItem(" -------- ", JSON.stringify( -------- ))
-  // }

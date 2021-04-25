@@ -1,21 +1,8 @@
-// A main.js file that contains all DOM related JavaScript
-
 /////////////////////////////////////
 //////////// INSTANCES //////////////
 /////////////////////////////////////
 
-// MOVE THIS STUFF TO game.js
-
-var game = new Game("rps");
-
-function createPlayers() {
-  var human = new Player({ name: "Human", token: "💀" });
-  var computer = new Player({ name: "Computer", token: "🤖" });
-  game.human.push(human);
-  game.computer.push(computer);
-}
-
-createPlayers()
+var game = new Game();
 
 //////////////////////////////////////
 ////////// QUERY SELECTORS ///////////
@@ -70,18 +57,16 @@ var humanScore = document.querySelector("#humanScore");
 //////////// STORAGE GRABBING /////////////
 ///////////////////////////////////////////
 
-// MOVE THIS STUFF TO game.js
-
 if (localStorage.humanWins === undefined) {
   localStorage.humanWins = 0;
 } else {
-  humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
+  humanScore.innerText = game.human.retrieveHumanWinsFromStorage();
 }
 
 if (localStorage.computerWins === undefined) {
   localStorage.computerWins = 0;
 } else {
-  computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+  computerScore.innerText = game.computer.retrieveComputerWinsFromStorage();
 }
 
 ///////////////////////////////////////////
@@ -114,7 +99,7 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 ///////////// FUNCTIONS //////////////
 //////////////////////////////////////
 
-///// HUMAN CHOICES (move all to game.js) /////
+///// HUMAN CHOICES /////
 
 // RPS HUMAN CHOICES
 
@@ -206,7 +191,7 @@ function showHomePage() {
 // game pages
 
 function rpsGamePage() {
-  game.format = "rps"; // MOVE THIS TO game.js
+  game.playRps();
   hideHomeFeatures();
   showRpsGameFeatures();
   hide([rpsSelections, whoWon]);
@@ -214,7 +199,7 @@ function rpsGamePage() {
 }
 
 function mtgGamePage() {
-	game.format = "mtg"; // MOVE THIS TO game.js
+	game.playMtg();
   hideHomeFeatures();
   showMtgGameFeatures();
   hide([mtgSelections, whoWon]);
@@ -224,7 +209,6 @@ function mtgGamePage() {
 // selections pages
 
 function rpsSelectionsPage() {
-  game.format = "rps"; // MOVE THIS TO game.js
   hideRpsGameFeatures();
   hideHomeFeatures();
   show([rpsSelections, whoWon]);
@@ -233,7 +217,6 @@ function rpsSelectionsPage() {
 }
 
 function mtgSelectionsPage() {
-  game.format = "mtg"; // MOVE THIS TO game.js
   hideMtgGameFeatures();
   hideHomeFeatures();
   show([mtgSelections, whoWon]);
