@@ -1,19 +1,8 @@
-// A main.js file that contains all DOM related JavaScript
-
 /////////////////////////////////////
 //////////// INSTANCES //////////////
 /////////////////////////////////////
 
 var game = new Game();
-
-// function createPlayers() {
-//   var human = new Player({ name: "Human", token: "💀" });
-//   var computer = new Player({ name: "Computer", token: "🤖" });
-//   game.human.push(human);
-//   game.computer.push(computer);
-// }
-//
-// createPlayers()
 
 //////////////////////////////////////
 ////////// QUERY SELECTORS ///////////
@@ -68,8 +57,6 @@ var humanScore = document.querySelector("#humanScore");
 //////////// STORAGE GRABBING /////////////
 ///////////////////////////////////////////
 
-// MOVE THIS STUFF TO game.js
-
 if (localStorage.humanWins === undefined) {
   localStorage.humanWins = 0;
 } else {
@@ -112,7 +99,7 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 ///////////// FUNCTIONS //////////////
 //////////////////////////////////////
 
-///// HUMAN CHOICES (move all to game.js) /////
+///// HUMAN CHOICES /////
 
 // RPS HUMAN CHOICES
 
@@ -222,7 +209,6 @@ function mtgGamePage() {
 // selections pages
 
 function rpsSelectionsPage() {
-  // playRps(); /// ???
   hideRpsGameFeatures();
   hideHomeFeatures();
   show([rpsSelections, whoWon]);
@@ -231,7 +217,6 @@ function rpsSelectionsPage() {
 }
 
 function mtgSelectionsPage() {
-  // playMtg(); /// ???
   hideMtgGameFeatures();
   hideHomeFeatures();
   show([mtgSelections, whoWon]);
