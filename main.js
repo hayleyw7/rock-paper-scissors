@@ -216,3 +216,10 @@ function show(e) {
 //   e1.classList.remove("hidden");
 //   e2.classList.remove("hidden");
 // }
+
+
+
+// function pastScores() {
+//   this.computer[0].wins = retrieveWinsFromStorage();
+//   this.human[0].wins = retrieveWinsFromStorage();
+// }
