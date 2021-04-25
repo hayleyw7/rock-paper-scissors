@@ -63,6 +63,15 @@ var mtgChoicesChosen = document.querySelector("#mtgChoicesChosen");
 var computerScore = document.querySelector("#computerScore");
 var humanScore = document.querySelector("#humanScore");
 
+
+///////////////////////////////////////////
+//////////// STORAGE GRABBING /////////////
+///////////////////////////////////////////
+
+computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
+
+
 ///////////////////////////////////////////
 ///////////// EVENT LISTENERS /////////////
 ///////////////////////////////////////////
@@ -198,6 +207,8 @@ function rpsChoicesChosenScreen() {
   hide(rpsHeading);
   hide(changeFormatBtn);
   hide(mtgChoicesChosen);
+  // computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+  // humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
   setTimeout(function() {rpsGame()}, 2000);
 }
 
@@ -209,6 +220,8 @@ function mtgChoicesChosenScreen() {
   show(mtgChoicesChosen);
   show(whoWon);
   hide(changeFormatBtn);
+  // computerScore.innerText = game.computer[0].retrieveComputerWinsFromStorage();
+  // humanScore.innerText = game.human[0].retrieveHumanWinsFromStorage();
   setTimeout(function() {mtgGame()}, 2000);
 }
 

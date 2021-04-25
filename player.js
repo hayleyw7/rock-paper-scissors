@@ -15,17 +15,21 @@ class Player {
     var computerWinsToStorage = game.computer[0].wins;
     localStorage.setItem("humanWins", JSON.stringify(humanWinsToStorage));
     localStorage.setItem("computerWins", JSON.stringify(computerWinsToStorage));
+    localStorage.setItem("humanWins", humanWinsToStorage);
+    localStorage.setItem("computerWins", computerWinsToStorage);
   }
   retrieveHumanWinsFromStorage() {
     var humanWinsGrab = localStorage.getItem("humanWins");
-    humanWins = JSON.parse(humanWinsGrab);
-    return humanWinsGrab;
+    var humanWins = JSON.parse(humanWinsGrab);
+    this.wins = humanWins;
+    return humanWins;
   }
 
   retrieveComputerWinsFromStorage() {
     var computerWinsGrab = localStorage.getItem("computerWins");
-    computerWins = JSON.parse(computerWinsGrab);
-    return computerWinsGrab;
+    var computerWins = JSON.parse(computerWinsGrab);
+    this.wins = computerWins;
+    return computerWins;
   }
 
 }
