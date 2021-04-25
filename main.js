@@ -159,7 +159,6 @@ function showHome() {
 
 function hideHome() {
   hideMultiple(chooseFormatHeading, mtgBtn, rpsBtn);
-  show(changeFormatBtn);
 }
 
 // hide/show displays for each game
@@ -171,6 +170,7 @@ function rpsGame() {
   hideMtgGame();
   hide(rpsChoicesChosen);
   hide(whoWon);
+  show(changeFormatBtn);
 }
 
 function mtgGame() {
@@ -181,6 +181,7 @@ function mtgGame() {
   hide(mtgChoicesChosen);
   hide(whoWon); 
   hideRpsGame();
+  show(changeFormatBtn);
 }
 
 // hide/show choices-chosen displays
