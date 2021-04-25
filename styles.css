@@ -6,7 +6,7 @@
   --black: #000000;
   --white: #FFF;
   --beige: #f2efdc;
-  
+
 }
 
 * {
@@ -24,7 +24,7 @@
 /* BACKGROUND */
 
 body {
-  background:url("assets/background-5.png") no-repeat center center fixed; 
+  background:url("assets/background-5.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@ h1 {
   padding-top: 20px;
   padding-bottom: 20px;
   /* background-color: var(--black); */
-  font-size: 50px;
+  font-size: 100px;
   margin-bottom: 40px;
   margin-top: 0;
   color: var(--white);
@@ -66,9 +66,9 @@ h1 {
 }
 
 .mtg-image {
-  width: 10rem;
+  width: 8rem;
   border: solid 5px white;
-  margin: 1rem;
+  margin: 0.5rem;
   border-radius: 8px;
 }
 
@@ -123,7 +123,7 @@ h1 {
 
 .mtg-button {
   height: 15rem;
-} */ 
+} */
 
 .rps-button:hover,
 .mtg-button:hover,

@@ -1,162 +1,162 @@
-// A Game should include:
-// Two Player instances
-// A way to keep track of the data for the game board
-// A way to keep track of the selected game type
-// A way to reset the Game’s board to begin a new game
-
 class Game {
-  constructor(format) {
-    this.human = [];
-    this.computer = [];
-    this.format = format;
-    // this.data = data;
+  constructor() {
+    this.human = new Player({ name: "Human", token: "💀" });
+    this.computer = new Player({ name: "Computer", token: "🤖" });
+    this.type = "";
   }
 
-  displayChoices() {
+  playRps() {
+    this.type = "rps";
   }
+
+  playMtg() {
+    this.type = "mtg";
+  }
+
+// RANDOMIZERS
+
+  getRandomIndex(array) {
+    return Math.floor(Math.random()*array.length);
+  };
 
   getRandomChoice() {
-    if (this.format === "rps") {
-      var randomRpsChoice = getRandomIndex(rpsChoices);
+    if (this.type === "rps") {
+      var randomRpsChoice = this.getRandomIndex(rpsChoices);
       return rpsChoices[randomRpsChoice];
     } else {
-      var randomMtgChoice = getRandomIndex(mtgChoices);
+      var randomMtgChoice = this.getRandomIndex(mtgChoices);
       return mtgChoices[randomMtgChoice];
     }
   }
+
+  // SHOW 2 FIGHTERS
+
+  // displayFighters() {
+  // }
+
+  // WHO WON
 
   determineWinner(choice) {
     // RPS WINNER FUNCTION
 
     if (this.type === "rps") {
-      computerScore.innerText = this.computer.wins;
-      humanScore.innerText = this.human.wins;
+      // computerScore.innerText = this.computer.wins;
+      // humanScore.innerText = this.human.wins;
 
       var rpsCompChoice = this.getRandomChoice();
       var rpsHumanChoice = choice;
 
-      // tie
+      rpsSelections.innerHTML = `
+        <img class="rps-image" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
+        <img class="rps-image" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
+      `
 
-      if (rpsHumanChoice === rpsCompChoice) {
-        tieAlert();
+      if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
+        || (mtgCompChoice === "paper" && mtgHumanChoice === "paper")
+        || (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors") ) {
 
-        // comp throws rock
+        this.tieAlert();
 
-      } else if (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (rpsCompChoice === "rock" && rpsHumanChoice === "paper") {
-        this.human[0].wins++;
-        winAlert();
+      } else if ( (mtgCompChoice === "paper" && mtgHumanChoice === "rock")
+        || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
+        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
 
-        // comp throws paper
+       ) {
 
-      } else if (rpsCompChoice === "paper" && rpsHumanChoice === "scissors") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (rpsCompChoice === "paper" && rpsHumanChoice === "rock") {
-        this.computer[0].wins++;
-        loseAlert();
-        
-        // comp throws scissors
+        this.loseAlert();
 
-      } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "rock") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "paper") {
-        this.computer[0].wins++;
-        loseAlert();
+      } else {
+
+        this.winAlert();
+
       }
+
     } else {
 
       // MTG WINNER FUNCTION
 
-      computerScore.innerText = this.omputer.wins;
+      computerScore.innerText = this.computer.wins;
       humanScore.innerText = this.human.wins;
 
-      var mtgCompChoice = getRandomChoice();
+      var mtgCompChoice = this.getRandomChoice();
       var mtgHumanChoice = choice;
 
-      // tie
+      mtgSelections.innerHTML = `
+        <img class="mtg-image" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
+        <img class="mtg-image" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
+      `
 
-      if (mtgHumanChoice === mtgCompChoice) {
-        tieAlert();
+      if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
+        || (mtgCompChoice === "paper" && mtgHumanChoice === "paper")
+        || (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors")
+        || (mtgCompChoice === "lizard" && mtgHumanChoice === "lizard")
+        || (mtgCompChoice === "alien" && mtgHumanChoice === "alien") ) {
 
-        // comp throws rock
-      } else if (mtgCompChoice === "rock" && mtgHumanChoice === "scissors") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "rock" && mtgHumanChoice === "paper") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "rock" && mtgHumanChoice === "lizard") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "rock" && mtgHumanChoice === "alien") {
-        this.human[0].wins++;
-        winAlert();
+        this.tieAlert();
 
-        // comp throws paper
-      } else if (mtgCompChoice === "paper" && mtgHumanChoice === "scissors") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "paper" && mtgHumanChoice === "rock") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "paper" && mtgHumanChoice === "lizard") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "paper" && mtgHumanChoice === "alien") {
-        this.computer[0].wins++;
-        loseAlert();
+      } else if ( (mtgCompChoice === "rock" && mtgHumanChoice === "lizard")
+        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
+        || (mtgCompChoice === "paper" && mtgHumanChoice === "scissors")
+        || (mtgCompChoice === "paper" && mtgHumanChoice === "alien")
+        || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
+        || (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard")
+        || (mtgCompChoice === "lizard" && mtgHumanChoice === "paper")
+        || (mtgCompChoice === "lizard" && mtgHumanChoice === "alien")
+        || (mtgCompChoice === "alien" && mtgHumanChoice === "rock")
+        || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors")
+       ) {
 
-        // comp throws scissors
-      } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "rock") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "paper") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "alien") {
-        this.human[0].wins++;
-        winAlert();
+        this.loseAlert();
 
-        // comp throws lizard
-      } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "rock") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "paper") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "scissors") {
-        this.human.wins++;
-        winAlert();
-      } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "alien") {
-        this.computer[0].wins++;
-        loseAlert();
+      } else {
 
-        // comp throws alien
+        this.winAlert();
 
-      } else if (mtgCompChoice === "alien" && mtgHumanChoice === "paper") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "alien" && mtgHumanChoice === "rock") {
-        this.computer[0].wins++;
-        loseAlert();
-      } else if (mtgCompChoice === "alien" && mtgHumanChoice === "lizard") {
-        this.human[0].wins++;
-        winAlert();
-      } else if (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") {
-        this.computer[0].wins++;
-        loseAlert();
       }
     }
   }
-  resetGame() {
-    this.human[0].wins = 0;
-    this.computer[0].wins = 0;
+
+  // TIE/WIN/LOSE ALERTS
+
+  winAlert() {
+    this.human.wins++;
+    // humanScore.innerText = this.human.retrieveHumanWinsFromStorage();
+    humanScore.innerText = this.human.wins;
+    if (this.type === "rps") {
+      rpsSelectionsPage();
+    } else {
+      mtgSelectionsPage();
+    }
+    whoWon.innerText = "Construct defeated";
+    this.human.saveWinsToStorage();
+    this.computer.saveWinsToStorage();
   }
+  loseAlert() {
+    this.computer.wins++;
+    // computerScore.innerText = this.computer.retrieveComputerWinsFromStorage();
+    computerScore.innerText = this.computer.wins;
+    whoWon.innerText = "Planeswalker defeated";
+    if (this.type === "rps") {
+      rpsSelectionsPage();
+    } else {
+      mtgSelectionsPage();
+    }
+    this.human.saveWinsToStorage();
+    this.computer.saveWinsToStorage();
+  }
+  tieAlert() {
+    whoWon.innerText = "Evenly matched";
+    if (this.type === "rps") {
+      rpsSelectionsPage();
+    } else {
+      mtgSelectionsPage();
+    }
+  }
+
+  // RESET SCORES
+
+  // resetGame() {
+  //   this.human.wins = 0;
+  //   this.computer.wins = 0;
+  // }
 }

@@ -1,44 +1,29 @@
-// A main.js file that contains all DOM related JavaScript
+/////////////////////////////////////
+//////////// INSTANCES //////////////
+/////////////////////////////////////
 
-//////////////////////////////////////////////////////
-//////////////////// INSTANCES ///////////////////////
-//////////////////////////////////////////////////////
+var game = new Game();
 
-var game = new Game("rps");
-
-function createPlayers() {
-  var human = new Player({ name: "Human", token: "💀" });
-  var computer = new Player({ name: "Computer", token: "🤖" });
-  game.human.push(human);
-  game.computer.push(computer);
-}
-
-createPlayers()
-
-//////////////////////////////////////////////////////
-////////////////////// ARRAYS ////////////////////////
-//////////////////////////////////////////////////////
-
-var rpsChoices = ["rock", "paper", "scissors"];
-var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
-
-//////////////////////////////////////////////////////
-////////////////// QUERY SELECTORS ///////////////////
-//////////////////////////////////////////////////////
+//////////////////////////////////////
+////////// QUERY SELECTORS ///////////
+//////////////////////////////////////
 
 // HEADINGS
 
-var chooseFormatHeading = document.querySelector("#chooseFormatHeading")
-var mtgHeading = document.querySelector("#mtgHeading")
-var rpsHeading = document.querySelector("#rpsHeading")
+var chooseFormatHeading = document.querySelector("#chooseFormatHeading");
+var mtgHeading = document.querySelector("#mtgHeading");
+var rpsHeading = document.querySelector("#rpsHeading");
+var whoWon = document.querySelector("#whoWon");
 
-// RPS IMAGES
+// IMAGES
+
+// rps images
 
 var rpsImgRock = document.querySelector("#rpsImgRock");
 var rpsImgPaper = document.querySelector("#rpsImgPaper");
 var rpsImgScissors = document.querySelector("#rpsImgScissors");
 
-// MTG IMAGES
+// mtg images
 
 var mtgImgRock = document.querySelector("#mtgImgRock");
 var mtgImgPaper = document.querySelector("#mtgImgPaper");
@@ -48,34 +33,61 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 
 // BUTTONS
 
-var changeFormatBtn = document.querySelector("#changeFormatBtn")
+// home buttons
+
+var changeFormatBtn = document.querySelector("#changeFormatBtn");
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
+
+// var rpsButtons = document.querySelector("#rpsButtons");
+// var mtgButtons = document.querySelector("#mtgButtons");
+
+// CHOICES CHOSEN
+
+var rpsSelections = document.querySelector("#rpsSelections");
+var mtgSelections = document.querySelector("#mtgSelections");
 
 // SCORES
 
 var computerScore = document.querySelector("#computerScore");
 var humanScore = document.querySelector("#humanScore");
 
-//////////////////////////////////////////////////////
-/////////////////// EVENT LISTENERS //////////////////
-//////////////////////////////////////////////////////
+
+///////////////////////////////////////////
+//////////// STORAGE GRABBING /////////////
+///////////////////////////////////////////
+
+if (localStorage.humanWins === undefined) {
+  localStorage.humanWins = 0;
+} else {
+  humanScore.innerText = game.human.retrieveHumanWinsFromStorage();
+}
+
+if (localStorage.computerWins === undefined) {
+  localStorage.computerWins = 0;
+} else {
+  computerScore.innerText = game.computer.retrieveComputerWinsFromStorage();
+}
+
+///////////////////////////////////////////
+///////////// EVENT LISTENERS /////////////
+///////////////////////////////////////////
 
 // BUTTONS
 
-changeFormatBtn.addEventListener("click", showHome);
-rpsBtn.addEventListener("click", rpsGame);
-mtgBtn.addEventListener("click", mtgGame);
+changeFormatBtn.addEventListener("click", showHomePage);
+rpsBtn.addEventListener("click", rpsGamePage);
+mtgBtn.addEventListener("click", mtgGamePage);
 
 // IMAGES
 
-// rps
+// rps images
 
 rpsImgRock.addEventListener("click", rpsHumanChoiceRock);
 rpsImgPaper.addEventListener("click", rpsHumanChoicePaper);
 rpsImgScissors.addEventListener("click", rpsHumanChoiceScissors);
 
-// mtg
+// mtg images
 
 mtgImgScissors.addEventListener("click", mtgHumanChoiceScissors);
 mtgImgRock.addEventListener("click", mtgHumanChoiceRock);
@@ -83,13 +95,13 @@ mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
 mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 
-//////////////////////////////////////////////////////
-///////////////////// FUNCTIONS //////////////////////
-//////////////////////////////////////////////////////
+//////////////////////////////////////
+///////////// FUNCTIONS //////////////
+//////////////////////////////////////
 
-////////// HUMAN CHOICES //////////
+///// HUMAN CHOICES /////
 
-// RPS HUMAN CHOICE
+// RPS HUMAN CHOICES
 
 function rpsHumanChoiceRock() {
   game.determineWinner("rock");
@@ -103,7 +115,7 @@ function rpsHumanChoiceScissors() {
   game.determineWinner("scissors");
 }
 
-// MTG HUMAN CHOICE
+// MTG HUMAN CHOICES
 
 function mtgHumanChoiceRock() {
   game.determineWinner("rock");
@@ -125,95 +137,107 @@ function mtgHumanChoiceLizard() {
   game.determineWinner("lizard");
 }
 
-////////// SHOW AND HIDE ELEMENTS ON DIFFERENT PAGES //////////
+///// HIDE & SHOW ELEMENTS ////
 
-// hiding games specifically (try to show and hide div for these later)
+// FEATURES
 
-function hideRpsGame() {
-  hide(rpsHeading);
-  hide(rpsImgRock);
-  hide(rpsImgScissors);
-  hide(rpsImgPaper);
+// rps game features
+
+function hideRpsGameFeatures() {
+  hide([rpsHeading, rpsImgRock, rpsImgScissors, rpsImgPaper]);
 }
 
-function hideMtgGame() {
-  hide(mtgHeading);
-  hide(mtgImgRock);
-  hide(mtgImgPaper);
-  hide(mtgImgScissors);
-  hide(mtgImgLizard);
-  hide(mtgImgAlien);
+function showRpsGameFeatures() {
+  show([rpsHeading, rpsImgRock, rpsImgScissors, rpsImgPaper]);
 }
 
-// show & hide home stuffs
+// mtg game features
 
-function showHome() {
-  hide(changeFormatBtn);
-  show(chooseFormatHeading);
-  show(mtgBtn);
-  show(rpsBtn);
-  hideRpsGame();
-  hideMtgGame();
+function hideMtgGameFeatures() {
+  hide([mtgHeading, mtgImgRock, mtgImgPaper, mtgImgScissors, mtgImgLizard, mtgImgAlien]);
 }
 
-function hideHome() {
-  hide(chooseFormatHeading);
-  hide(mtgBtn);
-  hide(rpsBtn);
-  show(changeFormatBtn);
+function showMtgGameFeatures() {
+  show([mtgHeading, mtgImgRock, mtgImgPaper, mtgImgScissors, mtgImgLizard, mtgImgAlien]);
 }
 
-// displays for each game
+// all game features
 
-function rpsGame() {
-  hideHome();
-  show(rpsHeading);
-  show(rpsImgRock);
-  show(rpsImgPaper);
-  show(rpsImgScissors);
+function hideGameFeatures() {
+  hide([changeFormatBtn, rpsSelections, mtgSelections]);
+  hideRpsGameFeatures();
+  hideMtgGameFeatures();
 }
 
-function mtgGame() {
-	game.format = "mtg";
-  hideHome();
-  show(mtgHeading);
-  show(mtgImgRock);
-  show(mtgImgPaper);
-  show(mtgImgScissors);
-  show(mtgImgLizard);
-  show(mtgImgAlien);
+// home features
+
+function hideHomeFeatures() {
+  hide([chooseFormatHeading, mtgBtn, rpsBtn]);
 }
 
-////////// HELPER FUNCTIONS //////////
-
-// RANDOMIZER
-
-// randomizer helper
-
-function getRandomIndex(array) {
-  return Math.floor(Math.random()*array.length);
-};
-
-// SHOW & HIDE
-
-function hide(e) {
-  e.classList.add("hidden")
+function showHomeFeatures() {
+  show([chooseFormatHeading, mtgBtn, rpsBtn]);
 }
 
-function show(e) {
-  e.classList.remove("hidden")
+// PAGES
+
+// home page
+
+function showHomePage() {
+  hideGameFeatures();
+  showHomeFeatures();
 }
 
-// ALERT BUTTON TEST
+// game pages
 
-function winAlert() {
-  alert ("YOU WIN!");
+function rpsGamePage() {
+  game.playRps();
+  hideHomeFeatures();
+  showRpsGameFeatures();
+  hide([rpsSelections, whoWon]);
+  show([changeFormatBtn]);
 }
 
-function loseAlert() {
-  alert ("YOU LOSE!");
+function mtgGamePage() {
+	game.playMtg();
+  hideHomeFeatures();
+  showMtgGameFeatures();
+  hide([mtgSelections, whoWon]);
+  show([changeFormatBtn]);
 }
 
-function tieAlert() {
-  alert ("TIE!");
+// selections pages
+
+function rpsSelectionsPage() {
+  hideRpsGameFeatures();
+  hideHomeFeatures();
+  show([rpsSelections, whoWon]);
+  hide([changeFormatBtn]);
+  setTimeout(function() {rpsGamePage()}, 2000);
+}
+
+function mtgSelectionsPage() {
+  hideMtgGameFeatures();
+  hideHomeFeatures();
+  show([mtgSelections, whoWon]);
+  hide([changeFormatBtn]);
+  setTimeout(function() {mtgGamePage()}, 2000);
+}
+
+// HELPER FUNCTIONS
+
+// hide/show helper functions
+
+function hide(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    element = elements[i];
+    element.classList.add("hidden");
+  }
+}
+
+function show(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    element = elements[i];
+    element.classList.remove("hidden");
+  }
 }

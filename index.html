@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="assets/favicon.ico"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Rock-Paper-Scissors</title>
   </head>
@@ -17,7 +18,7 @@
 <!-- CENTER COLUMN -->
 <!-- load page -->
     <section class="middle-section">
-      <h1>ENCHANTED ROCK-PAPER-SCISSORS</h1>
+      <h1>ENCHANTED RPS</h1>
       <h2 id="chooseFormatHeading" class="choose-format">Choose a format</h2>
       <!-- <section class="button-containers"> -->
         <button id="rpsBtn" class="rps-button">
@@ -36,23 +37,26 @@
         </button>
       <!-- </section> -->
 <!-- home button (hidden on load) -->
-      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact</h3>
+      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact</h2>
       <h2 id="mtgHeading" class="mtg-heading hidden">Cast a spell</h2>
-      <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
+      <h2 id="whoWon"></h2>
 <!-- rps page (hidden on load) -->
-      <section class="button-containers">
+      <section id="rpsSelections" class="rps-selections"></section>
+      <section id = "rpsButtons" class="button-containers">
         <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
         <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
         <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
       </section>
 <!-- mtg page page (hidden on load) -->
-      <section class="button-containers">
+      <section id="mtgSelections" class="mtg-selections"></section>
+      <section id="mtgButtons" class="button-containers">
         <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
         <img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
         <img id="mtgImgScissors" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
         <img id="mtgImgLizard" class="mtg-image hidden" src="assets/mtg-lizard.jpeg" alt="lizard">
         <img id="mtgImgAlien" class="mtg-image hidden" src="assets/mtg-alien.jpeg" alt="alien">
       </section>
+      <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
     </section>
 <!-- COMPUTER SCORE -->
     <section class="right-section">
@@ -62,6 +66,7 @@
     </section>
 <!-- CLOSING TAGS -->
   </body>
+  <script src="data.js"></script>
   <script src="player.js"></script>
   <script src="game.js"></script>
   <script src="main.js"></script>
