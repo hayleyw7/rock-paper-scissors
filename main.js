@@ -202,7 +202,7 @@ function rpsChoicesChosenScreen() {
 }
 
 function mtgChoicesChosenScreen() {
-  game.format = "rps";
+  game.format = "mtg";
   hideMultiple(mtgImgRock, mtgImgPaper, mtgImgScissors);
   hideMultiple(mtgImgLizard, mtgImgAlien, mtgHeading);
   hideHome();
