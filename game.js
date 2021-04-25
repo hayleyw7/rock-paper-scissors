@@ -312,6 +312,7 @@ class Game {
 
   winAlert() {
     this.human[0].wins++;
+    // humanScore.innerText = this.human[0].retrieveHumanWinsFromStorage();
     humanScore.innerText = this.human[0].wins;
     if (this.format === "rps") {
       rpsChoicesChosenScreen();
@@ -319,11 +320,12 @@ class Game {
       mtgChoicesChosenScreen();
     }
     whoWon.innerText = "Construct defeated";
-    this.saveWinsToStorage();
-
+    game.human[0].saveWinsToStorage();
+    game.computer[0].saveWinsToStorage();
   }
   loseAlert() {
     this.computer[0].wins++;
+    // computerScore.innerText = this.computer[0].retrieveComputerWinsFromStorage();
     computerScore.innerText = this.computer[0].wins;
     whoWon.innerText = "Planeswalker defeated";
     if (this.format === "rps") {
@@ -331,7 +333,8 @@ class Game {
     } else {
       mtgChoicesChosenScreen();
     }
-    this.saveWinsToStorage();
+    game.human[0].saveWinsToStorage();
+    game.computer[0].saveWinsToStorage();
   }
   tieAlert() {
     whoWon.innerText = "Evenly matched";
@@ -340,7 +343,6 @@ class Game {
     } else {
       mtgChoicesChosenScreen();
     }
-    this.saveWinsToStorage();
   }
 
   // RESET SCORES

@@ -11,19 +11,23 @@ class Player {
     this.wins = 0;
   }
   saveWinsToStorage() {
-    if (this.name === "Human") {
-      localstorage.setItem("humanWins", this.wins);
-    } else {
-      local.storage.setItem("computerWins", this.wins);
-    }
+    var humanWinsToStorage = game.human[0].wins;
+    var computerWinsToStorage = game.computer[0].wins;
+    localStorage.setItem("humanWins", JSON.stringify(humanWinsToStorage));
+    localStorage.setItem("computerWins", JSON.stringify(computerWinsToStorage));
   }
-  retrieveWinsFromStorage() {
-    if (this.name === "Human") {
-      localStorage.getItem("humanWins");
-    } else {
-      localStorage.getItem("computerWins");
-    }
+  retrieveHumanWinsFromStorage() {
+    var humanWinsGrab = localStorage.getItem("humanWins");
+    humanWins = JSON.parse(humanWinsGrab);
+    return humanWinsGrab;
   }
+
+  retrieveComputerWinsFromStorage() {
+    var computerWinsGrab = localStorage.getItem("computerWins");
+    computerWins = JSON.parse(computerWinsGrab);
+    return computerWinsGrab;
+  }
+
 }
   // saveWinsToStorage() {
   //   activities.push( -------- )
