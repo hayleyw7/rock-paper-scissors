@@ -49,7 +49,8 @@ var mtgBtn = document.querySelector("#mtgBtn");
 var rpsButtons = document.querySelector("#rpsButtons");
 var mtgButtons = document.querySelector("#mtgButtons");
 
-var choicesChosen = document.querySelector("#choicesChosen");
+var rpsChoicesChosen = document.querySelector("#rpsChoicesChosen");
+var mtgChoicesChosen = document.querySelector("#mtgChoicesChosen");
 
 // SCORES
 
@@ -157,7 +158,8 @@ function showHome() {
   hideMtgGame();
   // hide(rpsButtons);
   // hide(mtgButtons);
-  hide(choicesChosen);
+  hide(rpsChoicesChosen);
+  hide(mtgChoicesChosen);
 }
 
 function hideHome() {
@@ -176,21 +178,23 @@ function rpsChoicesChosenScreen() {
   hide(rpsImgPaper);
   hide(rpsImgScissors);
   hideHome();
-  show(choicesChosen);
+  show(rpsChoicesChosen);
   setTimeout(function() {rpsGame()}, 2000);
 }
 
 function mtgChoicesChosenScreen() {
   // hide(rpsHeading);
   // show(rpsHeading);
+  hide(mtgHeading);
   hide(mtgImgRock);
   hide(mtgImgPaper);
   hide(mtgImgScissors);
   hide(mtgImgLizard);
   hide(mtgImgAlien);
   hideHome();
-  show(choicesChosen);
-  hide(mtgHeading);
+  show(mtgChoicesChosen);
+  // hide(rpsChoicesChosen);
+  show(whoWon);
   setTimeout(function() {mtgGame()}, 2000);
 }
 
@@ -203,7 +207,7 @@ function rpsGame() {
   // show(rpsButtons);
   // hide(mtgButtons);
   // hideMtgGame();
-  hide(choicesChosen);
+  hide(rpsChoicesChosen);
   hide(whoWon);
   // setTimeout(function() {rpsGame()}, 2000);
 }
@@ -219,7 +223,7 @@ function mtgGame() {
   show(mtgImgAlien);
   // show(mtgButtons);
   // hideRpsGame();
-  hide(choicesChosen);
+  hide(mtgChoicesChosen);
   hide(whoWon);
   // hide(rpsButtons);
 }
