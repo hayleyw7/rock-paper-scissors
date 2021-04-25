@@ -1,8 +1,8 @@
 // A main.js file that contains all DOM related JavaScript
 
 /////////////////////////////////////
-//////////// INSTANCES ///////////////
-//////////////////////////////////////
+//////////// INSTANCES //////////////
+/////////////////////////////////////
 
 var game = new Game("rps");
 
@@ -15,7 +15,7 @@ function createPlayers() {
 
 createPlayers()
 
-///////////////////////////////////////
+//////////////////////////////////////
 ////////// QUERY SELECTORS ///////////
 //////////////////////////////////////
 
@@ -144,7 +144,6 @@ function hideRpsGame() {
 function hideMtgGame() {
   hideMultiple(mtgHeading, mtgImgRock, mtgImgPaper);
   hideMultiple(mtgImgScissors, mtgImgLizard, mtgImgAlien);
-  // hide(mtgButtons);
 }
 
 // hide/show home displays
@@ -172,6 +171,7 @@ function rpsGame() {
   hideMtgGame();
   hide(rpsChoicesChosen);
   hide(whoWon);
+  hide(mtgGame);
 }
 
 function mtgGame() {
