@@ -44,21 +44,21 @@ class Game {
         // comp throws rock
 
       if (rpsCompChoice === "rock" && rpsHumanChoice === "rock") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
         this.tieAlert();
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
         this.loseAlert();
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "paper") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
@@ -67,21 +67,21 @@ class Game {
         // comp throws paper
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "paper") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
         this.tieAlert();
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "scissors") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
        this.winAlert();
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "rock") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
@@ -90,21 +90,21 @@ class Game {
         // comp throws scissors
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
         this.tieAlert();
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "rock") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
         this.winAlert();
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "paper") {
-        rpsChoicesChosen.innerHTML = `
+        rpsSelections.innerHTML = `
           <img class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
@@ -123,35 +123,35 @@ class Game {
       // comp throws rock
 
       if (mtgCompChoice === "rock" && mtgHumanChoice === "rock") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
         this.tieAlert();
 
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "scissors") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "paper") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "lizard") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "rock" && mtgHumanChoice === "alien") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
@@ -160,35 +160,35 @@ class Game {
         // comp throws paper
 
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "paper") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
         `
         this.tieAlert();
 
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "scissors") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "rock") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "lizard") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "paper" && mtgHumanChoice === "alien") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
           <img ilass="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
         `
@@ -197,35 +197,35 @@ class Game {
         // comp throws scissors
 
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
         `
         this.tieAlert();
 
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "rock") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "paper") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "scissors" && mtgHumanChoice === "alien") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
         `
@@ -234,35 +234,35 @@ class Game {
         // comp throws lizard
 
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "lizard") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
         `
         this.tieAlert();
 
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "rock") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">4
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "paper") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "scissors") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "lizard" && mtgHumanChoice === "alien") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
         `
@@ -271,35 +271,35 @@ class Game {
         // comp throws alien
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "alien") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
         `
         this.tieAlert();
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "paper") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-paper.jpeg" alt="paper">
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "rock") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-rock.jpeg" alt="rock">
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
         `
         this.loseAlert();
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "lizard") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-lizard.jpeg" alt="lizard">
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
         `
         this.winAlert();
 
       } else if (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") {
-        mtgChoicesChosen.innerHTML = `
+        mtgSelections.innerHTML = `
           <img class="mtg-image" src="assets/mtg-scissors.jpeg" alt="scissors">
           <img class="mtg-image" src="assets/mtg-alien.jpeg" alt="alien">
         `
@@ -315,9 +315,9 @@ class Game {
     // humanScore.innerText = this.human[0].retrieveHumanWinsFromStorage();
     humanScore.innerText = this.human[0].wins;
     if (this.format === "rps") {
-      rpsChoicesChosenScreen();
+      rpsSelectionsPage();
     } else {
-      mtgChoicesChosenScreen();
+      mtgSelectionsPage();
     }
     whoWon.innerText = "Construct defeated";
     this.human[0].saveWinsToStorage();
@@ -329,9 +329,9 @@ class Game {
     computerScore.innerText = this.computer[0].wins;
     whoWon.innerText = "Planeswalker defeated";
     if (this.format === "rps") {
-      rpsChoicesChosenScreen();
+      rpsSelectionsPage();
     } else {
-      mtgChoicesChosenScreen();
+      mtgSelectionsPage();
     }
     this.human[0].saveWinsToStorage();
     this.computer[0].saveWinsToStorage();
@@ -339,9 +339,9 @@ class Game {
   tieAlert() {
     whoWon.innerText = "Evenly matched";
     if (this.format === "rps") {
-      rpsChoicesChosenScreen();
+      rpsSelectionsPage();
     } else {
-      mtgChoicesChosenScreen();
+      mtgSelectionsPage();
     }
   }
 
