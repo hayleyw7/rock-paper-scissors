@@ -319,6 +319,8 @@ class Game {
       mtgChoicesChosenScreen();
     }
     whoWon.innerText = "Construct defeated";
+    this.saveWinsToStorage();
+
   }
   loseAlert() {
     this.computer[0].wins++;
@@ -329,6 +331,7 @@ class Game {
     } else {
       mtgChoicesChosenScreen();
     }
+    this.saveWinsToStorage();
   }
   tieAlert() {
     whoWon.innerText = "Evenly matched";
@@ -337,6 +340,7 @@ class Game {
     } else {
       mtgChoicesChosenScreen();
     }
+    this.saveWinsToStorage();
   }
 
   // RESET SCORES

@@ -10,20 +10,20 @@ class Player {
     this.token = playplay.token;
     this.wins = 0;
   }
-  // saveWinsToStorage() {
-  //   if (this.name === "Human") {
-  //     localstorage.setItem();
-  //   } else {
-  //     local.storage.setItem();
-  //   }
-  // }
-  // retrieveWinsFromStorage() {
-  //   if (this.name === "Human") {
-  //     localStorage.getItem();
-  //   } else {
-  //     localStorage.getItem();
-  //   }
-  // }
+  saveWinsToStorage() {
+    if (this.name === "Human") {
+      localstorage.setItem("humanWins", this.wins);
+    } else {
+      local.storage.setItem("computerWins", this.wins);
+    }
+  }
+  retrieveWinsFromStorage() {
+    if (this.name === "Human") {
+      localStorage.getItem("humanWins");
+    } else {
+      localStorage.getItem("computerWins");
+    }
+  }
 }
   // saveWinsToStorage() {
   //   activities.push( -------- )
