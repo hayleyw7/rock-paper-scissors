@@ -40,71 +40,71 @@ class Game {
         // comp throws rock
 
       if (rpsCompChoice === "rock" && rpsHumanChoice === "rock") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
-        tieAlert();
+        this.tieAlert();
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
-        loseAlert();
+        this.loseAlert();
 
       } else if (rpsCompChoice === "rock" && rpsHumanChoice === "paper") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
         `
-        winAlert();
+        this.winAlert();
 
         // comp throws paper
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "paper") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
-        tieAlert();
+        this.tieAlert();
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "scissors") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
-       winAlert();
+       this.winAlert();
 
       } else if (rpsCompChoice === "paper" && rpsHumanChoice === "rock") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
         `
-        loseAlert();
+        this.loseAlert();
 
         // comp throws scissors
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
-        tieAlert();
+        this.tieAlert();
 
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "rock") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgRock" class="rps-image" src="assets/rps-rock.png" alt="rock">
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
         winAlert();
         
       } else if (rpsCompChoice === "scissors" && rpsHumanChoice === "paper") {
-        rpsButtons.innerHTML = `
+        choicesChosen.innerHTML = `
           <img id="rpsImgPaper" class="rps-image" src="assets/rps-paper.png" alt="paper">
           <img id="rpsImgScissors" class="rps-image" src="assets/rps-scissors.png" alt="scissors">
         `
-        loseAlert();
+        this.loseAlert();
       }
     } else {
 
@@ -196,5 +196,26 @@ class Game {
   resetGame() {
     this.human[0].wins = 0;
     this.computer[0].wins = 0;
+  }
+  winAlert() {
+    game.human[0].wins++;
+    mtgChoicesChosenScreen();
+    rpsHeading.innerText = "Construct defeated";
+    mtgHeading.innerText = "Construct defeated";
+    setTimeout(function() {rpsGame()}, 2000);
+  }
+  loseAlert() {
+    game.computer[0].wins++;
+    mtgChoicesChosenScreen();
+    rpsHeading.innerText = "Planeswalker defeated";
+    mtgHeading.innerText = "Planeswalker defeated";
+    setTimeout(function() {rpsGame()}, 2000);
+  
+  }
+  tieAlert() {
+    mtgChoicesChosenScreen();
+    rpsHeading.innerText = "Evenly matched";
+    mtgHeading.innerText = "Evenly matched";
+    setTimeout(function() {rpsGame()}, 2000);
   }
 }

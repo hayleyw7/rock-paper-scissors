@@ -48,6 +48,8 @@ var mtgBtn = document.querySelector("#mtgBtn");
 var rpsButtons = document.querySelector("#rpsButtons")
 var mtgButtons = document.querySelector("#mtgButtons")
 
+var choicesChosen = document.querySelector("#choicesChosen")
+
 // SCORES
 
 var computerScore = document.querySelector("#computerScore");
@@ -127,18 +129,20 @@ function mtgHumanChoiceLizard() {
 
 function hideRpsGame() {
   hide(rpsHeading);
-  hide(rpsImgRock);
-  hide(rpsImgScissors);
-  hide(rpsImgPaper);
+  // hide(rpsImgRock);
+  // hide(rpsImgScissors);
+  // hide(rpsImgPaper);
+  hide(rpsButtons);
 }
 
 function hideMtgGame() {
   hide(mtgHeading);
-  hide(mtgImgRock);
-  hide(mtgImgPaper);
-  hide(mtgImgScissors);
-  hide(mtgImgLizard);
-  hide(mtgImgAlien);
+  // hide(mtgImgRock);
+  // hide(mtgImgPaper);
+  // hide(mtgImgScissors);
+  // hide(mtgImgLizard);
+  // hide(mtgImgAlien);
+  hide(mtgButtons);
 }
 
 // show & hide home stuffs
@@ -150,8 +154,9 @@ function showHome() {
   show(rpsBtn);
   hideRpsGame();
   hideMtgGame();
-  hide(rpsButtons);
-  hide(mtgButtons);
+  // hide(rpsButtons);
+  // hide(mtgButtons);
+  hide(choicesChosen);
 }
 
 function hideHome() {
@@ -163,15 +168,24 @@ function hideHome() {
 
 // displays for each game
 
+function mtgChoicesChosenScreen() {
+  hide(rpsImgRock);
+  hide(rpsImgPaper);
+  hide(rpsImgScissors);
+  hideHome();
+  show(choicesChosen);
+}
+
 function rpsGame() {
   hideHome();
   show(rpsHeading);
   show(rpsImgRock);
   show(rpsImgPaper);
   show(rpsImgScissors);
-  show(rpsButtons);
-  hide(mtgButtons);
-  hideMtgGame();
+  // show(rpsButtons);
+  // hide(mtgButtons);
+  // hideMtgGame();
+  hide(choicesChosen);
 }
 
 function mtgGame() {
@@ -183,35 +197,22 @@ function mtgGame() {
   show(mtgImgScissors);
   show(mtgImgLizard);
   show(mtgImgAlien);
-  show(mtgButtons);
+  // show(mtgButtons);
   hideRpsGame();
-  hide(rpsButtons);
+  // hide(rpsButtons);
 }
 
 ////////// HELPER FUNCTIONS //////////
 
 function hide(e) {
-  e.classList.add("hidden")
+  e.classList.add("hidden");
 }
 
 function show(e) {
-  e.classList.remove("hidden")
+  e.classList.remove("hidden");
 }
 
-function winAlert() {
-  game.human[0].wins++;
-  rpsHeading.innerText = "Construct defeated";
-  mtgHeading.innerText = "Construct defeated";
-  setTimeout(rpsGame(), 2000);
-  }
-function loseAlert() {
-  game.computer[0].wins++;
-  rpsHeading.innerText = "Planeswalker defeated";
-  mtgHeading.innerText = "Planeswalker defeated";
-  setTimeout(rpsGame(), 2000);
-  }
-function tieAlert() {
-  rpsHeading.innerText = "Evenly matched";
-  mtgHeading.innerText = "Evenly matched";
-  setTimeout(rpsGame(), 2000);
-  }
+// function hideShow(e1, e2) {
+//   e1.classList.remove("hidden");
+//   e2.classList.remove("hidden");
+// }
