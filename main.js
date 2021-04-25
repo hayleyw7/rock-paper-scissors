@@ -42,7 +42,7 @@ var mtgBtn = document.querySelector("#mtgBtn");
 // var rpsButtons = document.querySelector("#rpsButtons");
 // var mtgButtons = document.querySelector("#mtgButtons");
 
-// CHOICES CHOSEN
+// SELECTIONS
 
 var rpsSelections = document.querySelector("#rpsSelections");
 var mtgSelections = document.querySelector("#mtgSelections");
@@ -99,9 +99,9 @@ mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 ///////////// FUNCTIONS //////////////
 //////////////////////////////////////
 
-///// HUMAN CHOICES /////
+///// HUMAN SELECTIONS /////
 
-// RPS HUMAN CHOICES
+// RPS HUMAN SELECTIONS
 
 function rpsHumanChoiceRock() {
   game.determineWinner("rock");
