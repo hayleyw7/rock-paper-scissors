@@ -8,10 +8,7 @@ class Game {
     this.format = format;
   }
 
-  displayFighters() {
-  }
-
-// RANDOMIZER
+// RANDOMIZERS
 
   getRandomIndex(array) {
     return Math.floor(Math.random()*array.length);
@@ -26,6 +23,13 @@ class Game {
       return mtgChoices[randomMtgChoice];
     }
   }
+
+  // SHOW 2 FIGHTERS
+
+  // displayFighters() {
+  // }
+
+  // WHO WON
 
   determineWinner(choice) {
     // RPS WINNER FUNCTION
@@ -303,10 +307,9 @@ class Game {
       }
     }
   }
-  resetGame() {
-    this.human[0].wins = 0;
-    this.computer[0].wins = 0;
-  }
+
+  // TIE/WIN/LOSE ALERTS
+
   winAlert() {
     this.human[0].wins++;
     humanScore.innerText = this.human[0].wins;
@@ -316,34 +319,30 @@ class Game {
       mtgChoicesChosenScreen();
     }
     whoWon.innerText = "Construct defeated";
-    // whoWon.innerText = "Construct defeated";
-    // setTimeout(function() {rpsGame()}, 2000);
-    // this.human[0].saveWinsToStorage();
-    // this.computer[0].saveWinsToStorage();
-    // setTimeout(function() {rpsGame()}, 2000);
   }
   loseAlert() {
     this.computer[0].wins++;
     computerScore.innerText = this.computer[0].wins;
+    whoWon.innerText = "Planeswalker defeated";
     if (this.format === "rps") {
       rpsChoicesChosenScreen();
     } else {
       mtgChoicesChosenScreen();
     }
-    whoWon.innerText = "Planeswalker defeated";
-    // setTimeout(function() {rpsGame()}, 2000);
-    // this.human[0].saveWinsToStorage();
-    // this.computer[0].saveWinsToStorage();
   }
   tieAlert() {
+    whoWon.innerText = "Evenly matched";
     if (this.format === "rps") {
       rpsChoicesChosenScreen();
     } else {
       mtgChoicesChosenScreen();
     }
-    whoWon.innerText = "Evenly matched";
-    // setTimeout(function() {mtgGame()}, 2000);
-    // this.human[0].saveWinsToStorage();
-    // this.computer[0].saveWinsToStorage();
   }
+
+  // RESET SCORES
+
+  // resetGame() {
+  //   this.human[0].wins = 0;
+  //   this.computer[0].wins = 0;
+  // }
 }
