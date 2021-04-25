@@ -164,11 +164,13 @@ function hideHome() {
 // hide/show displays for each game
 
 function rpsGame() {
+  game.format = "rps";
   hideHome();
   showMultiple(rpsImgRock, rpsImgPaper, rpsImgScissors);
   show(rpsHeading);
   hideMtgGame();
   hide(rpsChoicesChosen);
+  hide(mtgChoicesChosen);
   hide(whoWon);
   show(changeFormatBtn);
 }
@@ -187,16 +189,20 @@ function mtgGame() {
 // hide/show choices-chosen displays
 
 function rpsChoicesChosenScreen() {
+  game.format = "rps";
   hideMultiple(rpsImgRock, rpsImgPaper, rpsImgScissors);
   hideHome();
+  hideMtgGame();
   show(rpsChoicesChosen);
   show(whoWon);
   hide(rpsHeading);
   hide(changeFormatBtn);
+  hide(mtgChoicesChosen);
   setTimeout(function() {rpsGame()}, 2000);
 }
 
 function mtgChoicesChosenScreen() {
+  game.format = "rps";
   hideMultiple(mtgImgRock, mtgImgPaper, mtgImgScissors);
   hideMultiple(mtgImgLizard, mtgImgAlien, mtgHeading);
   hideHome();
