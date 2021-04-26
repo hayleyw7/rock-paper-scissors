@@ -12,7 +12,6 @@
 * {
   margin: 0;
   padding: 0;
-  text-decoration: none;
   text-align: center;
 }
 
@@ -23,64 +22,63 @@
 /* BACKGROUND */
 
 body {
-  background:url("assets/background-5.png") no-repeat center center fixed;
+  background: url("assets/background-5.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
-  justify-content: center;
   flex: 1; */
   height: 100vh;
+  justify-content: center;
 }
 
-/* HEADER */
+/* TYPEFACES */
 
-h1 {
-  padding-top: 20px;
-  font-size: 90px;
-  margin-bottom: 10px;
-  margin-top: 0;
-  color: var(--white);
-  padding-right: 2rem;
-  padding-left: 2rem;
+h1,
+h2,
+h3 {
   font-family: 'Copperplate', fantasy;
 }
 
-/* IMAGES */
-
-.rps-image {
-  width: 6rem;
-  background: var(--white);
-  border-radius: 1rem;
-  padding: .4rem;
-  margin: 1rem;
-  border: solid .4rem var(--black);
+.rps-button,
+.mtg-button,
+.change-format-btn, 
+.score {
+    font-family: 'American Typewriter', serif;
 }
 
-.mtg-image {
-  width: 10rem;
-  border: solid 5px white;
-  margin: 0.5rem;
-  border-radius: 8px;
+/* HEADERS */
+
+h1 {
+  color: var(--white);
+  font-size: 90px;
+  margin-bottom: 1rem;
+  padding: 2rem 2rem 0 2rem;
 }
+
+h2 {
+  color: var(--beige);
+  font-size: 60px;
+  padding-bottom: 1rem;
+}
+
+/* SECTIONS */
 
 .middle-section {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 80%;
   height: 100vh;
+  width: 80%;
 }
 
 .right-section,
 .left-section {
+  background: url("assets/background-4.jpeg");
+  color: var(--white);
   display: flex;
   flex-direction: column;
-  background:url("assets/background-4.jpeg");
-  color: var(--white);
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 10%;
   min-width: 9rem;
+  padding: 1rem;
+  width: 10%;
 }
 
 .right-section {
@@ -90,45 +88,85 @@ h1 {
   border-right: solid .4rem var(--white);
 }
 
-.rps-button,
-.mtg-button,
-.change-format-btn {
-  width: 25rem;
-  padding: 1rem;
-  margin: 0.5rem;
-  border: solid .4rem var(--white);
-  border-radius: 1rem;
-  background: var(--black);
-  color: var(--white);
-  font-family: 'American Typewriter', serif;
-  font-size: 20px;
-}
+/* BUTTONS */
 
-.rps-button:hover,
-.mtg-button:hover,
-.change-format-btn:hover,
-.rps-image:hover,
-.mtg-image:hover {
-  transform: scale(1.25);
-}
-
-h3 {
-  font-size: 20px;
-  font-family: 'Copperplate', fantasy;
-}
-
-.score {
-  font-size: 100px;
-}
-
-h2 {
-  font-size: 60px;
-  color: var(--beige);
-  padding-bottom: 1rem;
-  font-family: 'Copperplate', fantasy;
-}
+/* button containers */
 
 .button-containers,  {
   display: flex;
   flex-direction: row;
+}
+
+/* button content */
+
+.rps-button,
+.mtg-button,
+.change-format-btn {
+  background: var(--black);
+  border: solid .4rem var(--white);
+  border-radius: 1rem;
+  font-size: 20px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 25rem;
+}
+
+.rps-button,
+.mtg-button {
+  color: var(--beige);
+}
+
+.change-format-btn {
+  color: var(--white);
+}
+
+.format-name {
+  color: var(--white);
+  font-size: 40px;
+}
+
+/* button hover */
+
+.rps-button:hover,
+.mtg-button:hover,
+.change-format-btn:hover {
+  border: solid .4rem var(--beige);
+  transform: scale(1.05);
+}
+
+.rps-image:hover {
+  background: var(--beige);
+  transform: scale(1.3);
+}
+
+.mtg-image:hover {
+  transform: scale(1.6);
+}
+
+/* IMAGES */
+
+.rps-image {
+  background: var(--white);
+  border: solid .4rem var(--black);
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: .4rem;
+  width: 6rem;
+}
+
+.mtg-image {
+  border: solid .4rem white;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  width: 10rem;
+}
+
+/* SCORE */
+
+.player {
+  font-size: 20px;
+}
+
+.score {
+  font-size: 120px;
 }
