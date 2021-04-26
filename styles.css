@@ -62,6 +62,8 @@ h2 {
 
 /* SECTIONS */
 
+/* middle */
+
 .middle-section {
   align-items: center;
   display: flex;
@@ -70,8 +72,11 @@ h2 {
   width: 80%;
 }
 
-.right-section,
-.left-section {
+/* sides */
+
+.left-section,
+.right-section
+ {
   background: url("assets/background-4.jpeg");
   color: var(--white);
   display: flex;
@@ -81,11 +86,12 @@ h2 {
   width: 10%;
 }
 
-.right-section {
-  border-left: solid .4rem var(--white);
-}
 .left-section {
   border-right: solid .4rem var(--white);
+}
+
+.right-section {
+  border-left: solid .4rem var(--white);
 }
 
 /* BUTTONS */
@@ -104,19 +110,22 @@ h2 {
   width: 25rem;
 }
 
+
 .rps-button,
 .mtg-button {
   color: var(--beige);
   margin: .4rem;
 }
 
-.home-btns {
-  color: var(--white);
-}
-
 .format-name {
   color: var(--white);
   font-size: 40px;
+}
+
+.home-btns {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 22px;
 }
 
 /* button hover */
