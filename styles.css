@@ -107,6 +107,7 @@ h2 {
 .rps-button,
 .mtg-button {
   color: var(--beige);
+  margin: .4rem;
 }
 
 .home-btns {
