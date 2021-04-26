@@ -90,13 +90,6 @@ h2 {
 
 /* BUTTONS */
 
-/* button containers */
-
-.button-containers,  {
-  display: flex;
-  flex-direction: row;
-}
-
 /* button content */
 
 .rps-button,
