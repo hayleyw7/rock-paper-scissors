@@ -133,7 +133,7 @@ h2 {
 }
 
 .mtg-image:hover {
-  transform: scale(1.6);
+  transform: scale(2);
 }
 
 /* IMAGES */
@@ -150,8 +150,8 @@ h2 {
 .mtg-image {
   border: solid .4rem white;
   border-radius: 1rem;
-  margin: 0.5rem;
-  width: 10rem;
+  margin: 0.1rem;
+  width: 9rem;
 }
 
 /* SCORE */
