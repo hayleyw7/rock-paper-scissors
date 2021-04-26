@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- INFO -->
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css">
@@ -9,14 +8,11 @@
     <title>Rock-Paper-Scissors</title>
   </head>
   <body>
-<!-- HUMAN SCORE -->
     <section class="left-section">
       <h2>💀</h2>
       <h3 class="player">Planeswalker</h3>
       <p id="humanScore" class="score">0</p>
     </section>
-<!-- CENTER COLUMN -->
-<!-- load page -->
     <section class="middle-section">
       <h1>ENCHANTED RPS</h1>
       <h2 id="chooseFormatHeading" class="choose-format">Choose A Format</h2>
@@ -34,18 +30,15 @@
           <p>Lizard eats Paper & Alien.</p>
           <p>Alien vaporizes Scissors & Rock.</p>
         </button>
-<!-- home button (hidden on load) -->
       <h2 id="rpsHeading" class="rps-heading hidden">Summon An Artifact</h2>
       <h2 id="mtgHeading" class="mtg-heading hidden">Cast A Spell</h2>
       <h2 id="whoWon"></h2>
-<!-- rps page (hidden on load) -->
       <section id="rpsSelections" class="rps-selections"></section>
-      <section id = "rpsButtons" class="button-containers">
+      <section id="rpsButtons" class="button-containers">
         <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
         <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
         <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
       </section>
-<!-- mtg page page (hidden on load) -->
       <section id="mtgSelections" class="mtg-selections"></section>
       <section id="mtgButtons1" class="button-containers">
         <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
@@ -58,13 +51,11 @@
       </section>
       <button id="changeFormatBtn" class="change-format-btn hidden">CHANGE FORMAT</button>
     </section>
-<!-- COMPUTER SCORE -->
     <section class="right-section">
       <h2>🤖</h2>
       <h3 class="player">Construct</h3>
       <p id="computerScore" class="score">0</p>
     </section>
-<!-- CLOSING TAGS -->
   </body>
   <script src="data.js"></script>
   <script src="player.js"></script>
