@@ -45,8 +45,8 @@ var mtgSelections = document.querySelector("#mtgSelections");
 
 // SCORES
 
-var computerScore = document.querySelector("#computerScore");
 var humanScore = document.querySelector("#humanScore");
+var computerScore = document.querySelector("#computerScore");
 
 ///////////////////////////////////////////
 /////////// UPDATE LOCALSTORAGE ///////////
@@ -85,11 +85,11 @@ rpsImgScissors.addEventListener("click", rpsHumanChoiceScissors);
 
 // mtg images
 
-mtgImgScissors.addEventListener("click", mtgHumanChoiceScissors);
 mtgImgRock.addEventListener("click", mtgHumanChoiceRock);
+mtgImgScissors.addEventListener("click", mtgHumanChoiceScissors);
 mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
-mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
+mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 
 /////////////////////////////////////////
 ////////////// FUNCTIONS ////////////////
@@ -125,12 +125,12 @@ function mtgHumanChoiceScissors() {
   game.determineWinner("scissors");
 }
 
-function mtgHumanChoiceAlien() {
-  game.determineWinner("alien");
-}
-
 function mtgHumanChoiceLizard() {
   game.determineWinner("lizard");
+}
+
+function mtgHumanChoiceAlien() {
+  game.determineWinner("alien");
 }
 
 ///// HIDE & SHOW ELEMENTS ////
