@@ -118,7 +118,7 @@ class Game {
     } else {
       mtgSelectionsPage();
     }
-    whoWon.innerText = "Construct defeated";
+    whoWon.innerText = "Construct Defeated";
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
@@ -126,7 +126,7 @@ class Game {
   loseAlert() {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
-    whoWon.innerText = "Planeswalker defeated";
+    whoWon.innerText = "Planeswalker Defeated";
     if (this.type === "rps") {
       rpsSelectionsPage();
     } else {
@@ -137,7 +137,7 @@ class Game {
   }
 
   tieAlert() {
-    whoWon.innerText = "Evenly matched";
+    whoWon.innerText = "Evenly Matched";
     if (this.type === "rps") {
       rpsSelectionsPage();
     } else {
