@@ -171,11 +171,11 @@ function hideGameFeatures() {
 // home features
 
 function hideHomeFeatures() {
-  hide([chooseFormatHeading, mtgBtn, rpsBtn]);
+  hide([chooseFormatHeading, startOverBtn, mtgBtn, rpsBtn]);
 }
 
 function showHomeFeatures() {
-  show([chooseFormatHeading, mtgBtn, rpsBtn]);
+  show([chooseFormatHeading, startOverBtn, mtgBtn, rpsBtn]);
 }
 
 // PAGES
