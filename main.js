@@ -1,12 +1,12 @@
-/////////////////////////////////////
-//////////// INSTANCES //////////////
-/////////////////////////////////////
+///////////////////////////////////////////
+/////////////// INSTANCES /////////////////
+///////////////////////////////////////////
 
 var game = new Game();
 
-//////////////////////////////////////
-////////// QUERY SELECTORS ///////////
-//////////////////////////////////////
+///////////////////////////////////////////
+//////////// QUERY SELECTORS //////////////
+///////////////////////////////////////////
 
 // HEADINGS
 
@@ -33,14 +33,9 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 
 // BUTTONS
 
-// home buttons
-
 var changeFormatBtn = document.querySelector("#changeFormatBtn");
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
-
-// var rpsButtons = document.querySelector("#rpsButtons");
-// var mtgButtons = document.querySelector("#mtgButtons");
 
 // SELECTIONS
 
@@ -52,9 +47,8 @@ var mtgSelections = document.querySelector("#mtgSelections");
 var computerScore = document.querySelector("#computerScore");
 var humanScore = document.querySelector("#humanScore");
 
-
 ///////////////////////////////////////////
-//////////// STORAGE GRABBING /////////////
+/////////// UPDATE LOCALSTORAGE ///////////
 ///////////////////////////////////////////
 
 if (localStorage.humanWins === undefined) {
@@ -95,11 +89,11 @@ mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
 mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
 
-//////////////////////////////////////
-///////////// FUNCTIONS //////////////
-//////////////////////////////////////
+/////////////////////////////////////////
+////////////// FUNCTIONS ////////////////
+/////////////////////////////////////////
 
-///// HUMAN SELECTIONS /////
+//////////// HUMAN SELECTIONS ///////////
 
 // RPS HUMAN SELECTIONS
 
@@ -115,7 +109,7 @@ function rpsHumanChoiceScissors() {
   game.determineWinner("scissors");
 }
 
-// MTG HUMAN CHOICES
+// MTG HUMAN SELECTIONS
 
 function mtgHumanChoiceRock() {
   game.determineWinner("rock");
@@ -224,9 +218,7 @@ function mtgSelectionsPage() {
   setTimeout(function() {mtgGamePage()}, 2000);
 }
 
-// HELPER FUNCTIONS
-
-// hide/show helper functions
+// SHOW & HIDE HELPER FUNCTIONS
 
 function hide(elements) {
   for (var i = 0; i < elements.length; i++) {

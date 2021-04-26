@@ -5,6 +5,8 @@ class Game {
     this.type = "";
   }
 
+// PLAY GAME
+
   playRps() {
     this.type = "rps";
   }
@@ -29,15 +31,11 @@ class Game {
     }
   }
 
-  // SHOW 2 FIGHTERS
-
-  // displayFighters() {
-  // }
-
-  // WHO WON
+// WHO WON?
 
   determineWinner(choice) {
-    // RPS WINNER FUNCTION
+
+// rps winner
 
     if (this.type === "rps") {
 
@@ -57,9 +55,7 @@ class Game {
 
       } else if ( (mtgCompChoice === "paper" && mtgHumanChoice === "rock")
         || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
-
-       ) {
+        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors") ) {
 
         this.loseAlert();
 
@@ -70,7 +66,7 @@ class Game {
 
     } else {
 
-      // MTG WINNER FUNCTION
+// mtg winner
 
       computerScore.innerText = this.computer.wins;
       humanScore.innerText = this.human.wins;
@@ -100,8 +96,7 @@ class Game {
         || (mtgCompChoice === "lizard" && mtgHumanChoice === "paper")
         || (mtgCompChoice === "lizard" && mtgHumanChoice === "alien")
         || (mtgCompChoice === "alien" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors")
-       ) {
+        || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") ) {
 
         this.loseAlert();
 
@@ -149,11 +144,4 @@ class Game {
       mtgSelectionsPage();
     }
   }
-
-  // RESET SCORES
-
-  // resetGame() {
-  //   this.human.wins = 0;
-  //   this.computer.wins = 0;
-  // }
 }
