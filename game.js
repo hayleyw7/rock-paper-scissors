@@ -153,10 +153,8 @@ class Game {
   // START OVER
 
   startOver() {
+    computerScore.innerText = `0`;
+    humanScore.innerText = `0`;
     localStorage.clear();
-    this.player.wins = 0;
-    this.computer.wins = 0;
-    computerScore.innerText = this.computer.wins;
-    humanScore.innerText = this.human.wins;
   }
 }
