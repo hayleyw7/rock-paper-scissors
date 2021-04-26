@@ -28,9 +28,11 @@ The site is live at https://hayleyw7.github.io/rock-paper-scissors/.
 
 ## Screenshots
 
-![text](/link.png)
-![text](/link.png)
-![text](/link.png)
+![text](assets/ss-home.png)
+![text](assets/ss-rps-game.png)
+![text](assets/ss-rps-selections.png)
+![text](assets/ss-mtg-game.png)
+![text](assets/ss-mtg-selections.png)
 
 ## Future additions
 
