@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-<!-- INFO -->
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css">
@@ -9,65 +8,53 @@
     <title>Rock-Paper-Scissors</title>
   </head>
   <body>
-<!-- HUMAN SCORE -->
     <section class="left-section">
       <h2>💀</h2>
       <h3 class="player">Planeswalker</h3>
       <p id="humanScore" class="score">0</p>
     </section>
-<!-- CENTER COLUMN -->
-<!-- load page -->
     <section class="middle-section">
-      <h1>ENCHANTED RPS</h1>
-      <h2 id="chooseFormatHeading" class="choose-format">Choose a format</h2>
-      <!-- <section class="button-containers"> -->
+      <h1>Enchanted RPS</h1>
+      <h2 id="chooseFormatHeading" class="choose-format">Choose A Format</h2>
         <button id="rpsBtn" class="rps-button">
-          <h3>Standard</h3>
+          <h3 class="format-name">Standard</h3>
           <p>Rock smashes Scissors.</p>
           <p>Scissors cut Paper.</p>
           <p>Paper smothers Rock.</p>
         </button>
         <button id="mtgBtn" class="mtg-button">
-          <h3>Magic: The Gathering</h3>
+          <h3 class="format-name">Magic:<br>The Gathering</h3>
           <p>Rock smashes Scissors & Lizard.</p>
           <p>Scissors cut Paper & Lizard.</p>
           <p>Paper covers Rock & Alien.</p>
           <p>Lizard eats Paper & Alien.</p>
           <p>Alien vaporizes Scissors & Rock.</p>
         </button>
-      <!-- </section> -->
-<!-- home button (hidden on load) -->
-      <h2 id="rpsHeading" class="rps-heading hidden">Summon an artifact</h2>
-      <h2 id="mtgHeading" class="mtg-heading hidden">Cast a spell</h2>
+      <h2 id="rpsHeading" class="rps-heading hidden">Summon An Artifact</h2>
+      <h2 id="mtgHeading" class="mtg-heading hidden">Cast A Spell</h2>
       <h2 id="whoWon"></h2>
-<!-- rps page (hidden on load) -->
       <section id="rpsSelections" class="rps-selections"></section>
-      <section id = "rpsButtons" class="button-containers">
+      <section id="rpsButtons" class="button-containers">
         <img id="rpsImgRock" class="rps-image hidden" src="assets/rps-rock.png" alt="rock">
         <img id="rpsImgPaper" class="rps-image hidden" src="assets/rps-paper.png" alt="paper">
         <img id="rpsImgScissors" class="rps-image hidden" src="assets/rps-scissors.png" alt="scissors">
       </section>
-<!-- mtg page page (hidden on load) -->
       <section id="mtgSelections" class="mtg-selections"></section>
       <section id="mtgButtons1" class="button-containers">
         <img id="mtgImgRock" class="mtg-image hidden" src="assets/mtg-rock.jpeg" alt="rock">
         <img id="mtgImgPaper" class="mtg-image hidden" src="assets/mtg-paper.jpeg" alt="paper">
         <img id="mtgImgScissors" class="mtg-image hidden" src="assets/mtg-scissors.jpeg" alt="scissors">
-      </section>
-      <section id="mtgButtons2" class="button-containers">
         <img id="mtgImgLizard" class="mtg-image hidden" src="assets/mtg-lizard.jpeg" alt="lizard">
         <img id="mtgImgAlien" class="mtg-image hidden" src="assets/mtg-alien.jpeg" alt="alien">
       </section>
       <button id="changeFormatBtn" class="home-btns hidden">CHANGE FORMAT</button>
       <button id="startOverBtn" class="home-btns">START OVER</button>
     </section>
-<!-- COMPUTER SCORE -->
     <section class="right-section">
       <h2>🤖</h2>
       <h3 class="player">Construct</h3>
       <p id="computerScore" class="score">0</p>
     </section>
-<!-- CLOSING TAGS -->
   </body>
   <script src="data.js"></script>
   <script src="player.js"></script>
