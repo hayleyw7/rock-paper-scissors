@@ -10,7 +10,6 @@
 }
 
 * {
-  /* font-family: 'Roboto', sans-serif; */
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -28,11 +27,8 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-  /* min-height: 40rem; */
-  /* flex-grow: 1;
   flex: 1; */
   height: 100vh;
-  /* width: 100%; */ */
 }
 
 /* HEADER */
@@ -40,7 +36,7 @@ body {
 h1 {
   padding-top: 20px;
   font-size: 90px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   margin-top: 0;
   color: var(--white);
   padding-right: 2rem;
@@ -96,31 +92,21 @@ h1 {
 
 .rps-button,
 .mtg-button,
-.change-format-btn {
+.home-btns {
   width: 25rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: .2rem;
   border: solid .4rem var(--white);
   border-radius: 1rem;
   background: var(--black);
   color: var(--white);
-  /* font-family: 'Times', serif; */
   font-family: 'American Typewriter', serif;
   font-size: 20px;
 }
 
-/* .rps-button {
-  height: 15rem;
-  margin-top: 1rem;
-}
-
-.mtg-button {
-  height: 15rem;
-} */
-
 .rps-button:hover,
 .mtg-button:hover,
-.change-format-btn:hover,
+.home-btns:hover,
 .rps-image:hover,
 .mtg-image:hover {
   transform: scale(1.25);

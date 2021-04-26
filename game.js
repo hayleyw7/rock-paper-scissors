@@ -150,10 +150,13 @@ class Game {
     }
   }
 
-  // RESET SCORES
+  // START OVER
 
-  // resetGame() {
-  //   this.human.wins = 0;
-  //   this.computer.wins = 0;
-  // }
+  startOver() {
+    localStorage.clear();
+    this.player.wins = 0;
+    this.computer.wins = 0;
+    computerScore.innerText = this.computer.wins;
+    humanScore.innerText = this.human.wins;
+  }
 }
