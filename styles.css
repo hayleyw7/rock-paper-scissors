@@ -40,7 +40,7 @@ h3 {
 
 .rps-button,
 .mtg-button,
-.change-format-btn, 
+.home-btns,
 .score {
     font-family: 'American Typewriter', serif;
 }
@@ -94,7 +94,7 @@ h2 {
 
 .rps-button,
 .mtg-button,
-.change-format-btn {
+.home-btns {
   background: var(--black);
   border: solid .4rem var(--white);
   border-radius: 1rem;
@@ -107,9 +107,10 @@ h2 {
 .rps-button,
 .mtg-button {
   color: var(--beige);
+  margin: .4rem;
 }
 
-.change-format-btn {
+.home-btns {
   color: var(--white);
 }
 
@@ -122,7 +123,7 @@ h2 {
 
 .rps-button:hover,
 .mtg-button:hover,
-.change-format-btn:hover {
+.home-btns:hover {
   border: solid .4rem var(--beige);
   transform: scale(1.05);
 }

@@ -34,6 +34,7 @@ var mtgImgAlien = document.querySelector("#mtgImgAlien");
 // BUTTONS
 
 var changeFormatBtn = document.querySelector("#changeFormatBtn");
+var startOverBtn = document.querySelector("#startOverBtn")
 var rpsBtn = document.querySelector("#rpsBtn");
 var mtgBtn = document.querySelector("#mtgBtn");
 
@@ -70,6 +71,7 @@ if (localStorage.computerWins === undefined) {
 // BUTTONS
 
 changeFormatBtn.addEventListener("click", showHomePage);
+startOverBtn.addEventListener("click", game.startOver);
 rpsBtn.addEventListener("click", rpsGamePage);
 mtgBtn.addEventListener("click", mtgGamePage);
 
@@ -166,11 +168,11 @@ function hideGameFeatures() {
 // home features
 
 function hideHomeFeatures() {
-  hide([chooseFormatHeading, mtgBtn, rpsBtn]);
+  hide([chooseFormatHeading, startOverBtn, mtgBtn, rpsBtn]);
 }
 
 function showHomeFeatures() {
-  show([chooseFormatHeading, mtgBtn, rpsBtn]);
+  show([chooseFormatHeading, startOverBtn, mtgBtn, rpsBtn]);
 }
 
 // PAGES

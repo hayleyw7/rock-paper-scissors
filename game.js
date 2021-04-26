@@ -144,4 +144,13 @@ class Game {
       mtgSelectionsPage();
     }
   }
+
+ startOver() {
+   computerScore.innerText = `0`;
+   humanScore.innerText = `0`;
+   localStorage.clear();
+   game.human.wins = 0;
+   game.computer.wins = 0;
+ }
 }
+
