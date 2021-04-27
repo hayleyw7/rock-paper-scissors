@@ -43,8 +43,8 @@ class Game {
       var rpsHumanChoice = choice;
 
       rpsSelections.innerHTML = `
-        <img class="rps-image" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
-        <img class="rps-image" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
+        <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
+        <img class="rps-image-selection" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
       `
 
       if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
@@ -75,8 +75,8 @@ class Game {
       var mtgHumanChoice = choice;
 
       mtgSelections.innerHTML = `
-        <img class="mtg-image" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
-        <img class="mtg-image" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
+        <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
+        <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
       `
 
       if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
