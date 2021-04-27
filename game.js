@@ -145,12 +145,12 @@ class Game {
     }
   }
 
- startOver() {
-   computerScore.innerText = `0`;
-   humanScore.innerText = `0`;
-   localStorage.clear();
-   game.human.wins = 0;
-   game.computer.wins = 0;
- }
+  startOver() {
+    computerScore.innerText = `0`;
+    humanScore.innerText = `0`;
+    this.human.wins = 0;
+    this.computer.wins = 0;
+    localStorage.clear();
+  }
 }
 
