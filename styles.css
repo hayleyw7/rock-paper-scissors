@@ -150,7 +150,8 @@ h2 {
 
 /* IMAGES */
 
-.rps-image {
+.rps-image,
+.rps-image-selection {
   background: var(--white);
   border: solid .4rem var(--black);
   border-radius: 1rem;
@@ -159,7 +160,8 @@ h2 {
   width: 6rem;
 }
 
-.mtg-image {
+.mtg-image,
+.mtg-image-selection {
   border: solid .4rem white;
   border-radius: 1rem;
   margin: 0.1rem;
