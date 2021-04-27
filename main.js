@@ -209,7 +209,7 @@ function rpsSelectionsPage() {
   hideHomeFeatures();
   show([rpsSelections, whoWon]);
   hide([changeFormatBtn]);
-  setTimeout(function() {rpsGamePage()}, 2000);
+  setTimeout(function() {rpsGamePage()}, 1200);
 }
 
 function mtgSelectionsPage() {
@@ -217,7 +217,7 @@ function mtgSelectionsPage() {
   hideHomeFeatures();
   show([mtgSelections, whoWon]);
   hide([changeFormatBtn]);
-  setTimeout(function() {mtgGamePage()}, 2000);
+  setTimeout(function() {mtgGamePage()}, 1200);
 }
 
 // SHOW & HIDE HELPER FUNCTIONS
