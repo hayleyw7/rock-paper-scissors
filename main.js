@@ -53,15 +53,15 @@ var computerScore = document.querySelector("#computerScore");
 ///////////////////////////////////////////
 
 if (localStorage.humanWins === undefined) {
-  localStorage.humanWins = 0;
+ localStorage.humanWins = 0;
 } else {
-  humanScore.innerText = game.human.retrieveHumanWinsFromStorage();
+ humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
 }
-
+ 
 if (localStorage.computerWins === undefined) {
-  localStorage.computerWins = 0;
+ localStorage.computerWins = 0;
 } else {
-  computerScore.innerText = game.computer.retrieveComputerWinsFromStorage();
+ computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
 }
 
 ///////////////////////////////////////////
