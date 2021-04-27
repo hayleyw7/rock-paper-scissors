@@ -47,15 +47,15 @@ class Game {
         <img class="rps-image-selection" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
       `
 
-      if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors") ) {
+      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
+        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
+        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
 
         this.tieAlert();
 
-      } else if ( (mtgCompChoice === "paper" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors") ) {
+      } else if ( (rpsCompChoice === "paper" && rpsHumanChoice === "rock")
+        || (rpsCompChoice === "scissors" && rpsHumanChoice === "paper")
+        || (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") ) {
 
         this.loseAlert();
 
