@@ -1,11 +1,5 @@
 ///////////////////////////////////////////
-/////////////// INSTANCES /////////////////
-///////////////////////////////////////////
-
-var game = new Game();
-
-///////////////////////////////////////////
-//////////// QUERY SELECTORS //////////////
+///////////// QUERY SELECTORS /////////////
 ///////////////////////////////////////////
 
 // HEADINGS
@@ -49,20 +43,11 @@ var humanScore = document.querySelector("#humanScore");
 var computerScore = document.querySelector("#computerScore");
 
 ///////////////////////////////////////////
-/////////// UPDATE LOCALSTORAGE ///////////
+/////////////// GAME SETUP ////////////////
 ///////////////////////////////////////////
 
-if (localStorage.humanWins === undefined) {
- localStorage.humanWins = 0;
-} else {
- humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
-}
- 
-if (localStorage.computerWins === undefined) {
- localStorage.computerWins = 0;
-} else {
- computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
-}
+var game = new Game();
+initializeLocalStorage();
 
 ///////////////////////////////////////////
 ///////////// EVENT LISTENERS /////////////
@@ -71,7 +56,7 @@ if (localStorage.computerWins === undefined) {
 // BUTTONS
 
 changeFormatBtn.addEventListener("click", showHomePage);
-startOverBtn.addEventListener("click", game.startOver);
+startOverBtn.addEventListener("click", startOverListener);
 rpsBtn.addEventListener("click", rpsGamePage);
 mtgBtn.addEventListener("click", mtgGamePage);
 
@@ -234,4 +219,24 @@ function show(elements) {
     element = elements[i];
     element.classList.remove("hidden");
   }
+}
+
+// LOCAL STORAGE MGMT
+
+function initializeLocalStorage() {
+  if (localStorage.humanWins === undefined) {
+  localStorage.humanWins = 0;
+  } else {
+  humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
+  }
+  
+  if (localStorage.computerWins === undefined) {
+  localStorage.computerWins = 0;
+  } else {
+  computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
+  }
+}
+
+function startOverListener() {
+  game.startOver();
 }
