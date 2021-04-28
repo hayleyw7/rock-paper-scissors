@@ -14,13 +14,15 @@ https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html
 
 * The "Change Format" button is hidden when the human and computer selections are shown. Then, it displays again when the user is choosing their artifact or spell.
 
-### Added feature
+### Extra feature
 
 * The user now has a "Start Over" button, which is explained below in more detail.
 
 ## Reflections
 
-A great challenge for this project was learning how to get the DOM and the data model to work smoothly together. However, once it happened, seeing the site functioning was a big win. This project serves as an important stepping point.
+A great challenge for this project was learning how to get the DOM and the data model to work smoothly together. However, once it happened, seeing the site functioning was a big win.
+
+Getting the CSS to match both the rubric and personal design goals was also a learning experience, but the project made for a great creative outlet.
 
 ## Languages
 
