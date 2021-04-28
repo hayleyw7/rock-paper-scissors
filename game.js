@@ -145,6 +145,26 @@ class Game {
     }
   }
 
+// LOCAL STORAGE
+
+// initiate
+
+  initializeLocalStorage() {
+    if (localStorage.humanWins === undefined) {
+      localStorage.humanWins = 0;
+    } else {
+      humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
+    }
+    
+    if (localStorage.computerWins === undefined) {
+      localStorage.computerWins = 0;
+    } else {
+      computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
+    }
+  }
+
+// start over
+
   startOver() {
     computerScore.innerText = `0`;
     humanScore.innerText = `0`;
@@ -153,4 +173,3 @@ class Game {
     localStorage.clear();
   }
 }
-
