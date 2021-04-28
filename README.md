@@ -2,15 +2,25 @@
 
 This is an application that allows a user to play Rock Paper Scissors against a computer. The user selects format, either Standard RPS, with 3 choices, or Magic: The Gathering RPS, with 5 choices. The app keeps track of all time score between the user, known as a "planewalker", and the computer, know as a "construct".
 
-## Motivation & Rubric
+## Motivation and rubric
 
 This project was completed as a final project at Turing School of Software & Design in order to pass Module 1.
 
 https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html
 
-I mostly wanted to match the rubric, but I thought that the "Change Format" button makes more sense on the middle of the page with the other buttons instead of inside the left score column. Also, I hid the button when the human and computer selections are shown, and then it displays again when the user is choosing their artifact or spell.
+### Changed features
+
+* The "Change Format" button felt more intuitively located in the middle of the page with the other buttons, instead of inside the left score column.
+
+* The "Change Format" button is hidden when the human and computer selections are shown. Then, it displays again when the user is choosing their artifact or spell.
+
+### Added feature
+
+* The user now has a "Start Over" button, which is explained below in more detail.
 
 ## Reflections
+
+A great challenge for this project was learning how to get the DOM and the data model to work smoothly together. However, once it happened, seeing the site functioning was the biggest win I could imagine.
 
 ## Languages
 
