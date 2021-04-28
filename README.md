@@ -48,7 +48,7 @@ If the user selects "Standard", they are presented with 3 images: rock, paper, a
 
 If the user selects "Magic: The Gathering", they are presented with 5 images: rock, paper, scissors, lizard, alien. When they click one, it works just as in the previous game, except for five MTG choices instead of three RPS choices.
 
-If at any point a user wants to clear store to 0-0, they can click "Start Over" on the home page.
+If at any point a user wants to clear the score to 0-0, they can click "Start Over" on the home page.
 
 ## Screenshots
 
