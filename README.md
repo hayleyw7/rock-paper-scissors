@@ -20,7 +20,7 @@ https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html
 
 ## Reflections
 
-A great challenge for this project was learning how to get the DOM and the data model to work smoothly together. However, once it happened, seeing the site functioning was the biggest win I could imagine.
+A great challenge for this project was learning how to get the DOM and the data model to work smoothly together. However, once it happened, seeing the site functioning was a big win. This project serves as an important stepping point.
 
 ## Languages
 
