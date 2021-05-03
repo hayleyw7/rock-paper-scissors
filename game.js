@@ -79,11 +79,7 @@ class Game {
         <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
       `
 
-      if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "alien") ) {
+      if ( (mtgCompChoice === mtgHumanChoice)) {
 
         this.tieAlert();
 
