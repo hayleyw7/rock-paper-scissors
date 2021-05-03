@@ -19,7 +19,7 @@ class Game {
 
   getRandomIndex(array) {
     return Math.floor(Math.random()*array.length);
-  };
+  }
 
   getRandomChoice() {
     if (this.type === "rps") {
