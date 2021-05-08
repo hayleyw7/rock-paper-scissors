@@ -215,17 +215,10 @@ function hide(elements) {
 }
 
 function show(elements) {
-  for (var i = 0; i < elements.length; i++) {
-    element = elements[i];
+  elements.forEach(element => {
     element.classList.remove("hidden");
-  }
+  });
 }
-
-// function show(elements) {
-//   elements.forEach(function()) {
-//     element = elements[i];
-//     element.classList.remove("hidden");
-// }
 
 // LOCAL STORAGE MGMT
 
