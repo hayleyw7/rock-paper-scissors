@@ -27,6 +27,7 @@ class Game {
       case "rps":
         let randomRpsChoice = this.getRandomIndex(rpsChoices);
         return rpsChoices[randomRpsChoice];
+        break;
       default:
         let randomMtgChoice = this.getRandomIndex(mtgChoices);
         return mtgChoices[randomMtgChoice];
@@ -39,73 +40,69 @@ class Game {
 
 // rps winner
 
-    if (this.type === "rps") {
+    const typey = this.type;
+    switch (typey) {
+      case "rps":
+        let rpsCompChoice = this.getRandomChoice();
+        let rpsHumanChoice = choice;
 
-      let rpsCompChoice = this.getRandomChoice();
-      let rpsHumanChoice = choice;
+        rpsSelections.innerHTML = `
+          <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
+          <img class="rps-image-selection" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
+        `
 
-      rpsSelections.innerHTML = `
-        <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
-        <img class="rps-image-selection" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
-      `
+        if (rpsCompChoice === rpsHumanChoice) {          
 
-      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
+          this.tieAlert();
 
-}
-      if (rpsCompChoice === rpsHumanChoice) {          
+        } else if ( (rpsCompChoice === "paper" && rpsHumanChoice === "rock")
+          || (rpsCompChoice === "scissors" && rpsHumanChoice === "paper")
+          || (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") ) {
 
-        this.tieAlert();
+          this.loseAlert();
 
-      } else if ( (rpsCompChoice === "paper" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") ) {
+        } else {
 
-        this.loseAlert();
-
-      } else {
-
-        this.winAlert();
-      }
-
-    } else {
-
+          this.winAlert();
+        }
+        break;
+        
 // mtg winner
 
-      computerScore.innerText = this.computer.wins;
-      humanScore.innerText = this.human.wins;
+      default:
+        computerScore.innerText = this.computer.wins;
+        humanScore.innerText = this.human.wins;
 
-      let mtgCompChoice = this.getRandomChoice();
-      let mtgHumanChoice = choice;
+        let mtgCompChoice = this.getRandomChoice();
+        let mtgHumanChoice = choice;
 
-      mtgSelections.innerHTML = `
-        <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
-        <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
-      `
+        mtgSelections.innerHTML = `
+          <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
+          <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
+        `
 
-      if ( (mtgCompChoice === mtgHumanChoice)) {
+        if (mtgCompChoice === mtgHumanChoice) {
 
-        this.tieAlert();
+          this.tieAlert();
 
-      } else if ( (mtgCompChoice === "rock" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "alien")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "alien")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") ) {
+        } else if ( (mtgCompChoice === "rock" && mtgHumanChoice === "lizard")
+          || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
+          || (mtgCompChoice === "paper" && mtgHumanChoice === "scissors")
+          || (mtgCompChoice === "paper" && mtgHumanChoice === "alien")
+          || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
+          || (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard")
+          || (mtgCompChoice === "lizard" && mtgHumanChoice === "paper")
+          || (mtgCompChoice === "lizard" && mtgHumanChoice === "alien")
+          || (mtgCompChoice === "alien" && mtgHumanChoice === "rock")
+          || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") ) {
 
-        this.loseAlert();
+          this.loseAlert();
 
-      } else {
+        } else {
 
-        this.winAlert();
+          this.winAlert();
 
-      }
+        }
     }
   }
 
