@@ -52,9 +52,7 @@ class Game {
         || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
 
 }
-      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {          
+      if (rpsCompChoice === rpsHumanChoice) {          
 
         this.tieAlert();
 
