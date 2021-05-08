@@ -23,10 +23,10 @@ class Game {
 
   getRandomChoice() {
     if (this.type === "rps") {
-      var randomRpsChoice = this.getRandomIndex(rpsChoices);
+      let randomRpsChoice = this.getRandomIndex(rpsChoices);
       return rpsChoices[randomRpsChoice];
     } else {
-      var randomMtgChoice = this.getRandomIndex(mtgChoices);
+      let randomMtgChoice = this.getRandomIndex(mtgChoices);
       return mtgChoices[randomMtgChoice];
     }
   }
@@ -39,8 +39,8 @@ class Game {
 
     if (this.type === "rps") {
 
-      var rpsCompChoice = this.getRandomChoice();
-      var rpsHumanChoice = choice;
+      let rpsCompChoice = this.getRandomChoice();
+      let rpsHumanChoice = choice;
 
       rpsSelections.innerHTML = `
         <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
@@ -76,8 +76,8 @@ class Game {
       computerScore.innerText = this.computer.wins;
       humanScore.innerText = this.human.wins;
 
-      var mtgCompChoice = this.getRandomChoice();
-      var mtgHumanChoice = choice;
+      let mtgCompChoice = this.getRandomChoice();
+      let mtgHumanChoice = choice;
 
       mtgSelections.innerHTML = `
         <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
@@ -128,7 +128,7 @@ class Game {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker Defeated";
-    var typey = this.type;
+    const typey = this.type;
     switch (typey) {
       case "rps":
         rpsSelectionsPage();
