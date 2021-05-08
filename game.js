@@ -1,18 +1,18 @@
 class Game {
   constructor() {
-    this.human = new Player({ name: "Human", token: "💀" });
-    this.computer = new Player({ name: "Computer", token: "🤖" });
-    this.type = "";
+    this.human = new Player({ name: 'Human', token: '💀' });
+    this.computer = new Player({ name: 'Computer', token: '🤖' });
+    this.type = '';
   }
 
 // PLAY GAME
 
   playRps() {
-    this.type = "rps";
+    this.type = 'rps';
   }
 
   playMtg() {
-    this.type = "mtg";
+    this.type = 'mtg';
   }
 
 // RANDOMIZERS
@@ -22,13 +22,16 @@ class Game {
   }
 
   getRandomChoice() {
-    if (this.type === "rps") {
-      let randomRpsChoice = this.getRandomIndex(rpsChoices);
-      return rpsChoices[randomRpsChoice];
-    } else {
-      let randomMtgChoice = this.getRandomIndex(mtgChoices);
-      return mtgChoices[randomMtgChoice];
-    }
+    const typey = this.type;
+    switch (typey) {
+      case 'rps':
+        let randomRpsChoice = this.getRandomIndex(rpsChoices);
+        return rpsChoices[randomRpsChoice];
+        break;
+      default:
+        let randomMtgChoice = this.getRandomIndex(mtgChoices);
+        return mtgChoices[randomMtgChoice];
+    }  
   }
 
 // WHO WON?
@@ -37,75 +40,69 @@ class Game {
 
 // rps winner
 
-    if (this.type === "rps") {
+    const typey = this.type;
+    switch (typey) {
+      case 'rps':
+        let rpsCompChoice = this.getRandomChoice();
+        let rpsHumanChoice = choice;
 
-      let rpsCompChoice = this.getRandomChoice();
-      let rpsHumanChoice = choice;
+        rpsSelections.innerHTML = `
+          <img class='rps-image-selection' src='assets/rps-${rpsHumanChoice}.png' alt='${rpsHumanChoice}'>
+          <img class='rps-image-selection' src='assets/rps-${rpsCompChoice}.png' alt='${rpsCompChoice}'>
+        `
 
-      rpsSelections.innerHTML = `
-        <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
-        <img class="rps-image-selection" src="assets/rps-${rpsCompChoice}.png" alt="${rpsCompChoice}">
-      `
+        if (rpsCompChoice === rpsHumanChoice) {          
 
-      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
+          this.tieAlert();
 
-}
-      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {          
+        } else if ( (rpsCompChoice === 'paper' && rpsHumanChoice === 'rock')
+          || (rpsCompChoice === 'scissors' && rpsHumanChoice === 'paper')
+          || (rpsCompChoice === 'rock' && rpsHumanChoice === 'scissors') ) {
 
-        this.tieAlert();
+          this.loseAlert();
 
-      } else if ( (rpsCompChoice === "paper" && rpsHumanChoice === "rock")
-        || (rpsCompChoice === "scissors" && rpsHumanChoice === "paper")
-        || (rpsCompChoice === "rock" && rpsHumanChoice === "scissors") ) {
+        } else {
 
-        this.loseAlert();
-
-      } else {
-
-        this.winAlert();
-      }
-
-    } else {
+          this.winAlert();
+        }
+        break;
 
 // mtg winner
 
-      computerScore.innerText = this.computer.wins;
-      humanScore.innerText = this.human.wins;
+      default:
+        computerScore.innerText = this.computer.wins;
+        humanScore.innerText = this.human.wins;
 
-      let mtgCompChoice = this.getRandomChoice();
-      let mtgHumanChoice = choice;
+        let mtgCompChoice = this.getRandomChoice();
+        let mtgHumanChoice = choice;
 
-      mtgSelections.innerHTML = `
-        <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
-        <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
-      `
+        mtgSelections.innerHTML = `
+          <img class='mtg-image-selection' src='assets/mtg-${mtgHumanChoice}.jpeg' alt='${mtgHumanChoice}'>
+          <img class='mtg-image-selection' src='assets/mtg-${mtgCompChoice}.jpeg' alt='${mtgCompChoice}'>
+        `
 
-      if ( (mtgCompChoice === mtgHumanChoice)) {
+        if (mtgCompChoice === mtgHumanChoice) {
 
-        this.tieAlert();
+          this.tieAlert();
 
-      } else if ( (mtgCompChoice === "rock" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "rock" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "alien")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "alien")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "scissors") ) {
+        } else if ( (mtgCompChoice === 'rock' && mtgHumanChoice === 'lizard')
+          || (mtgCompChoice === 'rock' && mtgHumanChoice === 'scissors')
+          || (mtgCompChoice === 'paper' && mtgHumanChoice === 'scissors')
+          || (mtgCompChoice === 'paper' && mtgHumanChoice === 'alien')
+          || (mtgCompChoice === 'scissors' && mtgHumanChoice === 'paper')
+          || (mtgCompChoice === 'scissors' && mtgHumanChoice === 'lizard')
+          || (mtgCompChoice === 'lizard' && mtgHumanChoice === 'paper')
+          || (mtgCompChoice === 'lizard' && mtgHumanChoice === 'alien')
+          || (mtgCompChoice === 'alien' && mtgHumanChoice === 'rock')
+          || (mtgCompChoice === 'alien' && mtgHumanChoice === 'scissors') ) {
 
-        this.loseAlert();
+          this.loseAlert();
 
-      } else {
+        } else {
 
-        this.winAlert();
+          this.winAlert();
 
-      }
+        }
     }
   }
 
@@ -114,7 +111,7 @@ class Game {
   returnToSelectionScreen() {
     const typey = this.type;
     switch (typey) {
-      case "rps":
+      case 'rps':
         rpsSelectionsPage();
         break;
       default:
@@ -128,7 +125,7 @@ class Game {
     this.human.wins++;
     humanScore.innerText = this.human.wins;
     this.returnToSelectionScreen();
-    whoWon.innerText = "Construct Defeated";
+    whoWon.innerText = 'Construct Defeated';
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
@@ -136,14 +133,14 @@ class Game {
   loseAlert() {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
-    whoWon.innerText = "Planeswalker Defeated";
+    whoWon.innerText = 'Planeswalker Defeated';
     this.returnToSelectionScreen();
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
 
   tieAlert() {
-    whoWon.innerText = "Evenly Matched";
+    whoWon.innerText = 'Evenly Matched';
     this.returnToSelectionScreen();
   }
 
@@ -152,18 +149,23 @@ class Game {
 // initiate
 
   initializeLocalStorage() {
-    if (localStorage.humanWins === undefined) {
-      localStorage.humanWins = 0;
-    } else {
-      humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
-    }
-    
-    if (localStorage.computerWins === undefined) {
+    const humanWinsStorage = localStorage.humanWins;
+    const computerWinsStorage = localStorage.computerWins;
+    switch (humanWinsStorage) {
+      case undefined:
+        localStorage.humanWins = 0;
+        break;
+      default:
+        humanScore.innerText = game.human.retrieveWinsFromStorage('humanWins');
+    }  
+    switch (computerWinsStorage) {
+      case undefined:
       localStorage.computerWins = 0;
-    } else {
-      computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
+        break;
+      default:
+      computerScore.innerText = game.computer.retrieveWinsFromStorage('computerWins');
     }
-  }
+  } 
 
 // start over
 

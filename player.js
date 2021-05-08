@@ -8,10 +8,10 @@ class Player {
   saveWinsToStorage() {
     let humanWinsToStorage = game.human.wins;
     let computerWinsToStorage = game.computer.wins;
-    localStorage.setItem("humanWins", JSON.stringify(humanWinsToStorage));
-    localStorage.setItem("computerWins", JSON.stringify(computerWinsToStorage));
-    localStorage.setItem("humanWins", humanWinsToStorage);
-    localStorage.setItem("computerWins", computerWinsToStorage);
+    localStorage.setItem('humanWins', JSON.stringify(humanWinsToStorage));
+    localStorage.setItem('computerWins', JSON.stringify(computerWinsToStorage));
+    localStorage.setItem('humanWins', humanWinsToStorage);
+    localStorage.setItem('computerWins', computerWinsToStorage);
   }
 
   retrieveWinsFromStorage(playerWins) {
