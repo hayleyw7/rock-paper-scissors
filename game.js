@@ -51,6 +51,11 @@ class Game {
         || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
         || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
 
+}
+      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
+        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
+        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {          
+
         this.tieAlert();
 
       } else if ( (rpsCompChoice === "paper" && rpsHumanChoice === "rock")
@@ -123,10 +128,13 @@ class Game {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker Defeated";
-    if (this.type === "rps") {
-      rpsSelectionsPage();
-    } else {
-      mtgSelectionsPage();
+    var typey = this.type;
+    switch (typey) {
+      case "rps":
+        rpsSelectionsPage();
+        break;
+      default:
+        mtgSelectionsPage();
     }
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
