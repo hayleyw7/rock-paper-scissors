@@ -221,6 +221,12 @@ function show(elements) {
   }
 }
 
+// function show(elements) {
+//   elements.forEach(function()) {
+//     element = elements[i];
+//     element.classList.remove("hidden");
+// }
+
 // LOCAL STORAGE MGMT
 
 function startOverListener() {
