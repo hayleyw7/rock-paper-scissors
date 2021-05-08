@@ -208,10 +208,9 @@ function mtgSelectionsPage() {
 // SHOW & HIDE HELPER FUNCTIONS
 
 function hide(elements) {
-  for (let i = 0; i < elements.length; i++) {
-    element = elements[i];
+  elements.forEach(element => {
     element.classList.add("hidden");
-  }
+  });
 }
 
 function show(elements) {
