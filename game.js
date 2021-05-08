@@ -66,7 +66,7 @@ class Game {
           this.winAlert();
         }
         break;
-        
+
 // mtg winner
 
       default:
@@ -149,18 +149,23 @@ class Game {
 // initiate
 
   initializeLocalStorage() {
-    if (localStorage.humanWins === undefined) {
-      localStorage.humanWins = 0;
-    } else {
-      humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
-    }
-    
-    if (localStorage.computerWins === undefined) {
+    const humanWinsStorage = localStorage.humanWins;
+    const computerWinsStorage = localStorage.computerWins;
+    switch (humanWinsStorage) {
+      case undefined:
+        localStorage.humanWins = 0;
+        break;
+      default:
+        humanScore.innerText = game.human.retrieveWinsFromStorage("humanWins");
+    }  
+    switch (computerWinsStorage) {
+      case undefined:
       localStorage.computerWins = 0;
-    } else {
+        break;
+      default:
       computerScore.innerText = game.computer.retrieveWinsFromStorage("computerWins");
     }
-  }
+  } 
 
 // start over
 
