@@ -4,49 +4,49 @@
 
 // HEADINGS
 
-var chooseFormatHeading = document.querySelector("#chooseFormatHeading");
-var mtgHeading = document.querySelector("#mtgHeading");
-var rpsHeading = document.querySelector("#rpsHeading");
-var whoWon = document.querySelector("#whoWon");
+const chooseFormatHeading = document.querySelector("#chooseFormatHeading");
+const mtgHeading = document.querySelector("#mtgHeading");
+const rpsHeading = document.querySelector("#rpsHeading");
+const whoWon = document.querySelector("#whoWon");
 
 // IMAGES
 
 // rps images
 
-var rpsImgRock = document.querySelector("#rpsImgRock");
-var rpsImgPaper = document.querySelector("#rpsImgPaper");
-var rpsImgScissors = document.querySelector("#rpsImgScissors");
+const rpsImgRock = document.querySelector("#rpsImgRock");
+const rpsImgPaper = document.querySelector("#rpsImgPaper");
+const rpsImgScissors = document.querySelector("#rpsImgScissors");
 
 // mtg images
 
-var mtgImgRock = document.querySelector("#mtgImgRock");
-var mtgImgPaper = document.querySelector("#mtgImgPaper");
-var mtgImgScissors = document.querySelector("#mtgImgScissors");
-var mtgImgLizard = document.querySelector("#mtgImgLizard");
-var mtgImgAlien = document.querySelector("#mtgImgAlien");
+const mtgImgRock = document.querySelector("#mtgImgRock");
+const mtgImgPaper = document.querySelector("#mtgImgPaper");
+const mtgImgScissors = document.querySelector("#mtgImgScissors");
+const mtgImgLizard = document.querySelector("#mtgImgLizard");
+const mtgImgAlien = document.querySelector("#mtgImgAlien");
 
 // BUTTONS
 
-var changeFormatBtn = document.querySelector("#changeFormatBtn");
-var startOverBtn = document.querySelector("#startOverBtn")
-var rpsBtn = document.querySelector("#rpsBtn");
-var mtgBtn = document.querySelector("#mtgBtn");
+const changeFormatBtn = document.querySelector("#changeFormatBtn");
+const startOverBtn = document.querySelector("#startOverBtn")
+const rpsBtn = document.querySelector("#rpsBtn");
+const mtgBtn = document.querySelector("#mtgBtn");
 
 // SELECTIONS
 
-var rpsSelections = document.querySelector("#rpsSelections");
-var mtgSelections = document.querySelector("#mtgSelections");
+const rpsSelections = document.querySelector("#rpsSelections");
+const mtgSelections = document.querySelector("#mtgSelections");
 
 // SCORES
 
-var humanScore = document.querySelector("#humanScore");
-var computerScore = document.querySelector("#computerScore");
+const humanScore = document.querySelector("#humanScore");
+const computerScore = document.querySelector("#computerScore");
 
 ///////////////////////////////////////////
 /////////////// GAME SETUP ////////////////
 ///////////////////////////////////////////
 
-var game = new Game();
+let game = new Game();
 game.initializeLocalStorage();
 
 ///////////////////////////////////////////
@@ -208,17 +208,16 @@ function mtgSelectionsPage() {
 // SHOW & HIDE HELPER FUNCTIONS
 
 function hide(elements) {
-  for (var i = 0; i < elements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     element = elements[i];
     element.classList.add("hidden");
   }
 }
 
 function show(elements) {
-  for (var i = 0; i < elements.length; i++) {
-    element = elements[i];
+  elements.forEach(element => {
     element.classList.remove("hidden");
-  }
+  });
 }
 
 // LOCAL STORAGE MGMT

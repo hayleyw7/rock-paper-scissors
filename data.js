@@ -1,2 +1,2 @@
-var rpsChoices = ["rock", "paper", "scissors"];
-var mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];
+const rpsChoices = ["rock", "paper", "scissors"];
+const mtgChoices = ["rock", "paper", "scissors", "lizard", "alien"];

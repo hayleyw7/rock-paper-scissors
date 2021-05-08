@@ -23,10 +23,10 @@ class Game {
 
   getRandomChoice() {
     if (this.type === "rps") {
-      var randomRpsChoice = this.getRandomIndex(rpsChoices);
+      let randomRpsChoice = this.getRandomIndex(rpsChoices);
       return rpsChoices[randomRpsChoice];
     } else {
-      var randomMtgChoice = this.getRandomIndex(mtgChoices);
+      let randomMtgChoice = this.getRandomIndex(mtgChoices);
       return mtgChoices[randomMtgChoice];
     }
   }
@@ -39,8 +39,8 @@ class Game {
 
     if (this.type === "rps") {
 
-      var rpsCompChoice = this.getRandomChoice();
-      var rpsHumanChoice = choice;
+      let rpsCompChoice = this.getRandomChoice();
+      let rpsHumanChoice = choice;
 
       rpsSelections.innerHTML = `
         <img class="rps-image-selection" src="assets/rps-${rpsHumanChoice}.png" alt="${rpsHumanChoice}">
@@ -50,6 +50,11 @@ class Game {
       if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
         || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
         || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {
+
+}
+      if ( (rpsCompChoice === "rock" && rpsHumanChoice === "rock")
+        || (rpsCompChoice === "paper" && rpsHumanChoice === "paper")
+        || (rpsCompChoice === "scissors" && rpsHumanChoice === "scissors") ) {          
 
         this.tieAlert();
 
@@ -71,19 +76,15 @@ class Game {
       computerScore.innerText = this.computer.wins;
       humanScore.innerText = this.human.wins;
 
-      var mtgCompChoice = this.getRandomChoice();
-      var mtgHumanChoice = choice;
+      let mtgCompChoice = this.getRandomChoice();
+      let mtgHumanChoice = choice;
 
       mtgSelections.innerHTML = `
         <img class="mtg-image-selection" src="assets/mtg-${mtgHumanChoice}.jpeg" alt="${mtgHumanChoice}">
         <img class="mtg-image-selection" src="assets/mtg-${mtgCompChoice}.jpeg" alt="${mtgCompChoice}">
       `
 
-      if ( (mtgCompChoice === "rock" && mtgHumanChoice === "rock")
-        || (mtgCompChoice === "paper" && mtgHumanChoice === "paper")
-        || (mtgCompChoice === "scissors" && mtgHumanChoice === "scissors")
-        || (mtgCompChoice === "lizard" && mtgHumanChoice === "lizard")
-        || (mtgCompChoice === "alien" && mtgHumanChoice === "alien") ) {
+      if ( (mtgCompChoice === mtgHumanChoice)) {
 
         this.tieAlert();
 
@@ -127,10 +128,13 @@ class Game {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker Defeated";
-    if (this.type === "rps") {
-      rpsSelectionsPage();
-    } else {
-      mtgSelectionsPage();
+    const typey = this.type;
+    switch (typey) {
+      case "rps":
+        rpsSelectionsPage();
+        break;
+      default:
+        mtgSelectionsPage();
     }
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
