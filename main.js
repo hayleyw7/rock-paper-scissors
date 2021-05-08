@@ -4,43 +4,43 @@
 
 // HEADINGS
 
-const chooseFormatHeading = document.querySelector("#chooseFormatHeading");
-const mtgHeading = document.querySelector("#mtgHeading");
-const rpsHeading = document.querySelector("#rpsHeading");
-const whoWon = document.querySelector("#whoWon");
+const chooseFormatHeading = document.querySelector('#chooseFormatHeading');
+const mtgHeading = document.querySelector('#mtgHeading');
+const rpsHeading = document.querySelector('#rpsHeading');
+const whoWon = document.querySelector('#whoWon');
 
 // IMAGES
 
 // rps images
 
-const rpsImgRock = document.querySelector("#rpsImgRock");
-const rpsImgPaper = document.querySelector("#rpsImgPaper");
-const rpsImgScissors = document.querySelector("#rpsImgScissors");
+const rpsImgRock = document.querySelector('#rpsImgRock');
+const rpsImgPaper = document.querySelector('#rpsImgPaper');
+const rpsImgScissors = document.querySelector('#rpsImgScissors');
 
 // mtg images
 
-const mtgImgRock = document.querySelector("#mtgImgRock");
-const mtgImgPaper = document.querySelector("#mtgImgPaper");
-const mtgImgScissors = document.querySelector("#mtgImgScissors");
-const mtgImgLizard = document.querySelector("#mtgImgLizard");
-const mtgImgAlien = document.querySelector("#mtgImgAlien");
+const mtgImgRock = document.querySelector('#mtgImgRock');
+const mtgImgPaper = document.querySelector('#mtgImgPaper');
+const mtgImgScissors = document.querySelector('#mtgImgScissors');
+const mtgImgLizard = document.querySelector('#mtgImgLizard');
+const mtgImgAlien = document.querySelector('#mtgImgAlien');
 
 // BUTTONS
 
-const changeFormatBtn = document.querySelector("#changeFormatBtn");
-const startOverBtn = document.querySelector("#startOverBtn")
-const rpsBtn = document.querySelector("#rpsBtn");
-const mtgBtn = document.querySelector("#mtgBtn");
+const changeFormatBtn = document.querySelector('#changeFormatBtn');
+const startOverBtn = document.querySelector('#startOverBtn')
+const rpsBtn = document.querySelector('#rpsBtn');
+const mtgBtn = document.querySelector('#mtgBtn');
 
 // SELECTIONS
 
-const rpsSelections = document.querySelector("#rpsSelections");
-const mtgSelections = document.querySelector("#mtgSelections");
+const rpsSelections = document.querySelector('#rpsSelections');
+const mtgSelections = document.querySelector('#mtgSelections');
 
 // SCORES
 
-const humanScore = document.querySelector("#humanScore");
-const computerScore = document.querySelector("#computerScore");
+const humanScore = document.querySelector('#humanScore');
+const computerScore = document.querySelector('#computerScore');
 
 ///////////////////////////////////////////
 /////////////// GAME SETUP ////////////////
@@ -55,26 +55,26 @@ game.initializeLocalStorage();
 
 // BUTTONS
 
-changeFormatBtn.addEventListener("click", showHomePage);
-startOverBtn.addEventListener("click", startOverListener);
-rpsBtn.addEventListener("click", rpsGamePage);
-mtgBtn.addEventListener("click", mtgGamePage);
+changeFormatBtn.addEventListener('click', showHomePage);
+startOverBtn.addEventListener('click', startOverListener);
+rpsBtn.addEventListener('click', rpsGamePage);
+mtgBtn.addEventListener('click', mtgGamePage);
 
 // IMAGES
 
 // rps images
 
-rpsImgRock.addEventListener("click", rpsHumanChoiceRock);
-rpsImgPaper.addEventListener("click", rpsHumanChoicePaper);
-rpsImgScissors.addEventListener("click", rpsHumanChoiceScissors);
+rpsImgRock.addEventListener('click', rpsHumanChoiceRock);
+rpsImgPaper.addEventListener('click', rpsHumanChoicePaper);
+rpsImgScissors.addEventListener('click', rpsHumanChoiceScissors);
 
 // mtg images
 
-mtgImgRock.addEventListener("click", mtgHumanChoiceRock);
-mtgImgScissors.addEventListener("click", mtgHumanChoiceScissors);
-mtgImgPaper.addEventListener("click", mtgHumanChoicePaper);
-mtgImgLizard.addEventListener("click", mtgHumanChoiceLizard);
-mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
+mtgImgRock.addEventListener('click', mtgHumanChoiceRock);
+mtgImgScissors.addEventListener('click', mtgHumanChoiceScissors);
+mtgImgPaper.addEventListener('click', mtgHumanChoicePaper);
+mtgImgLizard.addEventListener('click', mtgHumanChoiceLizard);
+mtgImgAlien.addEventListener('click', mtgHumanChoiceAlien);
 
 /////////////////////////////////////////
 ////////////// FUNCTIONS ////////////////
@@ -85,37 +85,37 @@ mtgImgAlien.addEventListener("click", mtgHumanChoiceAlien);
 // RPS HUMAN SELECTIONS
 
 function rpsHumanChoiceRock() {
-  game.determineWinner("rock");
+  game.determineWinner('rock');
 }
 
 function rpsHumanChoicePaper() {
-  game.determineWinner("paper");
+  game.determineWinner('paper');
 }
 
 function rpsHumanChoiceScissors() {
-  game.determineWinner("scissors");
+  game.determineWinner('scissors');
 }
 
 // MTG HUMAN SELECTIONS
 
 function mtgHumanChoiceRock() {
-  game.determineWinner("rock");
+  game.determineWinner('rock');
 }
 
 function mtgHumanChoicePaper() {
-  game.determineWinner("paper");
+  game.determineWinner('paper');
 }
 
 function mtgHumanChoiceScissors() {
-  game.determineWinner("scissors");
+  game.determineWinner('scissors');
 }
 
 function mtgHumanChoiceLizard() {
-  game.determineWinner("lizard");
+  game.determineWinner('lizard');
 }
 
 function mtgHumanChoiceAlien() {
-  game.determineWinner("alien");
+  game.determineWinner('alien');
 }
 
 ///// HIDE & SHOW ELEMENTS ////
@@ -209,13 +209,13 @@ function mtgSelectionsPage() {
 
 function hide(elements) {
   elements.forEach(element => {
-    element.classList.add("hidden");
+    element.classList.add('hidden');
   });
 }
 
 function show(elements) {
   elements.forEach(element => {
-    element.classList.remove("hidden");
+    element.classList.remove('hidden');
   });
 }
 
