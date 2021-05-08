@@ -109,16 +109,25 @@ class Game {
     }
   }
 
+  // RETURN TO SELECTION SCREEN
+
+  returnToSelectionScreen() {
+    const typey = this.type;
+    switch (typey) {
+      case "rps":
+        rpsSelectionsPage();
+        break;
+      default:
+        mtgSelectionsPage();
+    }  
+  }
+
   // TIE/WIN/LOSE ALERTS
 
   winAlert() {
     this.human.wins++;
     humanScore.innerText = this.human.wins;
-    if (this.type === "rps") {
-      rpsSelectionsPage();
-    } else {
-      mtgSelectionsPage();
-    }
+    this.returnToSelectionScreen();
     whoWon.innerText = "Construct Defeated";
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
@@ -128,25 +137,14 @@ class Game {
     this.computer.wins++;
     computerScore.innerText = this.computer.wins;
     whoWon.innerText = "Planeswalker Defeated";
-    const typey = this.type;
-    switch (typey) {
-      case "rps":
-        rpsSelectionsPage();
-        break;
-      default:
-        mtgSelectionsPage();
-    }
+    this.returnToSelectionScreen();
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
   }
 
   tieAlert() {
     whoWon.innerText = "Evenly Matched";
-    if (this.type === "rps") {
-      rpsSelectionsPage();
-    } else {
-      mtgSelectionsPage();
-    }
+    this.returnToSelectionScreen();
   }
 
 // LOCAL STORAGE
