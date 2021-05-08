@@ -22,13 +22,15 @@ class Game {
   }
 
   getRandomChoice() {
-    if (this.type === "rps") {
-      let randomRpsChoice = this.getRandomIndex(rpsChoices);
-      return rpsChoices[randomRpsChoice];
-    } else {
-      let randomMtgChoice = this.getRandomIndex(mtgChoices);
-      return mtgChoices[randomMtgChoice];
-    }
+    const typey = this.type;
+    switch (typey) {
+      case "rps":
+        let randomRpsChoice = this.getRandomIndex(rpsChoices);
+        return rpsChoices[randomRpsChoice];
+      default:
+        let randomMtgChoice = this.getRandomIndex(mtgChoices);
+        return mtgChoices[randomMtgChoice];
+    }  
   }
 
 // WHO WON?
