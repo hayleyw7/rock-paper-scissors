@@ -1,6 +1,11 @@
-///////////////////////////////////////////
-///////////// QUERY SELECTORS /////////////
-///////////////////////////////////////////
+// ***** REQUIREMENTS *****
+
+// const assert = require('chai').assert;
+// const gameReq = require('game.js');
+// const playerReq = require('player.js');
+// const dataReq = require('data.js');
+
+// ***** QUERY SELECTORS *****
 
 // HEADINGS
 
@@ -28,7 +33,7 @@ const mtgImgAlien = document.querySelector('#mtgImgAlien');
 // BUTTONS
 
 const changeFormatBtn = document.querySelector('#changeFormatBtn');
-const startOverBtn = document.querySelector('#startOverBtn')
+const startOverBtn = document.querySelector('#startOverBtn');
 const rpsBtn = document.querySelector('#rpsBtn');
 const mtgBtn = document.querySelector('#mtgBtn');
 
@@ -42,16 +47,12 @@ const mtgSelections = document.querySelector('#mtgSelections');
 const humanScore = document.querySelector('#humanScore');
 const computerScore = document.querySelector('#computerScore');
 
-///////////////////////////////////////////
-/////////////// GAME SETUP ////////////////
-///////////////////////////////////////////
+// ***** GAME SETUP *****
 
-let game = new Game();
+const game = new Game();
 game.initializeLocalStorage();
 
-///////////////////////////////////////////
-///////////// EVENT LISTENERS /////////////
-///////////////////////////////////////////
+// ***** EVENT LISTENERS *****
 
 // BUTTONS
 
@@ -76,11 +77,9 @@ mtgImgPaper.addEventListener('click', mtgHumanChoicePaper);
 mtgImgLizard.addEventListener('click', mtgHumanChoiceLizard);
 mtgImgAlien.addEventListener('click', mtgHumanChoiceAlien);
 
-/////////////////////////////////////////
-////////////// FUNCTIONS ////////////////
-/////////////////////////////////////////
+// ***** FUNCTIONS *****
 
-//////////// HUMAN SELECTIONS ///////////
+// * HUMAN SELECTIONS *
 
 // RPS HUMAN SELECTIONS
 
@@ -118,7 +117,21 @@ function mtgHumanChoiceAlien() {
   game.determineWinner('alien');
 }
 
-///// HIDE & SHOW ELEMENTS ////
+// SHOW & HIDE HELPER FUNCTIONS
+
+function hide(elements) {
+  elements.forEach(element => {
+    element.classList.add('hidden');
+  });
+}
+
+function show(elements) {
+  elements.forEach(element => {
+    element.classList.remove('hidden');
+  });
+}
+
+// * HIDE & SHOW ELEMENTS *
 
 // FEATURES
 
@@ -180,7 +193,7 @@ function rpsGamePage() {
 }
 
 function mtgGamePage() {
-	game.playMtg();
+  game.playMtg();
   hideHomeFeatures();
   showMtgGameFeatures();
   hide([mtgSelections, whoWon]);
@@ -194,7 +207,7 @@ function rpsSelectionsPage() {
   hideHomeFeatures();
   show([rpsSelections, whoWon]);
   hide([changeFormatBtn]);
-  setTimeout(function() {rpsGamePage()}, 1200);
+  setTimeout(function () { rpsGamePage(); }, 1200);
 }
 
 function mtgSelectionsPage() {
@@ -202,21 +215,7 @@ function mtgSelectionsPage() {
   hideHomeFeatures();
   show([mtgSelections, whoWon]);
   hide([changeFormatBtn]);
-  setTimeout(function() {mtgGamePage()}, 1200);
-}
-
-// SHOW & HIDE HELPER FUNCTIONS
-
-function hide(elements) {
-  elements.forEach(element => {
-    element.classList.add('hidden');
-  });
-}
-
-function show(elements) {
-  elements.forEach(element => {
-    element.classList.remove('hidden');
-  });
+  setTimeout(function () { mtgGamePage(); }, 1200);
 }
 
 // LOCAL STORAGE MGMT
