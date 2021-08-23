@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-This is an application that allows a user to play Rock Paper Scissors against a computer. The user selects format, either Standard RPS, with 3 choices, or Magic: The Gathering RPS, with 5 choices. The app keeps track of all time score between the user, known as a "planewalker", and the computer, know as a "construct".
+This is an application that allows a user to play Rock Paper Scissors against a computer. The user selects format, either Standard RPS, with 3 choices, or Magic: The Gathering RPS, with 5 choices. The app keeps track of all time score between the user, known as a "planeswalker", and the computer, know as a "construct".
 
 ## Motivation and rubric
 
